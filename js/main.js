@@ -1,13 +1,22 @@
 
 // Custom cursor
 const cursor = document.getElementById('cursor');
-document.addEventListener('mousemove', e => { cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`; });
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top  = e.clientY + 'px';
+});
 
 // Typing effect
 const homeTitle = document.getElementById('home-title');
 const text = "Welcome to My Portfolio";
 let i = 0;
-function type() { if(i < text.length) { homeTitle.textContent += text.charAt(i); i++; setTimeout(type, 100); } }
+function type() { 
+  if(i < text.length) { 
+    homeTitle.textContent += text.charAt(i); 
+    i++; 
+    setTimeout(type, 100); 
+  } 
+}
 type();
 
 // Intersection Observer for fade-in
@@ -17,7 +26,11 @@ const observer = new IntersectionObserver(entries => {
     if(entry.isIntersecting){
       entry.target.classList.add('visible');
       const children = entry.target.querySelectorAll('p, .portfolio-item, h1');
-      children.forEach((child,i)=>{ child.style.transitionDelay = `${i*0.2}s`; child.style.opacity=1; child.style.transform='translateY(0)'; });
+      children.forEach((child,i)=>{ 
+        child.style.transitionDelay = `${i*0.2}s`; 
+        child.style.opacity=1; 
+        child.style.transform='translateY(0)'; 
+      });
     }
   });
 }, {threshold:0.2});
@@ -38,13 +51,30 @@ for(let i=0;i<25;i++){
   document.body.appendChild(circle);
   circles.push(circle);
 }
+
+//smoother scroll handler using requestAnimationFrame
+let latestKnownScrollY = 0;
+let ticking = false;
+
 window.addEventListener('scroll', () => {
-  const scrollTop = window.pageYOffset;
-  circles.forEach(c => {
-    const speed = parseFloat(c.dataset.speed);
-    c.style.transform = `translate(${scrollTop*speed + parseFloat(c.dataset.offsetX)}px, ${scrollTop*speed + parseFloat(c.dataset.offsetY)}px)`;
-  });
-  sections.forEach((section,index) => {
-    section.style.transform=`translateY(${Math.sin(scrollTop*0.002+index)*10}px) rotateX(${Math.sin(scrollTop*0.002+index)*2}deg)`;
-  });
+  latestKnownScrollY = window.pageYOffset;
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      updateOnScroll(latestKnownScrollY);
+      ticking = false;
+    })
+    ticking = true;
+  }
 });
+
+function updateOnScroll(scrollTop) {
+  circles.forEach(circle => {
+    const speed = parseFloat(circle.dataset.speed);
+    circle.style.transform = `translate3d(${scrollTop * speed + parseFloat(circle.dataset.offsetX)}px, ${scrollTop * speed + parseFloat(circle.dataset.offsetY)}px, 0)`;
+  });
+  sections.forEach((section, index) => {
+    section.style.transform = `translate3d(0, ${Math.sin(scrollTop * 0.002 + index) * 10}px, 0) rotateX(${Math.sin(scrollTop * 0.002 + index) * 2}deg)`;
+  });
+}
+
+  
