@@ -66,7 +66,7 @@ section {
   justify-content:center; 
   padding:2rem; 
   position:relative; 
-  overflow:hidden; 
+  overflow:clip; 
   opacity:0; 
   transform:translateY(30px); 
   transition: all 1s ease, transform 1s ease; 
@@ -124,10 +124,11 @@ p {
 }
 
 .float-circle { 
-  position:absolute; 
-  border-radius:50%; 
-  background: rgba(243,156,18,0.15); 
-  pointer-events:none; 
+  position:fixed; 
+  top:0;
+  left:0;
+  will-change: transform;
+  z-index: 0;
 }
 
 @media (max-width:768px){ 
