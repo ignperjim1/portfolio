@@ -6,7 +6,12 @@
 }
 
 html, body{
-  overflow-x: hidden; /*prevent horizontal scroll*/
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden !important; /*prevent horizontal scroll*/
 }
 
 body {
@@ -18,6 +23,7 @@ body {
   perspective: 1000px;
   scroll-behavior: smooth;
   animation: gradientShift 20s ease infinite;
+  overflow-y: scroll;
 }
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
