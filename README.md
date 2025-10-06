@@ -9,6 +9,7 @@ A modern, animated portfolio website for game designers inspired by professional
 - **Animated Counters** - Stats that count up when scrolled into view
 - **Smooth Scrolling** - Seamless navigation between sections
 - **Sticky Header** - Navigation that follows you as you scroll
+- **Fixed Social Links** - Always-visible social media buttons on bottom right
 - **Portfolio Grid** - Showcase your projects with hover effects
 - **Responsive Design** - Looks great on all devices
 - **Modern Animations** - Smooth transitions and effects throughout
@@ -107,7 +108,23 @@ Replace the placeholder images in the `images/` folder:
 - Recommended dimensions: 800x600px or similar aspect ratio
 - Supported formats: JPG, PNG, WebP
 
-### 8. Color Scheme
+### 8. Fixed Social Links
+
+Update your social media links at the bottom of `index.html`:
+
+```html
+<!-- Fixed Social Links -->
+<div class="fixed-social-links">
+    <a href="https://github.com/yourusername" target="_blank" class="social-btn">
+        <i class="fab fa-github"></i>
+    </a>
+    <!-- Add more social links as needed -->
+</div>
+```
+
+These links are always visible on the bottom right of the screen!
+
+### 9. Color Scheme
 
 Customize colors in `css/style.css`:
 
@@ -120,7 +137,7 @@ Customize colors in `css/style.css`:
 }
 ```
 
-### 9. Particle Effect
+### 10. Particle Effect
 
 Customize particle behavior in `js/main.js`:
 

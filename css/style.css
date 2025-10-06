@@ -581,6 +581,41 @@ img {
 }
 
 /* ============================================
+   FIXED SOCIAL LINKS
+   ============================================ */
+.fixed-social-links {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+    z-index: 999;
+    animation: fadeInUp 1s ease 1s backwards;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(23, 224, 198, 0.1);
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.social-btn:hover {
+    background: var(--secondary-color);
+    color: var(--bg-dark);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 30px rgba(23, 224, 198, 0.4);
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 .footer {
@@ -652,6 +687,19 @@ img {
 
     .btn-portfolio {
         display: none;
+    }
+
+    /* Fixed social links on mobile */
+    .fixed-social-links {
+        bottom: 20px;
+        right: 20px;
+        gap: 10px;
+    }
+
+    .social-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
     }
 
     .hero-title {
