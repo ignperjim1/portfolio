@@ -207,7 +207,7 @@ if (mobileMenuToggle) {
 // ============================================
 // SCROLL ANIMATIONS
 // ============================================
-const fadeElements = document.querySelectorAll('.portfolio-item, .skill-badge, .experience-item, .company-logo');
+const fadeElements = document.querySelectorAll('.project-card, .skill-badge, .experience-item, .company-logo, .timeline-item');
 
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {

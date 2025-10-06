@@ -531,96 +531,142 @@ img {
    ============================================ */
 .portfolio-section {
     padding: 100px 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
 }
 
-.portfolio-grid { 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.portfolio-item { 
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    transition: var(--transition);
-}
-
-.portfolio-item:hover { 
-    transform: translateY(-10px);
-}
-
-.portfolio-image {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-}
-
-.portfolio-image img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.portfolio-item:hover .portfolio-image img {
-    transform: scale(1.1);
-}
-
-.portfolio-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(23, 224, 198, 0.9), rgba(1, 112, 185, 0.9));
+.portfolio-split-layout {
     display: flex;
     align-items: center;
-    justify-content: center;
-    opacity: 0;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Left Side - Text & CTA */
+.portfolio-left {
+    flex: 0 0 35%;
+    padding-right: 40px;
+}
+
+.portfolio-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+.portfolio-title .highlight {
+    color: var(--secondary-color);
+}
+
+.portfolio-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 35px;
+}
+
+.btn-portfolio-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 35px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--secondary-color);
+    border-radius: 50px;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1rem;
     transition: var(--transition);
-    padding: 30px;
+    text-decoration: none;
 }
 
-.portfolio-item:hover .portfolio-overlay {
-    opacity: 1;
+.btn-portfolio-view:hover {
+    background: var(--secondary-color);
+    color: var(--bg-dark);
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(23, 224, 198, 0.4);
 }
 
-.portfolio-info {
-    text-align: center;
-    transform: translateY(20px);
+/* Right Side - Project Cards */
+.portfolio-right {
+    flex: 1;
+}
+
+.portfolio-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(23, 224, 198, 0.3);
+}
+
+.project-card-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+.project-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.portfolio-item:hover .portfolio-info {
-    transform: translateY(0);
+.project-card:hover .project-card-image img {
+    transform: scale(1.1);
 }
 
-.portfolio-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+.project-card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
 }
 
-.project-role {
+.project-card-info h3 {
     font-size: 1.1rem;
-    margin-bottom: 20px;
-    opacity: 0.9;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--text-color);
 }
 
-.project-tech {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.project-tech span {
+.project-card-info p {
     font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* "... and more!" card */
+.project-card-more {
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(23, 224, 198, 0.3);
+    border-radius: 12px;
+}
+
+.project-card-more p {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: 600;
 }
 
 /* ============================================
@@ -1095,7 +1141,23 @@ img {
         font-size: 2rem;
     }
 
-    .portfolio-grid {
+    .portfolio-split-layout {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .portfolio-left {
+        flex: 1;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .portfolio-title {
+        font-size: 2.5rem;
+    }
+
+    .portfolio-cards-grid {
         grid-template-columns: 1fr;
     }
 
