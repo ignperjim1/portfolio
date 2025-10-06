@@ -1,179 +1,354 @@
-// ===== VIDEO HOVER EFFECTS =====
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Get all video elements
-    const videos = document.querySelectorAll('.lazy-video');
-    
-    videos.forEach(video => {
-        const card = video.closest('.job-card');
-        
-        if (card) {
-            // Play video on hover
-            card.addEventListener('mouseenter', function() {
-                video.play().catch(error => {
-                    console.log('Video play failed:', error);
-                });
-            });
-            
-            // Pause video when not hovering
-            card.addEventListener('mouseleave', function() {
-                video.pause();
-                video.currentTime = 0;
-            });
+// ============================================
+// PARTICLES.JS CONFIGURATION
+// ============================================
+particlesJS('particles-js', {
+    particles: {
+        number: {
+            value: 40,
+            density: {
+                enable: false,
+                value_area: 800
+            }
+        },
+        color: {
+            value: '#17E0C6'
+        },
+        shape: {
+            type: 'circle',
+            stroke: {
+                width: 0,
+                color: '#000000'
+            }
+        },
+        opacity: {
+            value: 0.3,
+            random: true,
+            anim: {
+                enable: false,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false
+            }
+        },
+        size: {
+            value: 3.25,
+            random: true,
+            anim: {
+                enable: false,
+                speed: 40,
+                size_min: 0.1,
+                sync: false
+            }
+        },
+        line_linked: {
+            enable: false
+        },
+        move: {
+            enable: true,
+            speed: 2.2,
+            direction: 'top-right',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+            bounce: false
         }
-    });
-
-    // ===== LAZY LOAD VIDEOS =====
-    const observerOptions = {
-        root: null,
-        rootMargin: '50px',
-        threshold: 0.1
-    };
-
-    const videoObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const video = entry.target;
-                const sources = video.querySelectorAll('source');
-                
-                sources.forEach(source => {
-                    if (source.dataset.src) {
-                        source.src = source.dataset.src;
-                    }
-                });
-                
-                video.load();
-                video.closest('.job-card-video')?.classList.add('video-loaded');
-                observer.unobserve(video);
+    },
+    interactivity: {
+        detect_on: 'window',
+        events: {
+            onhover: {
+                enable: true,
+                mode: 'bubble'
+            },
+            onclick: {
+                enable: false
+            },
+            resize: true
+        },
+        modes: {
+            bubble: {
+                distance: 400,
+                size: 3,
+                duration: 2,
+                opacity: 0.5,
+                speed: 2
             }
-        });
-    }, observerOptions);
-
-    videos.forEach(video => {
-        videoObserver.observe(video);
-    });
-
-    // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // Only prevent default for actual anchor links (not just "#")
-            if (href !== '#') {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
-    });
-
-    // ===== SCROLL ANIMATION FOR ELEMENTS =====
-    const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.job-card, .about-information, .information-section');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        elements.forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    };
-
-    animateOnScroll();
-
-    // ===== CARD CLICK HANDLER (Optional - for future expansion) =====
-    const cards = document.querySelectorAll('.job-card');
-    
-    cards.forEach(card => {
-        card.addEventListener('click', function() {
-            // You can add modal or page navigation here
-            console.log('Card clicked:', this.querySelector('h3')?.textContent);
-        });
-    });
-
-    // ===== PARALLAX EFFECT ON SCROLL (Optional) =====
-    let scrollY = 0;
-    
-    window.addEventListener('scroll', () => {
-        scrollY = window.scrollY;
-        
-        // You can add parallax effects here
-        const header = document.querySelector('.header');
-        if (header) {
-            header.style.transform = `translateY(${scrollY * 0.3}px)`;
         }
-    });
-
-    // ===== TYPING ANIMATION FOR HEADER (Optional) =====
-    const typeWriter = (element, text, speed = 100) => {
-        let i = 0;
-        element.textContent = '';
-        
-        const type = () => {
-            if (i < text.length) {
-                element.textContent += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
-            }
-        };
-        
-        type();
-    };
-
-    // Uncomment to enable typing animation
-    // const headerLink = document.querySelector('.header-link');
-    // if (headerLink) {
-    //     const originalText = headerLink.textContent;
-    //     typeWriter(headerLink, originalText, 100);
-    // }
-
-    // ===== BADGE ANIMATION =====
-    const badges = document.querySelectorAll('.badge');
-    
-    badges.forEach((badge, index) => {
-        badge.style.animationDelay = `${index * 0.05}s`;
-        badge.style.animation = 'fadeIn 0.5s ease forwards';
-    });
-
-    // ===== RESPONSIVE MENU TOGGLE (for future mobile menu) =====
-    // This is a placeholder for when you want to add a mobile hamburger menu
-    const createMobileMenu = () => {
-        // Future implementation
-    };
-
-    console.log('Portfolio loaded successfully!');
+    },
+    retina_detect: true
 });
 
-// ===== UTILITY FUNCTIONS =====
+// ============================================
+// TYPING ANIMATION
+// ============================================
+class TypeWriter {
+    constructor(txtElement, words, wait = 2500) {
+        this.txtElement = txtElement;
+        this.words = words;
+        this.txt = '';
+        this.wordIndex = 0;
+        this.wait = parseInt(wait, 10);
+        this.isDeleting = false;
+        this.type();
+    }
+
+    type() {
+        const current = this.wordIndex % this.words.length;
+        const fullTxt = this.words[current];
+
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.txtElement.textContent = this.txt;
+
+        let typeSpeed = 100;
+
+        if (this.isDeleting) {
+            typeSpeed /= 2;
+        }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+            typeSpeed = this.wait;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.wordIndex++;
+            typeSpeed = 500;
+        }
+
+        setTimeout(() => this.type(), typeSpeed);
+    }
+}
+
+// Initialize typing animation
+document.addEventListener('DOMContentLoaded', function() {
+    const txtElement = document.querySelector('#typed-text');
+    const words = ['Game', 'Combat', 'AI', 'Systems', 'Level'];
+    const wait = 2500;
+    
+    if (txtElement) {
+        new TypeWriter(txtElement, words, wait);
+    }
+});
+
+// ============================================
+// STICKY HEADER ON SCROLL
+// ============================================
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// ============================================
+// SMOOTH SCROLLING FOR NAVIGATION
+// ============================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        
+        if (href !== '#' && href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            
+            if (target) {
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                if (this.classList.contains('nav-link')) {
+                    this.classList.add('active');
+                }
+
+                // Close mobile menu if open
+                const navMenu = document.getElementById('navMenu');
+                navMenu.classList.remove('active');
+            }
+        }
+    });
+});
+
+// ============================================
+// MOBILE MENU TOGGLE
+// ============================================
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const navMenu = document.getElementById('navMenu');
+
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        const icon = this.querySelector('i');
+        
+        if (navMenu.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+}
+
+// ============================================
+// COUNTER ANIMATION
+// ============================================
+const counters = document.querySelectorAll('.stat-number');
+const speed = 200;
+let hasAnimated = false;
+
+const runCounter = () => {
+    if (hasAnimated) return;
+    
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const increment = target / speed;
+
+        const updateCount = () => {
+            const count = +counter.innerText;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        updateCount();
+    });
+    
+    hasAnimated = true;
+};
+
+// Intersection Observer for counter animation
+const observerOptions = {
+    threshold: 0.5
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            runCounter();
+        }
+    });
+}, observerOptions);
+
+const statsSection = document.querySelector('.stats-section');
+if (statsSection) {
+    observer.observe(statsSection);
+}
+
+// ============================================
+// SCROLL ANIMATIONS
+// ============================================
+const fadeElements = document.querySelectorAll('.portfolio-item, .skill-badge, .stat-item');
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+fadeElements.forEach(element => {
+    appearOnScroll.observe(element);
+});
+
+// ============================================
+// ACTIVE NAVIGATION ON SCROLL
+// ============================================
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('section[id]');
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 100;
+        const sectionId = current.getAttribute('id');
+        const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+
+        if (correspondingLink) {
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                correspondingLink.classList.add('active');
+            }
+        }
+    });
+});
+
+// ============================================
+// PORTFOLIO HOVER EFFECTS
+// ============================================
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+portfolioItems.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
+    });
+
+    item.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+});
+
+// ============================================
+// PREVENT DEFAULT ON EMPTY LINKS
+// ============================================
+document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+    });
+});
+
+// ============================================
+// PAGE LOAD ANIMATION
+// ============================================
+window.addEventListener('load', function() {
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
+});
+
+// ============================================
+// UTILITY FUNCTIONS
+// ============================================
 
 // Debounce function for performance
-function debounce(func, wait) {
+function debounce(func, wait = 20, immediate = true) {
     let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
+    return function() {
+        const context = this, args = arguments;
+        const later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
         };
+        const callNow = immediate && !timeout;
         clearTimeout(timeout);
         timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
     };
 }
 
@@ -190,4 +365,6 @@ function throttle(func, limit) {
         }
     };
 }
+
+console.log('Portfolio loaded successfully! ✨');
 
