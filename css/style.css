@@ -267,51 +267,6 @@ img {
 }
 
 /* ============================================
-   STATS SECTION
-   ============================================ */
-.stats-section {
-    padding: 80px 0;
-    background: rgba(23, 224, 198, 0.05);
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    text-align: center;
-}
-
-.stat-item {
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    transition: var(--transition);
-}
-
-.stat-item:hover {
-    background: rgba(23, 224, 198, 0.1);
-    transform: translateY(-5px);
-}
-
-.stat-item i {
-    font-size: 3rem;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-}
-
-.stat-number {
-    font-size: 3rem;
-    font-weight: 900;
-    color: var(--secondary-color);
-    margin: 10px 0;
-}
-
-.stat-item p {
-    font-size: 1.1rem;
-    color: #aaa;
-}
-
-/* ============================================
    ABOUT SECTION
    ============================================ */
 .about-section {
@@ -391,18 +346,134 @@ img {
 }
 
 /* ============================================
-   BACKSTORY SECTION
+   EXPERIENCE SECTION
    ============================================ */
-.backstory-section {
-    padding: 80px 0;
+.experience-section {
+    padding: 100px 0;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .divider {
     width: 100px;
     height: 4px;
     background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-    margin: 20px auto;
+    margin: 20px auto 50px;
     border-radius: 2px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.experience-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(23, 224, 198, 0.2);
+}
+
+.experience-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.experience-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover .experience-image img {
+    transform: scale(1.1);
+}
+
+.experience-content {
+    padding: 25px;
+}
+
+.experience-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.experience-company {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.experience-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.btn-view-details {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid var(--secondary-color);
+    border-radius: 30px;
+    color: var(--secondary-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-view-details:hover {
+    background: var(--secondary-color);
+    color: var(--bg-dark);
+    transform: translateX(5px);
+}
+
+/* ============================================
+   DEMO REEL SECTION
+   ============================================ */
+.demo-reel-section {
+    padding: 100px 0;
+}
+
+.demo-reel-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.demo-reel-text {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #ccc;
 }
 
 /* ============================================
@@ -503,10 +574,11 @@ img {
 }
 
 /* ============================================
-   SKILLS SECTION
+   TECHNICAL SKILLS SECTION
    ============================================ */
-.skills-section {
+.technical-skills-section {
     padding: 100px 0;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .skills-grid {
@@ -532,6 +604,62 @@ img {
     color: var(--bg-dark);
     transform: translateY(-3px);
     box-shadow: 0 5px 20px rgba(23, 224, 198, 0.3);
+}
+
+/* ============================================
+   DESIGN SKILLS SECTION
+   ============================================ */
+.design-skills-section {
+    padding: 100px 0;
+}
+
+/* ============================================
+   I HAVE WORKED IN SECTION
+   ============================================ */
+.worked-in-section {
+    padding: 100px 0;
+    background: rgba(23, 224, 198, 0.05);
+}
+
+.worked-in-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.company-logo {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    transition: var(--transition);
+}
+
+.company-logo:hover {
+    background: rgba(23, 224, 198, 0.1);
+    transform: translateY(-5px);
+}
+
+.company-logo img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin: 0 auto 15px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.company-logo:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.company-logo p {
+    font-size: 1rem;
+    color: #ccc;
+    font-weight: 500;
 }
 
 /* ============================================
@@ -657,6 +785,132 @@ img {
 }
 
 /* ============================================
+   MODAL POPUPS
+   ============================================ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, var(--bg-dark-alt), var(--bg-dark));
+    border: 1px solid var(--secondary-color);
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideInUp 0.3s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    color: var(--text-color);
+    transform: rotate(90deg);
+}
+
+.modal-content h2 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.modal-company {
+    color: #aaa;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.modal-body {
+    color: #ccc;
+}
+
+.modal-body h3 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.modal-body ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.modal-body li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.modal-body li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.modal-body p {
+    line-height: 1.8;
+    margin-top: 10px;
+}
+
+/* Custom scrollbar for modal */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 768px) {
@@ -719,12 +973,16 @@ img {
         font-size: 2rem;
     }
 
-    .stats-grid {
+    .portfolio-grid {
         grid-template-columns: 1fr;
     }
 
-    .portfolio-grid {
+    .experience-grid {
         grid-template-columns: 1fr;
+    }
+
+    .worked-in-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .contact-links {
@@ -735,6 +993,10 @@ img {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+
+    .modal-content {
+        padding: 30px 20px;
     }
 }
 
@@ -747,12 +1009,22 @@ img {
         font-size: 1.1rem;
     }
 
-    .stat-number {
-        font-size: 2.5rem;
-    }
-
     .section-title-center {
         font-size: 1.8rem;
+    }
+
+    .worked-in-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        padding: 25px 15px;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 15px;
+        font-size: 1.5rem;
     }
 }
 

@@ -205,58 +205,9 @@ if (mobileMenuToggle) {
 }
 
 // ============================================
-// COUNTER ANIMATION
-// ============================================
-const counters = document.querySelectorAll('.stat-number');
-const speed = 200;
-let hasAnimated = false;
-
-const runCounter = () => {
-    if (hasAnimated) return;
-    
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const increment = target / speed;
-
-        const updateCount = () => {
-            const count = +counter.innerText;
-
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCount, 1);
-            } else {
-                counter.innerText = target;
-            }
-        };
-
-        updateCount();
-    });
-    
-    hasAnimated = true;
-};
-
-// Intersection Observer for counter animation
-const observerOptions = {
-    threshold: 0.5
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            runCounter();
-        }
-    });
-}, observerOptions);
-
-const statsSection = document.querySelector('.stats-section');
-if (statsSection) {
-    observer.observe(statsSection);
-}
-
-// ============================================
 // SCROLL ANIMATIONS
 // ============================================
-const fadeElements = document.querySelectorAll('.portfolio-item, .skill-badge, .stat-item');
+const fadeElements = document.querySelectorAll('.portfolio-item, .skill-badge, .experience-item, .company-logo');
 
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -366,5 +317,58 @@ function throttle(func, limit) {
     };
 }
 
-console.log('Portfolio loaded successfully! ✨');
+// ============================================
+// MODAL FUNCTIONALITY
+// ============================================
+const viewDetailsButtons = document.querySelectorAll('.btn-view-details');
+const modalCloses = document.querySelectorAll('.modal-close');
+const modals = document.querySelectorAll('.modal');
 
+// Open modal
+viewDetailsButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const modalId = this.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+});
+
+// Close modal
+modalCloses.forEach(closeBtn => {
+    closeBtn.addEventListener('click', function() {
+        const modalId = this.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+
+// Close modal when clicking outside
+modals.forEach(modal => {
+    modal.addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        modals.forEach(modal => {
+            if (modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+});
+
+console.log('Portfolio loaded successfully! ✨');
+  

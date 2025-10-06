@@ -6,7 +6,6 @@ A modern, animated portfolio website for game designers inspired by professional
 
 - **Particle Background Effect** - Interactive particle.js animation
 - **Typing Animation** - Dynamic text animation showcasing different design specializations
-- **Animated Counters** - Stats that count up when scrolled into view
 - **Smooth Scrolling** - Seamless navigation between sections
 - **Sticky Header** - Navigation that follows you as you scroll
 - **Fixed Social Links** - Always-visible social media buttons on bottom right
@@ -57,16 +56,7 @@ const words = ['Game', 'Combat', 'AI', 'Systems', 'Level'];
 // Change to your specializations
 ```
 
-### 3. Stats/Counters
-
-Update the counter values in `index.html`:
-
-```html
-<div class="stat-number" data-target="12">0</div>
-<!-- Change data-target to your actual numbers -->
-```
-
-### 4. About Section
+### 3. About Section
 
 Replace the about text in `index.html`:
 
@@ -76,7 +66,7 @@ Replace the about text in `index.html`:
 </div>
 ```
 
-### 5. Portfolio Projects
+### 4. Portfolio Projects
 
 Update project information:
 
@@ -92,7 +82,7 @@ Update project information:
 </div>
 ```
 
-### 6. Skills
+### 5. Skills
 
 Update your skills in `index.html`:
 
@@ -101,14 +91,14 @@ Update your skills in `index.html`:
 <!-- Add or remove as needed -->
 ```
 
-### 7. Images
+### 6. Images
 
 Replace the placeholder images in the `images/` folder:
 - Use your own project screenshots
 - Recommended dimensions: 800x600px or similar aspect ratio
 - Supported formats: JPG, PNG, WebP
 
-### 8. Fixed Social Links
+### 7. Fixed Social Links
 
 Update your social media links at the bottom of `index.html`:
 
@@ -124,7 +114,7 @@ Update your social media links at the bottom of `index.html`:
 
 These links are always visible on the bottom right of the screen!
 
-### 9. Color Scheme
+### 8. Color Scheme
 
 Customize colors in `css/style.css`:
 
@@ -137,7 +127,7 @@ Customize colors in `css/style.css`:
 }
 ```
 
-### 10. Particle Effect
+### 9. Particle Effect
 
 Customize particle behavior in `js/main.js`:
 
@@ -196,14 +186,14 @@ particlesJS('particles-js', {
 ### Typing Animation
 The hero section features a typing animation that cycles through different design specializations (Game, Combat, AI, Systems, Level Design).
 
-### Animated Counters
-Stats counters animate when scrolled into view using Intersection Observer API.
-
 ### Smooth Scroll
 All anchor links scroll smoothly to their target sections with offset for the fixed header.
 
 ### Particle Background
 Interactive particle effect using particles.js that responds to mouse hover.
+
+### Fixed Social Links
+Always-visible social media buttons positioned at the bottom right of the screen with smooth hover animations.
 
 ### Mobile Menu
 Responsive hamburger menu for mobile devices with smooth slide-in animation.
@@ -222,13 +212,13 @@ Project cards with image hover effects and overlay information.
 ## 🎯 Sections Overview
 
 1. **Hero** - Your name and rotating specializations
-2. **Stats** - Quick stats about games, achievements, awards
-3. **About** - Your bio and experience
-4. **Backstory** - Optional section for your journey
-5. **Portfolio** - Your featured projects
-6. **Skills** - Technologies and tools you use
-7. **Contact** - Ways to reach you
-8. **Footer** - Social links and copyright
+2. **Backstory** - Optional section for your journey
+3. **Portfolio** - Your featured projects
+4. **Skills** - Technologies and tools you use
+5. **About** - Your bio and experience
+6. **Contact** - Ways to reach you
+7. **Footer** - Social links and copyright
+8. **Fixed Social Links** - Always-visible social buttons on bottom right
 
 ## 🔧 Advanced Customization
 

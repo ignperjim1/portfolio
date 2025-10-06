@@ -33,10 +33,10 @@
             <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
                     <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><a href="https://github.com/yourusername" target="_blank" class="nav-link">GitHub</a></li>
                 </ul>
             </nav>
             <a href="#portfolio" class="btn-portfolio">
@@ -61,59 +61,74 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <i class="fas fa-gamepad"></i>
-                    <div class="stat-number" data-target="12">0</div>
-                    <p>Games</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-star"></i>
-                    <div class="stat-number" data-target="6">0</div>
-                    <p>Achievements</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-trophy"></i>
-                    <div class="stat-number" data-target="3">0</div>
-                    <p>Awards</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <div class="section-badge">Game Developer specialized in Game Design</div>
-                    <h2 class="section-title">MY NAME IS YOUR NAME,<br>GAME DESIGNER.</h2>
-                    <div class="about-text">
-                        <p>Specialized in <strong>gameplay</strong> and <strong>systems.</strong> Since 2020, I have been working on different video games and tools in both <strong>Unreal Engine</strong> and <strong>Unity</strong>, some of them launched in platforms like <strong>Steam</strong> and consoles such as <strong>PlayStation</strong>, <strong>Xbox</strong> and <strong>Nintendo Switch</strong>, enhancing my skills as a <strong>Game Designer</strong>.</p>
-                        
-                        <p>Nowadays, I am working as a <strong>Game Designer</strong> in charge of <strong>Combat Design</strong> and <strong>AI Systems</strong> for exciting new projects.</p>
-                    </div>
-                    <div class="signature">
-                        <img src="images/placeholder1.png" alt="Signature" class="signature-img">
-                    </div>
-                    <p class="cta-text">Are you interested in my work?</p>
-                    <a href="mailto:your.email@example.com" class="btn-contact">
-                        <i class="fas fa-envelope"></i>
-                        <span>Contact me!</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Backstory Section -->
-    <section class="backstory-section">
-        <div class="container">
-            <h2 class="section-title-center">My Backstory</h2>
+            <h2 class="section-title-center">Experience</h2>
             <div class="divider"></div>
+            
+            <div class="experience-grid">
+                <!-- Experience Item 1 -->
+                <div class="experience-item">
+                    <div class="experience-image">
+                        <img src="images/placeholder1.png" alt="Company 1">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Senior Game Designer</h3>
+                        <p class="experience-company">Company Name • 2023 - Present</p>
+                        <p class="experience-desc">Leading combat and AI design for AAA titles, managing design pipelines and team collaboration.</p>
+                        <button class="btn-view-details" data-modal="modal1">
+                            <i class="fas fa-info-circle"></i>
+                            <span>View Details</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="experience-item">
+                    <div class="experience-image">
+                        <img src="images/placeholder2.png" alt="Company 2">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Game Designer</h3>
+                        <p class="experience-company">Previous Studio • 2021 - 2023</p>
+                        <p class="experience-desc">Designed gameplay systems and mechanics for multiple shipped titles across various platforms.</p>
+                        <button class="btn-view-details" data-modal="modal2">
+                            <i class="fas fa-info-circle"></i>
+                            <span>View Details</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="experience-item">
+                    <div class="experience-image">
+                        <img src="images/placeholder3.png" alt="Company 3">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Junior Game Designer</h3>
+                        <p class="experience-company">First Studio • 2020 - 2021</p>
+                        <p class="experience-desc">Started career in game design, contributing to level design and balancing for indie projects.</p>
+                        <button class="btn-view-details" data-modal="modal3">
+                            <i class="fas fa-info-circle"></i>
+                            <span>View Details</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Reel Section -->
+    <section class="demo-reel-section">
+        <div class="container">
+            <h2 class="section-title-center">Demo Reel</h2>
+            <div class="demo-reel-container">
+                <div class="video-wrapper">
+                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="demo-reel-text">Watch my latest work showcasing gameplay design, combat systems, and more!</p>
+            </div>
         </div>
     </section>
 
@@ -197,23 +212,90 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills-section">
+    <!-- Technical Skills Section -->
+    <section class="technical-skills-section">
         <div class="container">
-            <h2 class="section-title-center">Skills & Tools</h2>
+            <h2 class="section-title-center">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-badge">Unreal Engine</div>
                 <div class="skill-badge">Unity</div>
                 <div class="skill-badge">C++</div>
                 <div class="skill-badge">C#</div>
                 <div class="skill-badge">Blueprints</div>
-                <div class="skill-badge">Game Design</div>
+                <div class="skill-badge">Python</div>
+                <div class="skill-badge">Git</div>
+                <div class="skill-badge">Perforce</div>
+                <div class="skill-badge">Visual Studio</div>
+                <div class="skill-badge">Jira</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Skills Section -->
+    <section class="design-skills-section">
+        <div class="container">
+            <h2 class="section-title-center">Design Skills</h2>
+            <div class="skills-grid">
                 <div class="skill-badge">Combat Design</div>
                 <div class="skill-badge">AI Design</div>
                 <div class="skill-badge">Level Design</div>
                 <div class="skill-badge">Systems Design</div>
-                <div class="skill-badge">Balancing</div>
-                <div class="skill-badge">Prototyping</div>
+                <div class="skill-badge">Game Balancing</div>
+                <div class="skill-badge">Rapid Prototyping</div>
+                <div class="skill-badge">UX Design</div>
+                <div class="skill-badge">Narrative Design</div>
+                <div class="skill-badge">Economy Design</div>
+                <div class="skill-badge">Progression Systems</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- I Have Worked In Section -->
+    <section class="worked-in-section">
+        <div class="container">
+            <h2 class="section-title-center">I Have Worked In</h2>
+            <div class="worked-in-grid">
+                <div class="company-logo">
+                    <img src="images/placeholder1.png" alt="Company 1">
+                    <p>Company Name 1</p>
+                </div>
+                <div class="company-logo">
+                    <img src="images/placeholder2.png" alt="Company 2">
+                    <p>Company Name 2</p>
+                </div>
+                <div class="company-logo">
+                    <img src="images/placeholder3.png" alt="Company 3">
+                    <p>Company Name 3</p>
+                </div>
+                <div class="company-logo">
+                    <img src="images/placeholder4.png" alt="Company 4">
+                    <p>Company Name 4</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="section-badge">Game Developer specialized in Game Design</div>
+                    <h2 class="section-title">MY NAME IS YOUR NAME,<br>GAME DESIGNER.</h2>
+                    <div class="about-text">
+                        <p>Specialized in <strong>gameplay</strong> and <strong>systems.</strong> Since 2020, I have been working on different video games and tools in both <strong>Unreal Engine</strong> and <strong>Unity</strong>, some of them launched in platforms like <strong>Steam</strong> and consoles such as <strong>PlayStation</strong>, <strong>Xbox</strong> and <strong>Nintendo Switch</strong>, enhancing my skills as a <strong>Game Designer</strong>.</p>
+                        
+                        <p>Nowadays, I am working as a <strong>Game Designer</strong> in charge of <strong>Combat Design</strong> and <strong>AI Systems</strong> for exciting new projects.</p>
+                    </div>
+                    <div class="signature">
+                        <img src="images/placeholder1.png" alt="Signature" class="signature-img">
+                    </div>
+                    <p class="cta-text">Are you interested in my work?</p>
+                    <a href="mailto:your.email@example.com" class="btn-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact me!</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -268,6 +350,86 @@
         <a href="mailto:your.email@example.com" class="social-btn" title="Email">
             <i class="fas fa-envelope"></i>
         </a>
+    </div>
+
+    <!-- Modal Popups -->
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" data-modal="modal1">&times;</span>
+            <h2>Senior Game Designer</h2>
+            <p class="modal-company">Company Name • 2023 - Present</p>
+            <div class="modal-body">
+                <h3>Responsibilities:</h3>
+                <ul>
+                    <li>Lead combat design for flagship AAA title</li>
+                    <li>Design and balance AI behavior systems</li>
+                    <li>Collaborate with programmers and artists on feature implementation</li>
+                    <li>Mentor junior designers and conduct design reviews</li>
+                    <li>Create and maintain design documentation</li>
+                </ul>
+                <h3>Key Achievements:</h3>
+                <ul>
+                    <li>Designed combat system praised by players and press</li>
+                    <li>Improved player retention by 30% through gameplay improvements</li>
+                    <li>Successfully shipped 2 major updates on schedule</li>
+                </ul>
+                <h3>Technologies:</h3>
+                <p>Unreal Engine 5, Blueprints, C++, Jira, Confluence</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" data-modal="modal2">&times;</span>
+            <h2>Game Designer</h2>
+            <p class="modal-company">Previous Studio • 2021 - 2023</p>
+            <div class="modal-body">
+                <h3>Responsibilities:</h3>
+                <ul>
+                    <li>Designed gameplay systems and mechanics</li>
+                    <li>Created level layouts and mission structures</li>
+                    <li>Balanced game economy and progression</li>
+                    <li>Conducted playtests and gathered player feedback</li>
+                </ul>
+                <h3>Key Achievements:</h3>
+                <ul>
+                    <li>Shipped 3 successful titles across PC and consoles</li>
+                    <li>Designed award-winning puzzle mechanics</li>
+                    <li>Reduced bug count by 40% through improved design processes</li>
+                </ul>
+                <h3>Technologies:</h3>
+                <p>Unity, C#, Perforce, Trello</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" data-modal="modal3">&times;</span>
+            <h2>Junior Game Designer</h2>
+            <p class="modal-company">First Studio • 2020 - 2021</p>
+            <div class="modal-body">
+                <h3>Responsibilities:</h3>
+                <ul>
+                    <li>Assisted in level design and environment layout</li>
+                    <li>Balanced difficulty curves and player progression</li>
+                    <li>Created design documents and wireframes</li>
+                    <li>Participated in daily stand-ups and sprint planning</li>
+                </ul>
+                <h3>Key Achievements:</h3>
+                <ul>
+                    <li>Contributed to successful indie game launch</li>
+                    <li>Designed 15+ levels that received positive feedback</li>
+                    <li>Learned industry-standard tools and workflows</li>
+                </ul>
+                <h3>Technologies:</h3>
+                <p>Unity, C#, Git, Asana</p>
+            </div>
+        </div>
     </div>
 
     <!-- Particles JS -->
