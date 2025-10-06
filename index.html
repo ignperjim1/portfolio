@@ -1,50 +1,217 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Clone</title>
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Gameplay Programmer - Portfolio</title>
+    <meta name="description" content="Gameplay programmer portfolio. Explore my latest projects, expertise in game development, and immersive gameplay experiences.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+            <h1>
+                <a href="#" class="header-link">Your Name</a>
+                <small>Gameplay Programmer</small>
+            </h1>
+            <div class="links">
+                <a class="link" href="https://www.linkedin.com/in/yourprofile/" target="_blank" title="LinkedIn">
+                    <span class="sr-only">LinkedIn account</span>
+                    <i class="fab fa-linkedin link-icon"></i>
+                </a>
+                <a class="link" href="https://github.com/yourusername" target="_blank" title="Github">
+                    <span class="sr-only">Github account</span>
+                    <i class="fab fa-github link-icon"></i>
+                </a>
+                <a class="link" href="https://www.instagram.com/yourusername/" target="_blank" title="Instagram">
+                    <span class="sr-only">Instagram account</span>
+                    <i class="fab fa-instagram link-icon"></i>
+                </a>
+                <a class="link resume" href="#" target="_blank" title="Resume">
+                    <span class="sr-only">Resume</span>
+                    <span>Resume</span>
+                    <i class="fas fa-arrow-down link-icon"></i>
+                </a>
+            </div>
+        </div>
 
-<div id="cursor"></div>
+        <!-- Main Content -->
+        <div class="content">
+            <!-- About Information -->
+            <div class="about-information">
+                <picture>
+                    <img class="profile-image" width="248" height="248" src="images/placeholder1.png" loading="lazy" alt="Profile picture">
+                </picture>
+                <p class="about-text">
+                    Game programmer specializing in systems and gameplay programming, focused on writing efficient, clean code and tackling new challenges in game development.
+                </p>
+            </div>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#portfolio">Portfolio</a>
-  <a href="#contact">Contact</a>
-</nav>
+            <!-- Game Programming Section -->
+            <h2 id="portfolio">Game Programming</h2>
+            <div class="experience">
+                <!-- Project Card 1 -->
+                <button type="button" class="job-card">
+                    <section>
+                        <div class="job-card-video video-loaded">
+                            <video class="lazy-video" playsinline loop preload="none" loading="lazy">
+                                <source src="images/placeholder1.png" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="video-additional-info">
+                            <div class="team-size">
+                                <i class="fas fa-users icon"></i> 1
+                            </div>
+                            <div class="time">
+                                <i class="fas fa-clock icon"></i> 6 Weeks
+                            </div>
+                            <div class="water-mark">
+                                <i class="fas fa-screwdriver-wrench icon"></i> SDL 2 (C++)
+                            </div>
+                        </div>
+                        <h3 class="clickable-card-header">
+                            Project Name (2023)
+                            <i class="fas fa-chevron-right clickable-header-icon"></i>
+                            <small>Gameplay Programmer</small>
+                        </h3>
+                        <p>
+                            Description of your game project. Explain what technologies you used and what you learned from the experience.
+                        </p>
+                    </section>
+                </button>
 
-<section id="home">
-  <h1 class="typing" id="home-title"></h1>
-  <p>Interactive portfolio template clone with ultra-polished effects.</p>
-</section>
+                <!-- Project Card 2 -->
+                <button type="button" class="job-card">
+                    <section>
+                        <div class="job-card-video video-loaded">
+                            <video class="lazy-video" playsinline loop preload="none" loading="lazy">
+                                <source src="images/placeholder2.png" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="video-additional-info">
+                            <div class="team-size">
+                                <i class="fas fa-users icon"></i> 2
+                            </div>
+                            <div class="time">
+                                <i class="fas fa-clock icon"></i> 4 Months
+                            </div>
+                            <div class="water-mark">
+                                <i class="fas fa-screwdriver-wrench icon"></i> Unity
+                            </div>
+                        </div>
+                        <h3 class="clickable-card-header">
+                            Another Project (2022)
+                            <i class="fas fa-chevron-right clickable-header-icon"></i>
+                            <small>Gameplay Programmer</small>
+                        </h3>
+                        <p>
+                            Description of another game project. Highlight your contributions and technical achievements.
+                        </p>
+                    </section>
+                </button>
 
-<section id="about">
-  <h1>About</h1>
-  <p>Describe yourself with smooth staggered animations.</p>
-  <p>Multiple lines appear with subtle delays and depth effects.</p>
-</section>
+                <!-- Project Card 3 -->
+                <button type="button" class="job-card">
+                    <section>
+                        <div class="job-card-video">
+                            <video class="lazy-video" playsinline loop preload="none" loading="lazy">
+                                <source src="images/placeholder3.png" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="video-additional-info">
+                            <div class="team-size">
+                                <i class="fas fa-users icon"></i> 14
+                            </div>
+                            <div class="time">
+                                <i class="fas fa-clock icon"></i> 7 Weeks
+                            </div>
+                            <div class="water-mark">
+                                <i class="fas fa-screwdriver-wrench icon"></i> Unreal
+                            </div>
+                        </div>
+                        <h3 class="clickable-card-header">
+                            Team Project (2022)
+                            <i class="fas fa-chevron-right clickable-header-icon"></i>
+                            <small>Gameplay Programmer</small>
+                        </h3>
+                        <p>
+                            Description of a team project. Explain your role and what systems you implemented.
+                        </p>
+                    </section>
+                </button>
+            </div>
 
-<section id="portfolio">
-  <h1>Portfolio</h1>
-  <div class="portfolio-grid">
-    <div class="portfolio-item"><img src="images/placeholder1.jpg" alt="Project 1"><p>Project 1</p></div>
-    <div class="portfolio-item"><img src="images/placeholder2.jpg" alt="Project 2"><p>Project 2</p></div>
-    <div class="portfolio-item"><img src="images/placeholder3.jpg" alt="Project 3"><p>Project 3</p></div>
-    <div class="portfolio-item"><img src="images/placeholder4.jpg" alt="Project 4"><p>Project 4</p></div>
-  </div>
-</section>
+            <!-- Educations Section -->
+            <h2>Educations</h2>
+            <div class="experience">
+                <section class="job-card">
+                    <h3>
+                        School Name (2021-2023)
+                        <small>Higher Vocational Education Diploma, Game Programming</small>
+                    </h3>
+                </section>
+                <section class="job-card">
+                    <h3>
+                        University Name (2011-2013)
+                        <small>Higher Education Diploma with specialization in Computer Science</small>
+                    </h3>
+                </section>
+            </div>
 
-<section id="contact">
-  <h1>Contact</h1>
-  <p>Email: yourname@example.com</p>
-  <p>Phone: 123-456-7890</p>
-</section>
+            <!-- Technical Experience Section -->
+            <h2>Technical Experience</h2>
+            <ul class="badge-list">
+                <li class="badge">C++</li>
+                <li class="badge">Unreal Engine</li>
+                <li class="badge">SDL 2</li>
+                <li class="badge">Lua</li>
+                <li class="badge">C#</li>
+                <li class="badge">Unity</li>
+                <li class="badge">JavaScript</li>
+                <li class="badge">Java</li>
+                <li class="badge">Perforce</li>
+                <li class="badge">Git</li>
+            </ul>
 
-<script src="js/main.js"></script>
+            <!-- Information Section -->
+            <section class="information-section">
+                <h2 id="about" class="information-header">Hi, I'm [Your Name]</h2>
+                <div class="information-section-background">
+                    <p class="information-text">
+                        I am a <strong>game programmer</strong> that's currently working at [Company] in [City], [Country]. 
+                        Before that, I worked as a [previous role] for X years.
+                    </p>
+                    <p class="information-text">
+                        I describe myself as a <strong>problem solver</strong> that seeks opportunities to <strong>learn</strong> new things, 
+                        at the same time, <strong>constantly improving</strong> my skills. I enjoy creating games that feel great to play, 
+                        with clean code that is easy to read.
+                    </p>
+                    <p class="information-text">
+                        Want to know more? You can find my contact information in my resume at the top. 
+                        You can also reach me on any of my social media.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
+
