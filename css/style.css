@@ -141,7 +141,7 @@ img {
 }
 
 .logo a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-red);
 }
 
 .logo strong {
@@ -227,7 +227,7 @@ img {
     font-weight: 900;
     letter-spacing: 0.1em;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-teal), var(--accent-orange));
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-teal), var(--accent-orange), var(--accent-red));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -282,13 +282,14 @@ img {
 .section-badge {
     display: inline-block;
     padding: 10px 20px;
-    background: rgba(10, 147, 150, 0.15);
+    background: linear-gradient(135deg, rgba(10, 147, 150, 0.15), rgba(187, 62, 3, 0.1));
     border: 2px solid var(--secondary-color);
     border-radius: 30px;
     font-size: 0.9rem;
     margin-bottom: 30px;
     color: var(--accent-orange);
     font-weight: 600;
+    box-shadow: 0 0 10px rgba(238, 155, 0, 0.2);
 }
 
 .section-title {
@@ -303,7 +304,7 @@ img {
     font-weight: 900;
     text-align: center;
     margin-bottom: 50px;
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-teal), var(--accent-orange));
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-teal), var(--accent-orange), var(--accent-red));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -349,7 +350,7 @@ img {
 
 .btn-contact:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(238, 155, 0, 0.7);
+    box-shadow: 0 10px 30px rgba(238, 155, 0, 0.7), 0 5px 15px rgba(187, 62, 3, 0.4);
 }
 
 /* ============================================
@@ -380,7 +381,7 @@ img {
 .divider {
     width: 120px;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-teal), var(--accent-orange), var(--accent-red-orange));
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-teal), var(--accent-orange), var(--accent-red-orange), var(--accent-red));
     margin: 20px auto 50px;
     border-radius: 2px;
     box-shadow: 0 0 15px rgba(10, 147, 150, 0.6);
@@ -402,7 +403,7 @@ img {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 20%, var(--accent-teal) 40%, var(--accent-orange) 70%, var(--accent-red-orange) 100%);
+    background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 20%, var(--accent-teal) 40%, var(--accent-orange) 65%, var(--accent-red) 85%, var(--dark-red) 100%);
     transform: translateX(-50%);
     box-shadow: 0 0 20px rgba(10, 147, 150, 0.5);
 }
@@ -444,8 +445,8 @@ img {
 }
 
 .timeline-item:nth-child(4) .timeline-dot {
-    background: var(--accent-red-orange);
-    box-shadow: 0 0 0 6px rgba(202, 103, 2, 0.3), 0 0 20px rgba(202, 103, 2, 0.5);
+    background: var(--accent-red);
+    box-shadow: 0 0 0 6px rgba(187, 62, 3, 0.3), 0 0 20px rgba(187, 62, 3, 0.5);
 }
 
 .timeline-item:hover .timeline-dot {
@@ -619,7 +620,10 @@ img {
 }
 
 .portfolio-title .highlight {
-    color: var(--accent-orange);
+    background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .portfolio-subtitle {
@@ -707,6 +711,11 @@ img {
     font-weight: 700;
     margin-bottom: 5px;
     color: var(--text-color);
+    transition: var(--transition);
+}
+
+.project-card:hover .project-card-info h3 {
+    color: var(--accent-red);
 }
 
 .project-card-info p {
@@ -988,8 +997,8 @@ img {
    ============================================ */
 .footer {
     padding: 40px 0;
-    background: var(--bg-dark);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, var(--bg-dark), rgba(174, 32, 18, 0.15));
+    border-top: 2px solid rgba(238, 155, 0, 0.3);
 }
 
 .footer .container {
@@ -1019,9 +1028,10 @@ img {
 }
 
 .social-links a:hover {
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-teal), var(--accent-orange));
+    background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
     color: #ffffff;
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(187, 62, 3, 0.4);
 }
 
 /* ============================================
@@ -1035,9 +1045,10 @@ img {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 18, 25, 0.85);
     backdrop-filter: blur(5px);
     animation: fadeIn 0.3s ease;
+    background-image: radial-gradient(circle at 50% 50%, rgba(187, 62, 3, 0.05) 0%, transparent 50%);
 }
 
 .modal.active {
@@ -1082,7 +1093,7 @@ img {
 }
 
 .modal-close:hover {
-    color: var(--accent-beige);
+    color: var(--accent-red);
     transform: rotate(90deg);
 }
 
