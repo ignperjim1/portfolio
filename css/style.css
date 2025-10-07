@@ -235,30 +235,8 @@ img {
 
 .hero-subtitle {
     font-size: 2rem;
-    font-weight: 300;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-#typed-text {
-    color: var(--accent-orange);
-    font-weight: 600;
-}
-
-.cursor {
-    color: var(--accent-orange);
-    animation: blink 1s infinite;
-}
-
-.suffix {
     font-weight: 400;
-}
-
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+    color: var(--accent-orange);
 }
 
 @keyframes fadeInUp {
