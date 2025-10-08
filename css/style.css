@@ -104,6 +104,23 @@ img {
     opacity: 0.3;
 }
 
+/* Hide video controls and play button */
+#background-video::-webkit-media-controls {
+    display: none !important;
+}
+
+#background-video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+#background-video::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+#background-video::-webkit-media-controls-play-button {
+    display: none !important;
+}
+
 .video-overlay {
   position: fixed; 
     width: 100%;
@@ -220,6 +237,17 @@ img {
     list-style: none;
     gap: 15px;
     align-items: center;
+}
+
+/* Hide Home button when in hero (not sticky) */
+.header:not(.sticky):not(.no-hero) .nav-home-item {
+    display: none;
+}
+
+/* Show Home button only when sticky or on other pages */
+.header.sticky .nav-home-item,
+.header.no-hero .nav-home-item {
+    display: block;
 }
 
 .nav-link {

@@ -11,7 +11,7 @@ if (backgroundVideo) {
         
         if (videoSource) {
             // Define your video paths
-            const mobileVideo = 'videos/AfterWorld/survival9_16.mp4'; // Create a lighter version
+            const mobileVideo = 'videos/AfterWorld/survival9_16.mp4';
             const desktopVideo = 'videos/AfterWorld/survival16_9.mp4';
             
             const newSource = isMobile ? mobileVideo : desktopVideo;
@@ -20,6 +20,17 @@ if (backgroundVideo) {
             if (videoSource.src !== newSource && !videoSource.src.includes(newSource)) {
                 videoSource.src = newSource;
                 backgroundVideo.load(); // Reload video with new source
+                
+                // Force play after load (especially important for mobile)
+                backgroundVideo.addEventListener('loadeddata', function() {
+                    const playPromise = backgroundVideo.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            console.log('Autoplay prevented:', error);
+                            // Autoplay was prevented, video will show play button
+                        });
+                    }
+                }, { once: true });
             }
         }
     }
@@ -27,14 +38,34 @@ if (backgroundVideo) {
     // Set initial source
     setVideoSource();
     
+    // Attempt to play video (mobile requires user interaction or muted + playsinline)
+    const attemptPlay = () => {
+        const playPromise = backgroundVideo.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                // Video playing successfully
+                backgroundVideo.classList.add('loaded');
+            }).catch(error => {
+                console.log('Autoplay prevented, trying muted play:', error);
+                // If autoplay fails, ensure it's muted and try again
+                backgroundVideo.muted = true;
+                backgroundVideo.play().catch(e => {
+                    console.log('Video play failed:', e);
+                });
+            });
+        }
+    };
+    
     // Fade in video once it's ready to play
     backgroundVideo.addEventListener('canplay', function() {
         this.classList.add('loaded');
+        attemptPlay();
     });
     
     // Fallback: if video is already loaded when script runs
     if (backgroundVideo.readyState >= 3) {
         backgroundVideo.classList.add('loaded');
+        attemptPlay();
     }
     
     // Optional: Update video source on resize (debounced to avoid constant reloads)
@@ -193,6 +224,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Set active nav link based on current page
     setActiveNavLink();
+    
+    // If on index page at the top (no hash or #home), clear all section highlights
+    const isIndexPage = window.location.pathname.endsWith('index.html') || 
+                        window.location.pathname === '/' || 
+                        window.location.pathname === '';
+    const hash = window.location.hash;
+    
+    if (isIndexPage && (!hash || hash === '#home')) {
+        // We're at the top of the home page, remove all section link highlighting
+        document.querySelectorAll('.nav-link[href^="#"], .nav-link[href*="index.html#"]').forEach(link => {
+            link.classList.remove('active');
+        });
+    }
 });
 
 // ============================================
@@ -210,23 +254,28 @@ function setActiveNavLink() {
         // Page links: games.html, index.html (without hash)
         if (!linkHref.includes('#')) {
             // This is a page link, check if it matches current page
-            if (linkHref.includes(currentPage) || 
-                (currentPage === '' && linkHref.includes('index.html'))) {
+            // Don't highlight "Home" link on index page (we're already there)
+            if (isIndexPage && linkHref.includes('index.html')) {
+                link.classList.remove('active');
+            } else if (linkHref.includes(currentPage)) {
                 link.classList.add('active');
             } else {
                 link.classList.remove('active');
             }
         } else if (isIndexPage && linkHref.startsWith('#')) {
             // On index page, section links will be handled by scroll event
-            // Set home as active by default when at top
-            if (linkHref === '#home' && window.scrollY < 100) {
-                link.classList.add('active');
-            }
+            // Don't set any as active initially (even home)
+            link.classList.remove('active');
+        } else if (isIndexPage && linkHref.includes('index.html#')) {
+            // Cross-page section links on index page
+            link.classList.remove('active');
         } else {
-            // Cross-page anchor links (index.html#something) - only active if exact match
+            // Cross-page anchor links (index.html#something) from other pages
             const currentHash = window.location.hash;
             if (linkHref.includes(currentPage) && linkHref.includes(currentHash) && currentHash) {
                 link.classList.add('active');
+            } else {
+                link.classList.remove('active');
             }
         }
     });
@@ -322,23 +371,31 @@ window.addEventListener('scroll', function() {
     if (isIndexPage) {
         const sections = document.querySelectorAll('section[id]');
         const scrollY = window.pageYOffset;
+        let activeSection = null;
 
         sections.forEach(current => {
             const sectionHeight = current.offsetHeight;
             const sectionTop = current.offsetTop - 150;
             const sectionId = current.getAttribute('id');
-            const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"], .nav-link[href="index.html#${sectionId}"]`);
 
-            if (correspondingLink) {
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    // Remove active from section links only
-                    document.querySelectorAll('.nav-link[href^="#"], .nav-link[href*="index.html#"]').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    correspondingLink.classList.add('active');
-                }
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                activeSection = sectionId;
             }
         });
+
+        // Remove active from all section links
+        document.querySelectorAll('.nav-link[href^="#"], .nav-link[href*="index.html#"]').forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // Only add active if we're in a specific section (not home/hero)
+        if (activeSection && activeSection !== 'home') {
+            const correspondingLink = document.querySelector(`.nav-link[href="#${activeSection}"], .nav-link[href="index.html#${activeSection}"]`);
+            if (correspondingLink) {
+                correspondingLink.classList.add('active');
+            }
+        }
+        // If in home section or at top, no section links are active
     }
 });
 
