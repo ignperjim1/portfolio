@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete list of games I've worked on">
+    <title>Games | Nacho Pérez</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Spline+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Background Video Overlay -->
+    <div class="video-overlay">
+        <video id="background-video" autoplay muted playsinline loop>
+            <source src="videos/survival_showcase.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Header / Navigation (no hero section, so it starts sticky) -->
+    <header id="header" class="header">
+        <div class="container-header">
+            <!-- Logo/Name -->
+            <a href="index.html" class="nav-logo">
+                <span>NACHO PÉREZ</span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="games.html" class="nav-link active">Games</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Games List Section -->
+    <section class="games-list-section">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">All Games</h1>
+                <p class="page-subtitle">A complete collection of projects I've contributed to throughout my career</p>
+            </div>
+
+            <div class="games-grid">
+                <!-- Game Card 1 -->
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="images/placeholder1.png" alt="Project Downbelow">
+                        <div class="game-card-overlay">
+                            <a href="game-detail.html?game=downbelow" class="btn-view-game">
+                                <i class="fas fa-arrow-right"></i>
+                                <span>View Details</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="game-card-content">
+                        <h3>Project Downbelow</h3>
+                        <p class="game-company">Crema</p>
+                        <p class="game-role">Game Designer - Combat & AI</p>
+                        <p class="game-year">2024 - Present</p>
+                        <div class="game-tags">
+                            <span class="tag">Unreal Engine</span>
+                            <span class="tag">Combat Design</span>
+                            <span class="tag">AI Systems</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="images/placeholder2.png" alt="Vigor">
+                        <div class="game-card-overlay">
+                            <a href="game-detail.html?game=vigor" class="btn-view-game">
+                                <i class="fas fa-arrow-right"></i>
+                                <span>View Details</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="game-card-content">
+                        <h3>Vigor</h3>
+                        <p class="game-company">Bohemia Interactive</p>
+                        <p class="game-role">Mid Technical Designer</p>
+                        <p class="game-year">2023 - 2024</p>
+                        <div class="game-tags">
+                            <span class="tag">Third-Person Shooter</span>
+                            <span class="tag">Multi-platform</span>
+                            <span class="tag">Live Service</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="images/placeholder3.png" alt="Howl of Iron">
+                        <div class="game-card-overlay">
+                            <a href="game-detail.html?game=howl" class="btn-view-game">
+                                <i class="fas fa-arrow-right"></i>
+                                <span>View Details</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="game-card-content">
+                        <h3>Howl of Iron</h3>
+                        <p class="game-company">10 Ants</p>
+                        <p class="game-role">Junior Game Designer</p>
+                        <p class="game-year">2022</p>
+                        <div class="game-tags">
+                            <span class="tag">Third-Person Action</span>
+                            <span class="tag">Vertical Slice</span>
+                            <span class="tag">Combat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 4 -->
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="images/placeholder4.png" alt="Into the Cave">
+                        <div class="game-card-overlay">
+                            <a href="game-detail.html?game=cave" class="btn-view-game">
+                                <i class="fas fa-arrow-right"></i>
+                                <span>View Details</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="game-card-content">
+                        <h3>Into the Cave</h3>
+                        <p class="game-company">Gold Pillow Games</p>
+                        <p class="game-role">Game Designer</p>
+                        <p class="game-year">2021 - 2022</p>
+                        <div class="game-tags">
+                            <span class="tag">Puzzle Adventure</span>
+                            <span class="tag">Unity</span>
+                            <span class="tag">Indie</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more game cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Nacho Pérez. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Social Links -->
+    <div class="fixed-social-links">
+        <a href="https://github.com/yourusername" target="_blank" class="social-btn" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-btn" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com/yourusername" target="_blank" class="social-btn" title="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="mailto:your.email@example.com" class="social-btn" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+<script src="js/main.js"></script>
+</body>
+</html>
+

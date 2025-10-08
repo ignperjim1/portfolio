@@ -30,30 +30,31 @@
         
     </div>
 
-    <!-- Header / Navigation -->
-    <header id="header" class="header">
-        <div class="container-header">
-            <nav class="nav-menu" id="navMenu">
-                <ul>
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-</nav>
-            <a href="#portfolio" class="btn-portfolio">
-                <i class="fas fa-folder-open"></i>
-                <span>Portfolio</span>
-            </a>
-            <div class="mobile-menu-toggle" id="mobileMenuToggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
-
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
+    <section id="home" class="hero-section" data-hero="true">
+        <!-- Header / Navigation -->
+        <header id="header" class="header">
+            <div class="container-header">
+                <!-- Logo/Name (shows when sticky) -->
+                <a href="index.html" class="nav-logo">
+                    <span>NACHO PÉREZ</span>
+                </a>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+                        <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
+                        <li><a href="games.html" class="nav-link">Games</a></li>
+                        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </header>
+
         <div class="hero-content">
             <h2 class="hero-title">NACHO PÉREZ</h2>
             <div class="hero-subtitle">
@@ -137,9 +138,9 @@
             <div class="portfolio-left">
                 <h2 class="portfolio-title">My <span class="highlight">Work</span></h2>
                 <p class="portfolio-subtitle">Check out the games I have worked on, from indie projects to AAA franchises!</p>
-                <a href="#" class="btn-portfolio-view">
+                <a href="games.html" class="btn-portfolio-view">
                     <i class="fas fa-folder-open"></i>
-                    <span>View Portfolio</span>
+                    <span>View All Games</span>
                 </a>
             </div>
 

@@ -101,16 +101,60 @@ particlesJS('particles-js', {
 // Typing animation removed - using static text instead
 
 // ============================================
-// STICKY HEADER ON SCROLL
+// STICKY HEADER ON SCROLL WITH ANIMATION
 // ============================================
 window.addEventListener('scroll', function() {
     const header = document.getElementById('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+    const heroSection = document.querySelector('.hero-section[data-hero="true"]');
+    
+    // If there's a hero section on this page, use the animated transition
+    if (heroSection) {
+        const heroHeight = heroSection.offsetHeight;
+        
+        // Make header sticky when scrolling past 70% of hero section
+        if (window.scrollY > heroHeight * 0.7) {
+            header.classList.add('sticky');
+        } else {
+            header.classList.remove('sticky');
+        }
     }
+    // If no hero section, header is already sticky (no-hero class)
 });
+
+// ============================================
+// DETECT PAGE TYPE AND SET INITIAL HEADER STATE
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('header');
+    const heroSection = document.querySelector('.hero-section[data-hero="true"]');
+    
+    // If this page doesn't have a hero section, make header sticky from start
+    if (!heroSection) {
+        header.classList.add('no-hero');
+    }
+
+    // Set active nav link based on current page
+    setActiveNavLink();
+});
+
+// ============================================
+// SET ACTIVE NAVIGATION LINK
+// ============================================
+function setActiveNavLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        const linkHref = link.getAttribute('href');
+        
+        // Check if link matches current page
+        if (linkHref.includes(currentPage) || 
+            (currentPage === '' && linkHref.includes('index.html'))) {
+            link.classList.add('active');
+        }
+    });
+}
 
 // ============================================
 // SMOOTH SCROLLING FOR NAVIGATION
