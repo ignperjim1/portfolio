@@ -1212,22 +1212,41 @@ img {
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 768px) {
+    /* Mobile: Always sticky at top, no animations */
     .header {
-        bottom: 15%;
-        width: 90%;
+        position: fixed !important;
+        top: 0 !important;
+        bottom: auto !important;
+        left: 0 !important;
+        width: 100% !important;
+        transform: none !important;
+        background: rgba(10, 10, 10, 0.95) !important;
+        backdrop-filter: blur(10px);
+        padding: 15px 0;
+        box-shadow: 0 2px 20px rgba(72, 191, 227, 0.4);
+        opacity: 1 !important;
+        animation: none !important;
+        transition: none !important;
     }
 
-    .header.sticky,
-    .header.no-hero {
-        top: 0;
-        bottom: auto;
-        width: 100%;
-        left: 0;
-        transform: none;
+    .header.fading-out {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+
+    .container-header {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .nav-logo {
+        display: block !important;
+        font-size: 1rem;
     }
 
     .hero-content {
-        margin-bottom: 120px;
+        margin-bottom: 50px;
+        margin-top: 80px;
     }
 
     .hero-title {
@@ -1269,26 +1288,6 @@ img {
 
     .mobile-menu-toggle {
         display: block;
-    }
-
-    /* Mobile toggle positioning for hero page */
-    .header:not(.sticky):not(.no-hero) .mobile-menu-toggle {
-        position: absolute;
-        top: -80px;
-        right: 20px;
-    }
-
-    /* Mobile toggle for sticky and no-hero pages */
-    .header.sticky .container-header,
-    .header.no-hero .container-header {
-        justify-content: space-between;
-        padding: 0 20px;
-    }
-
-    .header.sticky .nav-logo,
-    .header.no-hero .nav-logo {
-        display: block;
-        font-size: 1rem;
     }
 
     /* Fixed social links on mobile */
@@ -1393,12 +1392,13 @@ img {
         font-size: 1.1rem;
     }
 
-    .header:not(.sticky):not(.no-hero) {
-        bottom: 10%;
+    .hero-content {
+        margin-top: 70px;
+        margin-bottom: 40px;
     }
 
-    .hero-content {
-        margin-bottom: 100px;
+    .nav-logo {
+        font-size: 0.9rem;
     }
 
     .section-title-center {

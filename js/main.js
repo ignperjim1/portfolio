@@ -96,49 +96,55 @@ particlesJS('particles-js', {
 });
 
 // ============================================
-// STICKY HEADER ON SCROLL WITH ANIMATION
+// STICKY HEADER ON SCROLL WITH ANIMATION (Desktop only)
 // ============================================
 let initialHeaderOffset = null;
 
 // Store initial header position on load
 window.addEventListener('load', function() {
-    const header = document.getElementById('header');
-    const heroSection = document.querySelector('.hero-section[data-hero="true"]');
-    
-    if (heroSection && header && !header.classList.contains('sticky')) {
-        const headerRect = header.getBoundingClientRect();
-        initialHeaderOffset = headerRect.top + window.scrollY;
+    // Only run animations on desktop (>768px)
+    if (window.innerWidth > 768) {
+        const header = document.getElementById('header');
+        const heroSection = document.querySelector('.hero-section[data-hero="true"]');
+        
+        if (heroSection && header && !header.classList.contains('sticky')) {
+            const headerRect = header.getBoundingClientRect();
+            initialHeaderOffset = headerRect.top + window.scrollY;
+        }
     }
 });
 
 window.addEventListener('scroll', function() {
-    const header = document.getElementById('header');
-    const heroSection = document.querySelector('.hero-section[data-hero="true"]');
-    
-    // If there's a hero section on this page, use the animated transition
-    if (heroSection && initialHeaderOffset !== null) {
-        // Make sticky when header starts to go out of view (within 100px of top)
-        if (window.scrollY > initialHeaderOffset - 100) {
-            // Fade out original, then show sticky
-            if (!header.classList.contains('sticky')) {
-                header.classList.add('fading-out');
-                setTimeout(() => {
-                    header.classList.remove('fading-out');
-                    header.classList.add('sticky');
-                }, 300); // Match the fade-out duration
-            }
-        } else {
-            // Remove sticky and fade back in
-            if (header.classList.contains('sticky')) {
-                header.classList.remove('sticky');
-                // Small delay to ensure smooth transition
-                setTimeout(() => {
-                    header.classList.remove('fading-out');
-                }, 50);
+    // Only run animations on desktop (>768px)
+    if (window.innerWidth > 768) {
+        const header = document.getElementById('header');
+        const heroSection = document.querySelector('.hero-section[data-hero="true"]');
+        
+        // If there's a hero section on this page, use the animated transition
+        if (heroSection && initialHeaderOffset !== null) {
+            // Make sticky when header starts to go out of view (within 100px of top)
+            if (window.scrollY > initialHeaderOffset - 100) {
+                // Fade out original, then show sticky
+                if (!header.classList.contains('sticky')) {
+                    header.classList.add('fading-out');
+                    setTimeout(() => {
+                        header.classList.remove('fading-out');
+                        header.classList.add('sticky');
+                    }, 300); // Match the fade-out duration
+                }
+            } else {
+                // Remove sticky and fade back in
+                if (header.classList.contains('sticky')) {
+                    header.classList.remove('sticky');
+                    // Small delay to ensure smooth transition
+                    setTimeout(() => {
+                        header.classList.remove('fading-out');
+                    }, 50);
+                }
             }
         }
     }
-    // If no hero section, header is already sticky (no-hero class)
+    // Mobile: no-hero class is set but no scroll animations
 });
 
 // ============================================
@@ -148,8 +154,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.getElementById('header');
     const heroSection = document.querySelector('.hero-section[data-hero="true"]');
     
-    // If this page doesn't have a hero section, make header sticky from start
-    if (!heroSection) {
+    // Desktop only: If this page doesn't have a hero section, make header sticky from start
+    if (!heroSection && window.innerWidth > 768) {
         header.classList.add('no-hero');
     }
 
