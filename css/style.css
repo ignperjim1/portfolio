@@ -120,9 +120,10 @@ img {
    ============================================ */
 .header {
     position: absolute;
-    top: 50%;
+    top: auto;
+    bottom: 25%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     width: auto;
     z-index: 1000;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -145,6 +146,7 @@ img {
 .header.sticky {
     position: fixed;
     top: 0;
+    bottom: auto;
     left: 0;
     transform: translate(0, 0);
     width: 100%;
@@ -271,7 +273,8 @@ img {
 
 .hero-content {
     animation: fadeInUp 1s ease;
-    margin-top: 150px;
+    margin-bottom: 180px;
+    position: relative;
 }
 
 .hero-title {
@@ -290,6 +293,7 @@ img {
     font-size: 4rem;
     font-weight: 900;
     color: #54cce1;
+    margin-bottom: 0;
 }
 
 @keyframes fadeInUp {
@@ -1192,13 +1196,26 @@ img {
    ============================================ */
 @media (max-width: 768px) {
     .header {
-        top: 60%;
+        bottom: 15%;
         width: 90%;
     }
 
     .header.sticky {
         top: 0;
+        bottom: auto;
         width: 100%;
+    }
+
+    .hero-content {
+        margin-bottom: 120px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
     }
 
     .nav-menu {
@@ -1251,15 +1268,6 @@ img {
         width: 45px;
         height: 45px;
         font-size: 1rem;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.3rem;
-        flex-direction: column;
     }
 
     .section-title {
@@ -1349,6 +1357,14 @@ img {
 
     .hero-subtitle {
         font-size: 1.1rem;
+    }
+
+    .header {
+        bottom: 10%;
+    }
+
+    .hero-content {
+        margin-bottom: 100px;
     }
 
     .section-title-center {

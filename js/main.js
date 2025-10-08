@@ -109,10 +109,12 @@ window.addEventListener('scroll', function() {
     
     // If there's a hero section on this page, use the animated transition
     if (heroSection) {
-        const heroHeight = heroSection.offsetHeight;
+        // Get the header's position relative to viewport
+        const headerRect = header.getBoundingClientRect();
+        const headerOffsetTop = headerRect.top + window.scrollY;
         
-        // Make header sticky when scrolling past 70% of hero section
-        if (window.scrollY > heroHeight * 0.7) {
+        // Make sticky when header starts to go out of view (within 100px of top)
+        if (window.scrollY > headerOffsetTop - 100) {
             header.classList.add('sticky');
         } else {
             header.classList.remove('sticky');
