@@ -96,11 +96,6 @@ particlesJS('particles-js', {
 });
 
 // ============================================
-// TYPING ANIMATION - DISABLED
-// ============================================
-// Typing animation removed - using static text instead
-
-// ============================================
 // STICKY HEADER ON SCROLL WITH ANIMATION
 // ============================================
 let initialHeaderOffset = null;
@@ -124,9 +119,23 @@ window.addEventListener('scroll', function() {
     if (heroSection && initialHeaderOffset !== null) {
         // Make sticky when header starts to go out of view (within 100px of top)
         if (window.scrollY > initialHeaderOffset - 100) {
-            header.classList.add('sticky');
+            // Fade out original, then show sticky
+            if (!header.classList.contains('sticky')) {
+                header.classList.add('fading-out');
+                setTimeout(() => {
+                    header.classList.remove('fading-out');
+                    header.classList.add('sticky');
+                }, 300); // Match the fade-out duration
+            }
         } else {
-            header.classList.remove('sticky');
+            // Remove sticky and fade back in
+            if (header.classList.contains('sticky')) {
+                header.classList.remove('sticky');
+                // Small delay to ensure smooth transition
+                setTimeout(() => {
+                    header.classList.remove('fading-out');
+                }, 50);
+            }
         }
     }
     // If no hero section, header is already sticky (no-hero class)
