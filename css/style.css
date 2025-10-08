@@ -138,7 +138,7 @@ img {
 
 /* For pages without hero section - start sticky immediately */
 .header.no-hero {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     transform: translate(0, 0);
