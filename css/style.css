@@ -250,7 +250,11 @@ img {
     z-index: -1;
 }
 
-.nav-link:hover::before,
+.nav-link:hover::before {
+    left: 0;
+}
+
+/* Active state for current page (filled background) */
 .nav-link.active::before {
     left: 0;
 }
@@ -261,6 +265,13 @@ img {
     color: #0a0a0a;
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(72, 191, 227, 0.5);
+}
+
+/* Alternative: Just highlight border for section links */
+.nav-link.section-active {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 15px rgba(72, 191, 227, 0.4);
+    border-width: 2px;
 }
 
 .header.sticky .nav-link {

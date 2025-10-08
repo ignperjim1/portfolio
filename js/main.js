@@ -1,9 +1,32 @@
 // ============================================
-// VIDEO FADE-IN ON LOAD
+// VIDEO SOURCE BASED ON DEVICE & FADE-IN ON LOAD
 // ============================================
 const backgroundVideo = document.getElementById('background-video');
 
 if (backgroundVideo) {
+    // Set video source based on screen size
+    function setVideoSource() {
+        const isMobile = window.innerWidth <= 768;
+        const videoSource = backgroundVideo.querySelector('source');
+        
+        if (videoSource) {
+            // Define your video paths
+            const mobileVideo = 'videos/AfterWorld/survival9_16.mp4'; // Create a lighter version
+            const desktopVideo = 'videos/AfterWorld/survival16_9.mp4';
+            
+            const newSource = isMobile ? mobileVideo : desktopVideo;
+            
+            // Only change if different to avoid reload
+            if (videoSource.src !== newSource && !videoSource.src.includes(newSource)) {
+                videoSource.src = newSource;
+                backgroundVideo.load(); // Reload video with new source
+            }
+        }
+    }
+    
+    // Set initial source
+    setVideoSource();
+    
     // Fade in video once it's ready to play
     backgroundVideo.addEventListener('canplay', function() {
         this.classList.add('loaded');
@@ -13,6 +36,15 @@ if (backgroundVideo) {
     if (backgroundVideo.readyState >= 3) {
         backgroundVideo.classList.add('loaded');
     }
+    
+    // Optional: Update video source on resize (debounced to avoid constant reloads)
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            setVideoSource();
+        }, 500);
+    });
 }
 
 // ============================================
@@ -168,16 +200,34 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 function setActiveNavLink() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const isIndexPage = currentPage === 'index.html' || currentPage === '';
     const navLinks = document.querySelectorAll('.nav-link');
     
     navLinks.forEach(link => {
-        link.classList.remove('active');
         const linkHref = link.getAttribute('href');
         
-        // Check if link matches current page
-        if (linkHref.includes(currentPage) || 
-            (currentPage === '' && linkHref.includes('index.html'))) {
-            link.classList.add('active');
+        // Only mark page links (not section anchors) as active
+        // Page links: games.html, index.html (without hash)
+        if (!linkHref.includes('#')) {
+            // This is a page link, check if it matches current page
+            if (linkHref.includes(currentPage) || 
+                (currentPage === '' && linkHref.includes('index.html'))) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        } else if (isIndexPage && linkHref.startsWith('#')) {
+            // On index page, section links will be handled by scroll event
+            // Set home as active by default when at top
+            if (linkHref === '#home' && window.scrollY < 100) {
+                link.classList.add('active');
+            }
+        } else {
+            // Cross-page anchor links (index.html#something) - only active if exact match
+            const currentHash = window.location.hash;
+            if (linkHref.includes(currentPage) && linkHref.includes(currentHash) && currentHash) {
+                link.classList.add('active');
+            }
         }
     });
 }
@@ -261,27 +311,35 @@ fadeElements.forEach(element => {
 });
 
 // ============================================
-// ACTIVE NAVIGATION ON SCROLL
+// ACTIVE NAVIGATION ON SCROLL (Section-based highlighting)
 // ============================================
 window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.pageYOffset;
+    // Only update section highlighting on index page
+    const isIndexPage = window.location.pathname.endsWith('index.html') || 
+                        window.location.pathname === '/' || 
+                        window.location.pathname === '';
+    
+    if (isIndexPage) {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollY = window.pageYOffset;
 
-    sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 100;
-        const sectionId = current.getAttribute('id');
-        const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 150;
+            const sectionId = current.getAttribute('id');
+            const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"], .nav-link[href="index.html#${sectionId}"]`);
 
-        if (correspondingLink) {
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('active');
-                });
-                correspondingLink.classList.add('active');
+            if (correspondingLink) {
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    // Remove active from section links only
+                    document.querySelectorAll('.nav-link[href^="#"], .nav-link[href*="index.html#"]').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    correspondingLink.classList.add('active');
+                }
             }
-        }
-    });
+        });
+    }
 });
 
 // ============================================
