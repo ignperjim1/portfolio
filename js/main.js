@@ -103,18 +103,27 @@ particlesJS('particles-js', {
 // ============================================
 // STICKY HEADER ON SCROLL WITH ANIMATION
 // ============================================
+let initialHeaderOffset = null;
+
+// Store initial header position on load
+window.addEventListener('load', function() {
+    const header = document.getElementById('header');
+    const heroSection = document.querySelector('.hero-section[data-hero="true"]');
+    
+    if (heroSection && header && !header.classList.contains('sticky')) {
+        const headerRect = header.getBoundingClientRect();
+        initialHeaderOffset = headerRect.top + window.scrollY;
+    }
+});
+
 window.addEventListener('scroll', function() {
     const header = document.getElementById('header');
     const heroSection = document.querySelector('.hero-section[data-hero="true"]');
     
     // If there's a hero section on this page, use the animated transition
-    if (heroSection) {
-        // Get the header's position relative to viewport
-        const headerRect = header.getBoundingClientRect();
-        const headerOffsetTop = headerRect.top + window.scrollY;
-        
+    if (heroSection && initialHeaderOffset !== null) {
         // Make sticky when header starts to go out of view (within 100px of top)
-        if (window.scrollY > headerOffsetTop - 100) {
+        if (window.scrollY > initialHeaderOffset - 100) {
             header.classList.add('sticky');
         } else {
             header.classList.remove('sticky');

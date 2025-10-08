@@ -182,16 +182,14 @@ img {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
     white-space: nowrap;
+    display: none;
+    transition: opacity 0.3s ease;
 }
 
 .header.sticky .nav-logo,
 .header.no-hero .nav-logo {
-    opacity: 1;
-    pointer-events: auto;
+    display: block;
 }
 
 .nav-logo:hover {
