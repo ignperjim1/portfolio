@@ -1,4 +1,21 @@
 // ============================================
+// VIDEO FADE-IN ON LOAD
+// ============================================
+const backgroundVideo = document.getElementById('background-video');
+
+if (backgroundVideo) {
+    // Fade in video once it's ready to play
+    backgroundVideo.addEventListener('canplay', function() {
+        this.classList.add('loaded');
+    });
+    
+    // Fallback: if video is already loaded when script runs
+    if (backgroundVideo.readyState >= 3) {
+        backgroundVideo.classList.add('loaded');
+    }
+}
+
+// ============================================
 // PARTICLES.JS CONFIGURATION
 // ============================================
 particlesJS('particles-js', {
