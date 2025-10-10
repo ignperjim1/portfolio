@@ -684,7 +684,7 @@ img {
    ============================================ */
 .portfolio-section {
     padding: 100px 0;
-    background: linear-gradient(135deg, rgba(116, 0, 184, 0.15), rgba(83, 144, 217, 0.1));
+    background: rgb(15, 15, 15);
 }
 
 .portfolio-split-layout {
