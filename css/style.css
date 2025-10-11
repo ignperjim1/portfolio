@@ -1450,7 +1450,7 @@ img {
 
     /* Skills Cards Mobile */
     .skills-cards-container {
-        flex-direction: column;
+        flex-direction: row;
         gap: 25px;
         margin: 40px 0;
     }
