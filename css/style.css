@@ -291,8 +291,8 @@ img {
 .nav-link.active {
     border-color: var(--accent-cyan);
     color: #0a0a0a;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(72, 191, 227, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(72, 191, 227, 0.6);
 }
 
 /* Alternative: Just highlight border for section links */
@@ -1004,7 +1004,7 @@ img {
    ============================================ */
 .contact-section {
     padding: 100px 0;
-    background: linear-gradient(135deg, rgba(116, 0, 184, 0.15), rgba(72, 191, 227, 0.08));
+    background: rgb(56 19 75);  
 }
 
 .contact-content {
