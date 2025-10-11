@@ -401,6 +401,26 @@ img {
     background-clip: text;
 }
 
+.about-grid {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.about-image {
+    flex: 0 0 300px;
+}
+
+.about-img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(72, 191, 227, 0.3);
+}
+
+.about-content {
+    flex: 1;
+}
+
 .about-text p {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -410,15 +430,6 @@ img {
 
 .about-text strong {
     color: var(--accent-cyan);
-}
-
-.signature {
-    margin: 40px 0;
-}
-
-.signature-img {
-    max-width: 200px;
-    opacity: 0.8;
 }
 
 .cta-text {
@@ -446,8 +457,8 @@ img {
 
 /* Skills Cards */
 .skills-cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     margin: 50px 0;
 }
@@ -457,32 +468,10 @@ img {
     border: 3px solid rgba(72, 191, 227, 0.4);
     border-radius: 25px;
     padding: 30px;
-    transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
-}
-
-.skill-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-turquoise), var(--accent-mint));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.skill-card:hover::before {
-    opacity: 1;
-}
-
-.skill-card:hover {
-    border-color: var(--accent-cyan);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(72, 191, 227, 0.3);
-    background: linear-gradient(135deg, rgba(72, 191, 227, 0.12), rgba(100, 223, 223, 0.08));
+    width: fit-content;
+    max-width: 450px;
+    pointer-events: none;
 }
 
 .skill-card-title {
@@ -1446,15 +1435,30 @@ img {
         font-size: 2rem;
     }
 
+    /* About Section Mobile */
+    .about-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
     /* Skills Cards Mobile */
     .skills-cards-container {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 25px;
         margin: 40px 0;
     }
 
     .skill-card {
         padding: 25px;
+        max-width: 100%;
+        width: 100%;
     }
 
     .skill-card-title {
