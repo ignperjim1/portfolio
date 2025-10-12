@@ -783,10 +783,8 @@ img {
     padding: 0 40px;
 }
 
-/* Left Side - Text & CTA */
-.portfolio-right {
-    flex: 0 0 35%;
-    padding-left: 40px;
+.portfolio-text {
+    position: absolute;
 }
 
 .portfolio-title {
@@ -836,7 +834,7 @@ img {
 
 .portfolio-cards-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
