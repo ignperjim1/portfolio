@@ -774,17 +774,9 @@ img {
     background: rgb(15, 15, 15);
 }
 
-.portfolio-split-layout {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-.portfolio-text {
-    position: absolute;
+.portfolio-header {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
 .portfolio-title {
@@ -803,6 +795,9 @@ img {
     line-height: 1.7;
     color: #ccc;
     margin-bottom: 35px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-portfolio-view {
@@ -823,13 +818,8 @@ img {
 .btn-portfolio-view:hover {
     background: linear-gradient(135deg, var(--secondary-color), var(--accent-cyan));
     color: #0a0a0a;
-    transform: translateX(10px);
+    transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(72, 191, 227, 0.6);
-}
-
-/* Right Side - Project Cards */
-.portfolio-left {
-    flex: 1;
 }
 
 .portfolio-cards-grid {
@@ -1470,20 +1460,16 @@ img {
         padding: 15px;
     }
 
-    .portfolio-split-layout {
-        flex-direction: column;
-        gap: 40px;
-        padding: 0 20px;
-    }
-
-    .portfolio-left {
-        flex: 1;
-        padding-right: 0;
-        text-align: center;
+    .portfolio-header {
+        margin-bottom: 40px;
     }
 
     .portfolio-title {
         font-size: 2.5rem;
+    }
+
+    .portfolio-subtitle {
+        font-size: 1rem;
     }
 
     .portfolio-cards-grid {
