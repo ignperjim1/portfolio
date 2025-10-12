@@ -420,6 +420,7 @@ img {
 
 .about-content {
     flex: 1;
+    margin-top: 40px;
 }
 
 .about-text p {
