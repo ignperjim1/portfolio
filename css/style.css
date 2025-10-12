@@ -461,6 +461,7 @@ img {
     display: flex;
     gap: 30px;
     margin: 50px 0;
+    justify-content: space-evenly;
 }
 
 .skill-card {
@@ -470,7 +471,7 @@ img {
     padding: 30px;
     position: relative;
     width: fit-content;
-    max-width: 450px;
+    max-width: 650px;
     pointer-events: none;
 }
 
