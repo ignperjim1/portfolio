@@ -1671,7 +1671,18 @@ img {
 .portfolio-subheader {
     text-align: left;
     margin-bottom: 30px;
-    margin-top: 30px;
+    margin-top: 60px;
+}
+
+.portfolio-subheader-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-turquoise), var(--accent-mint));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .separator-line {
