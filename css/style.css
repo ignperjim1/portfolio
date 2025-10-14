@@ -1335,6 +1335,11 @@ img {
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 768px) {
+    /* Hide background video on mobile devices */
+    .video-overlay {
+        display: none !important;
+    }
+    
     /* Mobile: Always sticky at top, no animations */
     .header {
         position: fixed !important;

@@ -2,26 +2,39 @@
 // VIDEO SOURCE BASED ON DEVICE & FADE-IN ON LOAD
 // ============================================
 const backgroundVideo = document.getElementById('background-video');
+const videoOverlay = document.getElementById('video-overlay');
 
-if (backgroundVideo) {
+if (backgroundVideo && videoOverlay) {
+    // Check if device is mobile
+    function isMobileDevice() {
+        return window.innerWidth <= 768;
+    }
+    
     // Set video source based on screen size
     function setVideoSource() {
-        const isMobile = window.innerWidth <= 768;
+        const isMobile = isMobileDevice();
+        
+        if (isMobile) {
+            // Hide video overlay completely on mobile
+            videoOverlay.style.display = 'none';
+            return;
+        }
+        
+        // Show video overlay on desktop
+        videoOverlay.style.display = 'block';
+        
         const videoSource = backgroundVideo.querySelector('source');
         
         if (videoSource) {
-            // Define your video paths
-            const mobileVideo = 'videos/AfterWorld/survival9_16.mp4';
+            // Only use desktop video
             const desktopVideo = 'videos/AfterWorld/survival16_9.mp4';
             
-            const newSource = isMobile ? mobileVideo : desktopVideo;
-            
             // Only change if different to avoid reload
-            if (videoSource.src !== newSource && !videoSource.src.includes(newSource)) {
-                videoSource.src = newSource;
+            if (videoSource.src !== desktopVideo && !videoSource.src.includes(desktopVideo)) {
+                videoSource.src = desktopVideo;
                 backgroundVideo.load(); // Reload video with new source
                 
-                // Force play after load (especially important for mobile)
+                // Force play after load
                 backgroundVideo.addEventListener('loadeddata', function() {
                     const playPromise = backgroundVideo.play();
                     if (playPromise !== undefined) {
