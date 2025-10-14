@@ -1668,6 +1668,20 @@ img {
     line-height: 1.6;
 }
 
+.portfolio-subheader {
+    text-align: left;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.separator-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    margin: 40px 0;
+    border: none;
+}
+
 .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
