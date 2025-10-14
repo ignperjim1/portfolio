@@ -370,6 +370,10 @@ img {
     padding: 100px 0;
     background: rgb(15, 15, 15);
 }
+.about-link{
+    color: var(--accent-turquoise);
+    text-decoration: underline;
+}
 
 .section-badge {
     display: inline-block;
@@ -1277,6 +1281,11 @@ img {
     font-size: 1.3rem;
     margin-top: 25px;
     margin-bottom: 15px;
+}
+
+.modal-link{
+    color: var(--accent-turquoise);
+    text-decoration: underline;
 }
 
 .modal-body ul {
