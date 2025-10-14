@@ -1693,6 +1693,219 @@ img {
     border: none;
 }
 
+/* ============================================
+   GAME DETAIL PAGE STYLES
+   ============================================ */
+
+.game-detail-section {
+    padding: 120px 0 80px;
+    min-height: 100vh;
+}
+
+.back-button-container {
+    margin-bottom: 40px;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: rgba(116, 0, 184, 0.1);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-back:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.game-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+    align-items: center;
+}
+
+.game-hero-image {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.game-hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game-title {
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-turquoise), var(--accent-mint));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+}
+
+.game-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.game-company {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+}
+
+.game-role {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--accent-turquoise);
+}
+
+.game-year {
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.game-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.game-content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.game-section {
+    background: rgba(26, 26, 26, 0.5);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(116, 0, 184, 0.2);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-turquoise));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.game-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.game-screenshots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.screenshot {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.screenshot:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(116, 0, 184, 0.3);
+}
+
+.my-role ul,
+.key-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.my-role li,
+.key-features li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(116, 0, 184, 0.1);
+    position: relative;
+    padding-left: 30px;
+}
+
+.my-role li:before,
+.key-features li:before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+}
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tech-tag {
+    padding: 8px 16px;
+    background: rgba(116, 0, 184, 0.1);
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    color: var(--accent-cyan);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .game-hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .game-title {
+        font-size: 2.5rem;
+    }
+    
+    .game-section {
+        padding: 30px 20px;
+    }
+    
+    .game-screenshots {
+        grid-template-columns: 1fr;
+    }
+    
+    .screenshot {
+        height: 250px;
+    }
+}
+
 .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
