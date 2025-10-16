@@ -2036,6 +2036,9 @@ img {
     font-size: 0.8rem;
     color: var(--accent-mint);
 }
+.game-tags .tag .gamejam{
+    background: rgba(124, 0, 255, .4);
+}
 
 /* ============================================
    ANIMATIONS
