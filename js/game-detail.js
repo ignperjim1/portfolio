@@ -2,6 +2,58 @@
 // GAME DETAIL PAGE DYNAMIC CONTENT
 // ============================================
 
+/*
+ * CUSTOMIZABLE KEY FEATURES SYSTEM
+ * 
+ * Each game's keyFeatures is an array of feature objects. Each feature contains:
+ * - title: The feature name (shown in the dropdown header)
+ * - content: An array of content blocks that can be mixed and matched
+ * 
+ * Available Content Block Types:
+ * 
+ * 1. TEXT BLOCK:
+ *    { type: 'text', value: 'Your text here' }
+ *    { type: 'text', heading: 'Section Title', value: 'Your text here' }
+ * 
+ * 2. SINGLE IMAGE:
+ *    { type: 'image', value: 'path/to/image.jpg', caption: 'Optional caption' }
+ *    { type: 'image', value: 'path/to/image.jpg', caption: 'Caption', customClass: 'large-image' }
+ *    { type: 'image', value: 'path/to/image.jpg', style: { maxWidth: '400px', margin: '0 auto' } }
+ * 
+ * 3. MULTIPLE IMAGES (Grid):
+ *    { type: 'images', value: ['image1.jpg', 'image2.jpg'], caption: 'Optional caption' }
+ *    { type: 'images', value: ['img1.jpg', 'img2.jpg'], columns: 3, customClass: 'tall-images' }
+ *    { type: 'images', value: ['img1.jpg', 'img2.jpg'], style: { gap: '2rem' } }
+ * 
+ * 4. VIDEO:
+ *    { type: 'video', value: 'path/to/video.mp4', caption: 'Optional caption' }
+ *    { type: 'video', value: 'path/to/video.mp4', customClass: 'small-video' }
+ *    { type: 'video', value: 'path/to/video.mp4', style: { maxWidth: '800px' } }
+ * 
+ * 5. CODE SNIPPET:
+ *    { type: 'code', language: 'csharp', value: 'your code here' }
+ *    { type: 'code', language: 'csharp', value: 'code', customClass: 'compact-code' }
+ * 
+ * CUSTOMIZATION OPTIONS:
+ * - customClass: Add custom CSS class for specific styling
+ * - style: Add inline styles as an object { property: 'value' }
+ * - columns: For 'images' type, specify number of columns (default: auto-fit)
+ * 
+ * EXAMPLE WITH CUSTOM STYLING:
+ * {
+ *     title: 'My Feature',
+ *     content: [
+ *         { type: 'text', value: 'Description text' },
+ *         { type: 'video', value: 'videos/demo.mp4', customClass: 'fullwidth-video' },
+ *         { type: 'images', value: ['img1.jpg', 'img2.jpg'], columns: 2, style: { gap: '2rem' } },
+ *         { type: 'image', value: 'big.jpg', customClass: 'hero-image', style: { maxWidth: '100%' } }
+ *     ]
+ * }
+ * 
+ * You can use any combination of these blocks in any order!
+ * No need to create separate HTML files - just customize the data below.
+ */
+
 // Game data object
 const gameData = {
     'afterworld': {
@@ -38,45 +90,70 @@ const gameData = {
         keyFeatures: [
             {
                 title: 'Zombie Combat System',
-                description: 'Advanced combat mechanics featuring multiple weapon types, zombie AI with different behaviors, and dynamic difficulty scaling. The system includes hit detection, damage calculation, and special effects.',
-                details: 'Implemented using Unity\'s physics system with custom collision detection. Features include weapon switching, combo attacks, and environmental damage. The AI uses state machines for different zombie types.',
-                codeSnippet: '// Zombie AI State Machine\npublic class ZombieAI : MonoBehaviour\n{\n    public enum ZombieState { Idle, Chasing, Attacking, Dead }\n    private ZombieState currentState;\n    \n    void Update() {\n        switch(currentState) {\n            case ZombieState.Chasing:\n                ChasePlayer();\n                break;\n            case ZombieState.Attacking:\n                AttackPlayer();\n                break;\n        }\n    }\n}',
-                video: 'videos/AfterWorld/survival16_9.mp4'
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Advanced combat mechanics featuring multiple weapon types, zombie AI with different behaviors, and dynamic difficulty scaling. The system includes hit detection, damage calculation, and special effects.'
+                    },
+                    {
+                        type: 'video',
+                        value: 'videos/AfterWorld/survival16_9.mp4',
+                        caption: 'Combat gameplay demonstration',
+                        customClass: 'fullwidth-video'  // Make video full width
+                    },
+                    {
+                        type: 'image',
+                        value: 'images/AfterWorld/Combat.png',
+                        caption: 'Zombie combat screenshot',
+                        customClass: 'large-image'  // Make image large
+                    },
+                    {
+                        type: 'text',
+                        heading: 'Technical Implementation',
+                        value: 'Implemented using Unity\'s physics system with custom collision detection. Features include weapon switching, combo attacks, and environmental damage. The AI uses state machines for different zombie types.',
+                        customClass: 'highlighted-text'  // Highlight this section
+                    },
+                    {
+                        type: 'code',
+                        language: 'csharp',
+                        value: '// Zombie AI State Machine\npublic class ZombieAI : MonoBehaviour\n{\n    public enum ZombieState { Idle, Chasing, Attacking, Dead }\n    private ZombieState currentState;\n    \n    void Update() {\n        switch(currentState) {\n            case ZombieState.Chasing:\n                ChasePlayer();\n                break;\n            case ZombieState.Attacking:\n                AttackPlayer();\n                break;\n        }\n    }\n}'
+                    }
+                ]
             },
             {
                 title: 'Resource Management',
-                description: 'Comprehensive resource system including food, water, materials, and ammunition. Players must balance immediate survival needs with long-term base building goals.',
-                details: 'Features dynamic resource consumption based on player actions, weather effects, and difficulty level. Includes resource trading between players and automated collection systems.',
-                codeSnippet: '// Resource Management System\npublic class ResourceManager : MonoBehaviour\n{\n    [SerializeField] private Dictionary<ResourceType, int> resources;\n    \n    public bool ConsumeResource(ResourceType type, int amount) {\n        if (resources[type] >= amount) {\n            resources[type] -= amount;\n            return true;\n        }\n        return false;\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Base Building',
-                description: 'Modular base construction system allowing players to build and customize their shelters. Includes defensive structures, resource storage, and crafting stations.',
-                details: 'Uses a grid-based placement system with snap-to-grid functionality. Features include structural integrity calculations, upgrade paths, and multiplayer synchronization.',
-                codeSnippet: '// Base Building System\npublic class BuildingSystem : MonoBehaviour\n{\n    public void PlaceBuilding(Vector3 position, BuildingType type) {\n        if (CanPlaceBuilding(position, type)) {\n            Instantiate(buildingPrefabs[type], position, Quaternion.identity);\n            UpdateGrid(position, type);\n        }\n    }\n}',
-                video: null
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Comprehensive resource system including food, water, materials, and ammunition. Players must balance immediate survival needs with long-term base building goals.'
+                    },
+                    {
+                        type: 'image',
+                        value: 'images/AfterWorld/Inventory.png',
+                        caption: 'Inventory management system'
+                    }
+                ]
             },
             {
                 title: 'Character Customization',
-                description: 'Extensive character creation and progression system with visual customization, skill trees, and equipment upgrades.',
-                details: 'Features over 50 customization options including appearance, clothing, and equipment. Skill system affects gameplay mechanics and unlocks new abilities.',
-                codeSnippet: '// Character Customization\npublic class CharacterCustomizer : MonoBehaviour\n{\n    public void ApplyCustomization(CharacterData data) {\n        SetAppearance(data.appearance);\n        SetSkills(data.skills);\n        SetEquipment(data.equipment);\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Multiplayer Elements',
-                description: 'Cooperative and competitive multiplayer features including shared bases, resource trading, and PvP combat zones.',
-                details: 'Uses Photon Networking for real-time multiplayer. Features include voice chat, clan systems, and cross-platform play between mobile and PC.',
-                codeSnippet: '// Multiplayer Sync\npublic class MultiplayerSync : MonoBehaviourPunPV\n{\n    void Update() {\n        if (photonView.IsMine) {\n            photonView.RPC("SyncPosition", RpcTarget.Others, transform.position);\n        }\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Progressive Difficulty',
-                description: 'Dynamic difficulty system that adapts to player skill level and progression. Includes seasonal events and special challenges.',
-                details: 'Uses machine learning algorithms to analyze player behavior and adjust difficulty accordingly. Features include adaptive enemy spawning and resource scarcity.',
-                codeSnippet: '// Difficulty Manager\npublic class DifficultyManager : MonoBehaviour\n{\n    public void AdjustDifficulty(PlayerStats stats) {\n        float difficulty = CalculateDifficulty(stats);\n        UpdateEnemySpawnRate(difficulty);\n        UpdateResourceScarcity(difficulty);\n    }\n}',
-                video: null
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Extensive character creation and progression system with visual customization, skill trees, and equipment upgrades.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/AfterWorld/PlayerCreation1.png', 'images/AfterWorld/PlayerCreation2.png', 'images/AfterWorld/Characters.png'],
+                        caption: 'Character creation options',
+                        columns: 3,  // Force 3 columns
+                        customClass: 'large-gap'  // Add extra gap between images
+                    },
+                    {
+                        type: 'text',
+                        heading: 'Features',
+                        value: 'Over 50 customization options including appearance, clothing, and equipment. The skill system affects gameplay mechanics and unlocks new abilities as players progress.'
+                    }
+                ]
             }
         ]
     },
@@ -114,45 +191,45 @@ const gameData = {
         keyFeatures: [
             {
                 title: 'Idle Resource Generation',
-                description: 'Automated resource collection system that continues even when the player is offline. Features multiple resource types and exponential growth mechanics.',
-                details: 'Implemented using Unity\'s coroutine system for background calculations. Includes offline time calculation and bonus multipliers for returning players.',
-                codeSnippet: '// Idle Resource Generation\npublic class IdleResourceGenerator : MonoBehaviour\n{\n    public void CalculateOfflineProgress() {\n        float offlineTime = Time.time - lastPlayTime;\n        float resources = baseRate * offlineTime * multiplier;\n        AddResources(resources);\n    }\n}',
-                video: 'videos/mining_playable.mp4'
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Automated resource collection system that continues even when the player is offline. Features multiple resource types and exponential growth mechanics.'
+                    },
+                    {
+                        type: 'video',
+                        value: 'videos/mining_playable.mp4',
+                        caption: 'Idle gameplay demonstration'
+                    }
+                ]
             },
             {
-                title: 'Factory Management System',
-                description: 'Complex factory automation system where players build and upgrade production chains to maximize efficiency and profits.',
-                details: 'Features modular factory components, conveyor belt systems, and automated resource routing. Includes factory templates and blueprint sharing.',
-                codeSnippet: '// Factory Management\npublic class FactoryManager : MonoBehaviour\n{\n    public void UpgradeFactory(FactoryType type) {\n        factories[type].Upgrade();\n        RecalculateProduction();\n    }\n}',
-                video: null
+                title: 'Factory Management',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Complex factory automation system where players build and upgrade production chains to maximize efficiency and profits.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Mining/FactoryList.png', 'images/Mining/FactoryDetails.png'],
+                        caption: 'Factory management interface'
+                    }
+                ]
             },
             {
-                title: 'Technology Tree',
-                description: 'Progressive research system that unlocks new buildings, upgrades, and mechanics as players advance through the game.',
-                details: 'Features branching research paths with prerequisites and unlock conditions. Includes visual progress indicators and research bonuses.',
-                codeSnippet: '// Technology Tree\npublic class TechnologyTree : MonoBehaviour\n{\n    public bool UnlockTechnology(Technology tech) {\n        if (CanUnlock(tech)) {\n            tech.Unlock();\n            return true;\n        }\n        return false;\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Prestige Mechanics',
-                description: 'End-game progression system that allows players to reset their progress for permanent bonuses and new content.',
-                details: 'Features prestige currency, permanent upgrades, and exclusive content. Includes prestige point calculations and bonus stacking.',
-                codeSnippet: '// Prestige System\npublic class PrestigeManager : MonoBehaviour\n{\n    public void Prestige() {\n        float prestigePoints = CalculatePrestigePoints();\n        ResetProgress();\n        AddPrestigePoints(prestigePoints);\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Achievement System',
-                description: 'Comprehensive achievement system with over 100 different achievements covering all aspects of gameplay.',
-                details: 'Features progress tracking, achievement categories, and reward systems. Includes hidden achievements and special event achievements.',
-                codeSnippet: '// Achievement System\npublic class AchievementManager : MonoBehaviour\n{\n    public void CheckAchievements() {\n        foreach(var achievement in achievements) {\n            if (achievement.CheckCondition() && !achievement.IsUnlocked()) {\n                achievement.Unlock();\n            }\n        }\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Offline Progress',
-                description: 'Advanced offline progression system that continues game calculations even when the app is closed.',
-                details: 'Uses Unity\'s Application.persistentDataPath for data persistence. Includes offline time limits and progress acceleration bonuses.',
-                codeSnippet: '// Offline Progress\npublic class OfflineProgress : MonoBehaviour\n{\n    void OnApplicationPause(bool pauseStatus) {\n        if (pauseStatus) {\n            SaveGame();\n            lastPauseTime = Time.time;\n        }\n    }\n}',
-                video: null
+                title: 'City Building & Upgrades',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Build and manage your mining town with various buildings and infrastructure. Upgrade technologies to unlock new capabilities.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Mining/Ciudad.png', 'images/Mining/TechnologyUpgrade.png'],
+                        caption: 'City overview and technology upgrades'
+                    }
+                ]
             }
         ]
     },
@@ -190,45 +267,31 @@ const gameData = {
         keyFeatures: [
             {
                 title: 'Hospital Management',
-                description: 'Comprehensive hospital management system where players oversee all aspects of medical facility operations.',
-                details: 'Features patient flow management, room allocation, and emergency response systems. Includes real-time statistics and performance metrics.',
-                codeSnippet: '// Hospital Management\npublic class HospitalManager : MonoBehaviour\n{\n    public void ProcessPatient(Patient patient) {\n        AssignRoom(patient);\n        ScheduleTreatment(patient);\n        UpdateStatistics();\n    }\n}',
-                video: null
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Comprehensive hospital management system where players oversee all aspects of medical facility operations including patient flow, staff management, and facility upgrades.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Hospital/hospital 1.png', 'images/Hospital/hospital 2.png', 'images/Hospital/hospital 3.png'],
+                        caption: 'Hospital management overview'
+                    }
+                ]
             },
             {
-                title: 'Staff Hiring & Training',
-                description: 'Advanced staff management system with hiring, training, and career progression mechanics.',
-                details: 'Features different staff types (doctors, nurses, technicians), skill trees, and performance-based promotions.',
-                codeSnippet: '// Staff Management\npublic class StaffManager : MonoBehaviour\n{\n    public void HireStaff(StaffType type, int level) {\n        var newStaff = CreateStaff(type, level);\n        staffList.Add(newStaff);\n        UpdateStaffUI();\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Patient Care Systems',
-                description: 'Realistic patient care simulation with diagnosis, treatment, and recovery mechanics.',
-                details: 'Features medical procedures, treatment effectiveness, and patient satisfaction systems.',
-                codeSnippet: '// Patient Care\npublic class PatientCare : MonoBehaviour\n{\n    public void DiagnosePatient(Patient patient) {\n        var diagnosis = RunTests(patient);\n        var treatment = GetTreatment(diagnosis);\n        StartTreatment(patient, treatment);\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Facility Upgrades',
-                description: 'Extensive upgrade system for hospital facilities, equipment, and infrastructure.',
-                details: 'Features modular room upgrades, equipment purchases, and facility expansion options.',
-                codeSnippet: '// Facility Upgrades\npublic class FacilityUpgrade : MonoBehaviour\n{\n    public void UpgradeFacility(FacilityType type) {\n        if (CanAffordUpgrade(type)) {\n            ApplyUpgrade(type);\n            DeductCost(type);\n        }\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Multi-location Expansion',
-                description: 'Hospital network expansion system allowing players to open multiple facilities across different locations.',
-                details: 'Features location-specific challenges, market analysis, and cross-facility resource sharing.',
-                codeSnippet: '// Multi-location System\npublic class LocationManager : MonoBehaviour\n{\n    public void OpenNewLocation(Location location) {\n        if (CanAffordLocation(location)) {\n            CreateHospital(location);\n            UpdateNetworkUI();\n        }\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Idle Progression',
-                description: 'Automated hospital operations that continue generating revenue and treating patients while offline.',
-                details: 'Features offline patient processing, revenue generation, and staff efficiency calculations.',
-                codeSnippet: '// Idle Progression\npublic class IdleProgression : MonoBehaviour\n{\n    public void CalculateOfflineRevenue() {\n        float offlineTime = GetOfflineTime();\n        float revenue = CalculateRevenue(offlineTime);\n        AddRevenue(revenue);\n    }\n}',
-                video: null
+                title: 'Patient Care & Gameplay',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Realistic patient care simulation with diagnosis, treatment, and recovery mechanics. Manage multiple departments and emergency situations.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Hospital/hospital gameplay 1.png', 'images/Hospital/hospital gameplay 2.png'],
+                        caption: 'Patient care gameplay'
+                    }
+                ]
             }
         ]
     },
@@ -267,45 +330,83 @@ const gameData = {
         keyFeatures: [
             {
                 title: 'Multiplayer Combat',
-                description: 'Real-time multiplayer combat system with low-latency networking and synchronized gameplay.',
-                details: 'Uses Photon Networking for PvP battles. Features include hit detection, damage calculation, and anti-cheat systems.',
-                codeSnippet: '// Multiplayer Combat\npublic class CombatSystem : MonoBehaviourPunPV\n{\n    [PunRPC]\n    public void DealDamage(int targetId, int damage) {\n        var target = PhotonView.Find(targetId);\n        target.GetComponent<PlayerHealth>().TakeDamage(damage);\n    }\n}',
-                video: null
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Real-time multiplayer combat system with low-latency networking and synchronized gameplay. Uses Photon Networking for PvP battles with advanced hit detection and damage calculation.'
+                    },
+                    {
+                        type: 'video',
+                        value: 'videos/placeholder.mp4', // Replace with actual video if available
+                        caption: 'Multiplayer combat gameplay'
+                    },
+                    {
+                        type: 'code',
+                        language: 'csharp',
+                        value: '// Multiplayer Combat\npublic class CombatSystem : MonoBehaviourPunPV\n{\n    [PunRPC]\n    public void DealDamage(int targetId, int damage) {\n        var target = PhotonView.Find(targetId);\n        target.GetComponent<PlayerHealth>().TakeDamage(damage);\n    }\n}'
+                    }
+                ]
             },
             {
                 title: 'Character Abilities',
-                description: 'Unique character abilities system with special powers and cooldown mechanics.',
-                details: 'Features over 20 different abilities across 8 character classes. Includes ability combinations and synergy effects.',
-                codeSnippet: '// Character Abilities\npublic class AbilitySystem : MonoBehaviour\n{\n    public void UseAbility(AbilityType ability) {\n        if (CanUseAbility(ability)) {\n            ExecuteAbility(ability);\n            StartCooldown(ability);\n        }\n    }\n}',
-                video: null
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Unique character abilities system with special powers and cooldown mechanics. Features over 20 different abilities across 8 character classes.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Bowtoys/bowtoys-characters.jpg', 'images/Bowtoys/bowtoyscharactershowcase.png'],
+                        caption: 'Character selection and abilities'
+                    }
+                ]
             },
             {
                 title: 'Dynamic Maps',
-                description: 'Procedurally generated maps with interactive elements and environmental hazards.',
-                details: 'Features 5 different map types with unique mechanics. Includes destructible environments and power-up spawns.',
-                codeSnippet: '// Dynamic Maps\npublic class MapGenerator : MonoBehaviour\n{\n    public void GenerateMap(MapType type) {\n        var mapData = GetMapData(type);\n        CreateMap(mapData);\n        SpawnPowerUps();\n    }\n}',
-                video: null
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Procedurally generated maps with interactive elements and environmental hazards. Features 5 different map types with unique mechanics.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Bowtoys/bowtoys-mapaacuatico.jpg', 'images/Bowtoys/bowtoys-mapacampo.jpg', 'images/Bowtoys/bowtoys-mapadesierto.jpg'],
+                        caption: 'Different map environments'
+                    }
+                ]
+            },
+            {
+                title: 'UI & Progression',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Comprehensive UI system with achievements, missions, rewards, and player progression tracking.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Bowtoys/bowtoysachievements.png', 'images/Bowtoys/bowtoysmissions.png', 'images/Bowtoys/bowtoysrewards.png'],
+                        caption: 'Achievements, missions, and rewards systems'
+                    },
+                    {
+                        type: 'text',
+                        heading: 'In-Game UI',
+                        value: 'Polished in-game UI with match end screens, roulette system, and real-time HUD elements.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Bowtoys/bowtoysingameui.png', 'images/Bowtoys/bowtoysmatchend.png'],
+                        caption: 'In-game UI elements'
+                    }
+                ]
             },
             {
                 title: 'Weapon Systems',
-                description: 'Diverse weapon system with different weapon types and upgrade mechanics.',
-                details: 'Features 15+ weapon types with unique stats and abilities. Includes weapon customization and rarity system.',
-                codeSnippet: '// Weapon System\npublic class WeaponManager : MonoBehaviour\n{\n    public void EquipWeapon(Weapon weapon) {\n        currentWeapon = weapon;\n        UpdateWeaponUI();\n        ApplyWeaponStats();\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Matchmaking',
-                description: 'Intelligent matchmaking system that pairs players of similar skill levels.',
-                details: 'Features skill-based matching, region selection, and queue time optimization.',
-                codeSnippet: '// Matchmaking\npublic class MatchmakingManager : MonoBehaviour\n{\n    public void FindMatch() {\n        var players = GetPlayersInQueue();\n        var match = CreateMatch(players);\n        StartGame(match);\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Progression System',
-                description: 'Character progression system with experience points, levels, and unlockable content.',
-                details: 'Features skill trees, cosmetic unlocks, and achievement rewards. Includes seasonal progression tracks.',
-                codeSnippet: '// Progression System\npublic class ProgressionManager : MonoBehaviour\n{\n    public void AddExperience(int amount) {\n        experience += amount;\n        if (experience >= nextLevelExp) {\n            LevelUp();\n        }\n    }\n}',
-                video: null
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Diverse weapon system with different weapon types and upgrade mechanics. Features 15+ weapon types with unique stats and abilities.'
+                    }
+                ]
             }
         ]
     },
@@ -343,45 +444,31 @@ const gameData = {
         keyFeatures: [
             {
                 title: 'Tower Defense Mechanics',
-                description: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems.',
-                details: 'Features multiple tower types, upgrade paths, and strategic positioning mechanics. Includes tower combinations and special abilities.',
-                codeSnippet: '// Tower Defense\npublic class TowerDefense : MonoBehaviour\n{\n    public void PlaceTower(Vector3 position, TowerType type) {\n        if (CanPlaceTower(position)) {\n            var tower = Instantiate(towerPrefabs[type], position, Quaternion.identity);\n            towers.Add(tower);\n        }\n    }\n}',
-                video: null
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
+                        caption: 'Game HUD and main menu'
+                    }
+                ]
             },
             {
-                title: 'Enemy AI Systems',
-                description: 'Advanced enemy AI with different behavior patterns and adaptive difficulty.',
-                details: 'Features multiple enemy types with unique abilities, pathfinding, and group behavior mechanics.',
-                codeSnippet: '// Enemy AI\npublic class EnemyAI : MonoBehaviour\n{\n    public void UpdateAI() {\n        if (health <= 0) {\n            Die();\n        } else {\n            MoveTowardsTarget();\n            AttackIfInRange();\n        }\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Resource Management',
-                description: 'Strategic resource management system for tower construction and upgrades.',
-                details: 'Features multiple resource types, resource generation, and economic decision-making mechanics.',
-                codeSnippet: '// Resource Management\npublic class ResourceManager : MonoBehaviour\n{\n    public bool SpendResources(ResourceType type, int amount) {\n        if (resources[type] >= amount) {\n            resources[type] -= amount;\n            return true;\n        }\n        return false;\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Wave Generation',
-                description: 'Dynamic wave generation system with increasing difficulty and special events.',
-                details: 'Features procedural wave generation, boss waves, and special event waves with unique mechanics.',
-                codeSnippet: '// Wave Generation\npublic class WaveGenerator : MonoBehaviour\n{\n    public void GenerateWave(int waveNumber) {\n        var waveData = CalculateWaveData(waveNumber);\n        SpawnEnemies(waveData);\n        StartWaveTimer();\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Upgrade Systems',
-                description: 'Comprehensive upgrade system for towers, abilities, and base defenses.',
-                details: 'Features multiple upgrade paths, upgrade costs, and permanent progression mechanics.',
-                codeSnippet: '// Upgrade System\npublic class UpgradeSystem : MonoBehaviour\n{\n    public void UpgradeTower(Tower tower, UpgradeType upgrade) {\n        if (CanAffordUpgrade(upgrade)) {\n            tower.ApplyUpgrade(upgrade);\n            DeductCost(upgrade);\n        }\n    }\n}',
-                video: null
-            },
-            {
-                title: 'Strategic Gameplay',
-                description: 'Deep strategic gameplay requiring careful planning and resource allocation.',
-                details: 'Features multiple victory conditions, strategic depth, and replayability through different strategies.',
-                codeSnippet: '// Strategic Gameplay\npublic class GameManager : MonoBehaviour\n{\n    public void CheckVictoryConditions() {\n        if (enemiesKilled >= requiredKills && baseHealth > 0) {\n            WinGame();\n        }\n    }\n}',
-                video: null
+                title: 'Characters & Bosses',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
+                        caption: 'Character selection and boss fights'
+                    }
+                ]
             }
         ]
     }
@@ -455,35 +542,146 @@ function populatePage(game) {
 function createFeatureElement(feature, index) {
     const featureDiv = document.createElement('div');
     featureDiv.className = 'feature-item';
-    featureDiv.innerHTML = `
-        <div class="feature-header" onclick="toggleFeature(${index})">
-            <h3 class="feature-title">${feature.title}</h3>
-            <i class="fas fa-chevron-down feature-chevron" id="chevron-${index}"></i>
-        </div>
-        <div class="feature-content" id="content-${index}">
-            <p class="feature-description">${feature.description}</p>
-            <div class="feature-details">
-                <h4>Technical Details:</h4>
-                <p>${feature.details}</p>
-            </div>
-            ${feature.codeSnippet ? `
-                <div class="feature-code">
-                    <h4>Code Example:</h4>
-                    <pre><code>${feature.codeSnippet}</code></pre>
-                </div>
-            ` : ''}
-            ${feature.video ? `
-                <div class="feature-video">
-                    <h4>Video Demo:</h4>
-                    <video controls>
-                        <source src="${feature.video}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            ` : ''}
-        </div>
+    
+    // Create header
+    const headerDiv = document.createElement('div');
+    headerDiv.className = 'feature-header';
+    headerDiv.onclick = () => toggleFeature(index);
+    headerDiv.innerHTML = `
+        <h3 class="feature-title">${feature.title}</h3>
+        <i class="fas fa-chevron-down feature-chevron" id="chevron-${index}"></i>
     `;
+    
+    // Create content container
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'feature-content';
+    contentDiv.id = `content-${index}`;
+    
+    // Render each content block
+    feature.content.forEach(block => {
+        const blockElement = createContentBlock(block);
+        if (blockElement) {
+            contentDiv.appendChild(blockElement);
+        }
+    });
+    
+    featureDiv.appendChild(headerDiv);
+    featureDiv.appendChild(contentDiv);
+    
     return featureDiv;
+}
+
+// Create individual content blocks based on type
+function createContentBlock(block) {
+    const container = document.createElement('div');
+    
+    switch(block.type) {
+        case 'text':
+            container.className = 'feature-text';
+            if (block.heading) {
+                const heading = document.createElement('h4');
+                heading.textContent = block.heading;
+                heading.className = 'feature-text-heading';
+                container.appendChild(heading);
+            }
+            const textPara = document.createElement('p');
+            textPara.textContent = block.value;
+            container.appendChild(textPara);
+            break;
+            
+        case 'image':
+            container.className = 'feature-image';
+            const img = document.createElement('img');
+            img.src = block.value;
+            img.alt = block.caption || 'Feature image';
+            container.appendChild(img);
+            if (block.caption) {
+                const caption = document.createElement('p');
+                caption.className = 'feature-caption';
+                caption.textContent = block.caption;
+                container.appendChild(caption);
+            }
+            break;
+            
+        case 'images':
+            container.className = 'feature-images';
+            const imagesGrid = document.createElement('div');
+            imagesGrid.className = 'images-grid';
+            
+            // Apply custom column setting if provided
+            if (block.columns) {
+                imagesGrid.style.gridTemplateColumns = `repeat(${block.columns}, 1fr)`;
+            }
+            
+            // Apply custom styles to grid if provided
+            if (block.style) {
+                applyInlineStyles(imagesGrid, block.style);
+            }
+            
+            block.value.forEach(imgSrc => {
+                const imgElement = document.createElement('img');
+                imgElement.src = imgSrc;
+                imgElement.alt = block.caption || 'Feature image';
+                imagesGrid.appendChild(imgElement);
+            });
+            container.appendChild(imagesGrid);
+            if (block.caption) {
+                const caption = document.createElement('p');
+                caption.className = 'feature-caption';
+                caption.textContent = block.caption;
+                container.appendChild(caption);
+            }
+            break;
+            
+        case 'video':
+            container.className = 'feature-video';
+            const video = document.createElement('video');
+            video.controls = true;
+            const source = document.createElement('source');
+            source.src = block.value;
+            source.type = 'video/mp4';
+            video.appendChild(source);
+            container.appendChild(video);
+            if (block.caption) {
+                const caption = document.createElement('p');
+                caption.className = 'feature-caption';
+                caption.textContent = block.caption;
+                container.appendChild(caption);
+            }
+            break;
+            
+        case 'code':
+            container.className = 'feature-code';
+            const pre = document.createElement('pre');
+            const code = document.createElement('code');
+            code.className = block.language || 'csharp';
+            code.textContent = block.value;
+            pre.appendChild(code);
+            container.appendChild(pre);
+            break;
+            
+        default:
+            return null;
+    }
+    
+    // Apply custom class if provided
+    if (block.customClass) {
+        container.classList.add(block.customClass);
+    }
+    
+    // Apply inline styles if provided
+    if (block.style) {
+        applyInlineStyles(container, block.style);
+    }
+    
+    return container;
+}
+
+// Helper function to apply inline styles from object
+function applyInlineStyles(element, styleObj) {
+    Object.keys(styleObj).forEach(property => {
+        element.style[property] = styleObj[property];
+    });
 }
 
 // Toggle feature expansion

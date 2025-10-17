@@ -1919,39 +1919,80 @@ img {
     background: rgba(0, 0, 0, 0.2);
 }
 
-.feature-description {
+/* Content Block Styles */
+.feature-text {
+    margin-bottom: 1.5rem;
+}
+
+.feature-text p {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
     color: var(--text-color);
 }
 
-.feature-details {
-    margin-bottom: 1.5rem;
-}
-
-.feature-details h4 {
+.feature-text-heading {
     color: var(--accent-cyan);
     font-size: 1rem;
     margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
     font-weight: 600;
 }
 
-.feature-details p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.95rem;
-    line-height: 1.5;
+.feature-image {
+    margin-bottom: 1.5rem;
+}
+
+.feature-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(116, 0, 184, 0.3);
+    display: block;
+}
+
+.feature-images {
+    margin-bottom: 1.5rem;
+}
+
+.images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.images-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(116, 0, 184, 0.3);
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.feature-caption {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.feature-video {
+    margin-bottom: 1.5rem;
+}
+
+.feature-video video {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(116, 0, 184, 0.3);
+    display: block;
 }
 
 .feature-code {
     margin-bottom: 1.5rem;
-}
-
-.feature-code h4 {
-    color: var(--accent-cyan);
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
 }
 
 .feature-code pre {
@@ -1970,23 +2011,81 @@ img {
     line-height: 1.4;
 }
 
-.feature-video {
-    margin-bottom: 1rem;
-}
+/* Custom Classes for Feature Content Customization */
+/* You can use these classes or create your own */
 
-.feature-video h4 {
-    color: var(--accent-cyan);
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.feature-video video {
+/* Large/Hero Images */
+.hero-image img,
+.large-image img {
+    max-width: 100% !important;
     width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 8px;
-    border: 1px solid rgba(116, 0, 184, 0.3);
+}
+
+/* Small Images */
+.small-image img {
+    max-width: 300px !important;
+}
+
+/* Centered Images */
+.centered-image img {
+    margin: 0 auto !important;
+    display: block;
+}
+
+/* Full Width Video */
+.fullwidth-video video {
+    max-width: 100% !important;
+    width: 100%;
+}
+
+/* Small Video */
+.small-video video {
+    max-width: 400px !important;
+}
+
+/* Portrait/Tall Images (good for mobile screenshots) */
+.portrait-images .images-grid img,
+.tall-images .images-grid img {
+    aspect-ratio: 9/16;
+}
+
+/* Square Images */
+.square-images .images-grid img {
+    aspect-ratio: 1/1;
+}
+
+/* Compact Code Block */
+.compact-code pre {
+    padding: 0.5rem !important;
+    font-size: 0.75rem !important;
+}
+
+/* Large Gap between Images */
+.large-gap .images-grid {
+    gap: 2rem !important;
+}
+
+/* Small Gap between Images */
+.small-gap .images-grid {
+    gap: 0.5rem !important;
+}
+
+/* Side-by-Side Layout (2 columns) */
+.two-columns .images-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+/* Three Columns Layout */
+.three-columns .images-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
+/* Highlighted Text Block */
+.highlighted-text {
+    background: rgba(116, 0, 184, 0.1) !important;
+    padding: 1rem !important;
+    border-left: 3px solid var(--primary-color) !important;
+    border-radius: 4px !important;
 }
 
 /* Mobile Responsiveness for Key Features */
@@ -2008,25 +2107,26 @@ img {
         padding: 0 1rem 1rem;
     }
     
-    .feature-description {
+    .feature-text p {
         font-size: 0.95rem;
     }
     
-    .feature-details p {
-        font-size: 0.9rem;
+    .images-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.75rem;
+    }
+    
+    .feature-image img,
+    .feature-video video {
+        max-width: 100%;
     }
     
     .feature-code pre {
         padding: 0.75rem;
-        font-size: 0.8rem;
     }
     
     .feature-code code {
         font-size: 0.75rem;
-    }
-    
-    .feature-video video {
-        max-width: 100%;
     }
 }
 
@@ -2050,29 +2150,35 @@ img {
         padding: 0 0.75rem 0.75rem;
     }
     
-    .feature-description {
+    .feature-text {
+        margin-bottom: 1rem;
+    }
+    
+    .feature-text p {
         font-size: 0.9rem;
-        margin-bottom: 1rem;
     }
     
-    .feature-details {
-        margin-bottom: 1rem;
-    }
-    
-    .feature-details h4 {
+    .feature-text-heading {
         font-size: 0.95rem;
     }
     
-    .feature-details p {
+    .images-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .feature-image,
+    .feature-images,
+    .feature-video {
+        margin-bottom: 1rem;
+    }
+    
+    .feature-caption {
         font-size: 0.85rem;
     }
     
     .feature-code {
         margin-bottom: 1rem;
-    }
-    
-    .feature-code h4 {
-        font-size: 0.95rem;
     }
     
     .feature-code pre {
@@ -2081,10 +2187,6 @@ img {
     
     .feature-code code {
         font-size: 0.7rem;
-    }
-    
-    .feature-video h4 {
-        font-size: 0.95rem;
     }
 }
 
