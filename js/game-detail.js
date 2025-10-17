@@ -563,13 +563,43 @@ function populatePage(game) {
     // Use hero video if available, otherwise use hero image
     const heroContainer = document.querySelector('.game-hero-image');
     if (game.heroVideo) {
-        // Create video element with controls
+        // Create video element with custom play button overlay
         heroContainer.innerHTML = `
-            <video controls class="hero-video">
-                <source src="${game.heroVideo}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div class="hero-video-container">
+                <video controls class="hero-video" id="hero-video-${Date.now()}">
+                    <source src="${game.heroVideo}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="hero-play-overlay" id="hero-play-overlay-${Date.now()}">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <p class="play-text">Click to play</p>
+                </div>
+            </div>
         `;
+        
+        // Add click event to play video and hide overlay
+        const videoId = `hero-video-${Date.now()}`;
+        const overlayId = `hero-play-overlay-${Date.now()}`;
+        
+        // Use setTimeout to ensure elements are rendered
+        setTimeout(() => {
+            const video = document.getElementById(videoId);
+            const overlay = document.getElementById(overlayId);
+            
+            if (video && overlay) {
+                overlay.addEventListener('click', () => {
+                    video.play();
+                    overlay.style.display = 'none';
+                });
+                
+                // Show overlay again when video is paused
+                video.addEventListener('pause', () => {
+                    overlay.style.display = 'flex';
+                });
+            }
+        }, 100);
     } else {
         // Use image as fallback
         const img = document.getElementById('game-hero-image');
