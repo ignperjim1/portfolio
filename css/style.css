@@ -1751,6 +1751,7 @@ img {
     height: auto;
     display: block;
     border-radius: 12px;
+    border: 1px solid rgba(116, 0, 184, 0.3);
 }
 
 /* Mobile responsiveness for hero video */

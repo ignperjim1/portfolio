@@ -43,6 +43,7 @@
  * - heroImage: Static image for game hero (fallback)
  * - heroVideo: Video for game hero (takes priority over heroImage)
  *   If heroVideo is present, it will be used instead of heroImage
+ *   Hero videos have controls (play/pause/volume) and do NOT autoplay
  * 
  * EXAMPLE WITH CUSTOM STYLING:
  * {
@@ -562,9 +563,9 @@ function populatePage(game) {
     // Use hero video if available, otherwise use hero image
     const heroContainer = document.querySelector('.game-hero-image');
     if (game.heroVideo) {
-        // Create video element
+        // Create video element with controls
         heroContainer.innerHTML = `
-            <video autoplay muted loop playsinline class="hero-video">
+            <video controls class="hero-video">
                 <source src="${game.heroVideo}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
