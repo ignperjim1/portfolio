@@ -838,11 +838,20 @@ img {
     overflow: hidden;
     transition: var(--transition);
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
-.project-card:hover {
+.project-card:hover,
+.project-card:focus {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 15px 40px rgba(72, 191, 227, 0.5);
+    outline: none;
+}
+
+.project-card:focus {
+    box-shadow: 0 15px 40px rgba(72, 191, 227, 0.5), 0 0 0 3px rgba(72, 191, 227, 0.3);
 }
 
 .project-card-image {
