@@ -39,6 +39,11 @@
  * - style: Add inline styles as an object { property: 'value' }
  * - columns: For 'images' type, specify number of columns (default: auto-fit)
  * 
+ * HERO MEDIA:
+ * - heroImage: Static image for game hero (fallback)
+ * - heroVideo: Video for game hero (takes priority over heroImage)
+ *   If heroVideo is present, it will be used instead of heroImage
+ * 
  * EXAMPLE WITH CUSTOM STYLING:
  * {
  *     title: 'My Feature',
@@ -63,6 +68,19 @@ const gameData = {
         year: '2024 - Present',
         tags: ['Unity', 'Zombie Survival', 'Android/iOS', 'Mobile'],
         heroImage: 'images/AfterWorld/Splash.png',
+        heroVideo: 'videos/AfterWorld/survival16_9.mp4',
+        storeLinks: [
+            {
+                store: 'Google Play',
+                url: 'https://play.google.com/store/apps/details?id=com.vivastudios.afterworld.zombie.survival&pcampaignid=web_share',
+                icon: 'fab fa-google-play'
+            },
+            {
+                store: 'App Store',
+                url: '',//'https://apps.apple.com/app/after-world/id123456789',
+                icon: 'fab fa-app-store-ios'
+            }
+        ],
         description: 'After World is an immersive zombie survival game set in a post-apocalyptic world. Players must scavenge for resources, build shelters, and fight off hordes of zombies while managing their survival needs. The game features deep crafting systems, base building, and intense combat mechanics.',
         screenshots: [
             'images/AfterWorld/Characters.png',
@@ -164,6 +182,14 @@ const gameData = {
         year: '2024 - Present',
         tags: ['Unity', 'Idle Incremental Game', 'Android', 'Maintenance & Optimization'],
         heroImage: 'images/Mining/Splash.png',
+        heroVideo: 'videos/Mining/mining-trailer.mp4',
+        storeLinks: [
+            {
+                store: 'Google Play',
+                url: 'https://play.google.com/store/apps/details?id=com.RadiusOne.IdleMiningTown&pcampaignid=web_share',
+                icon: 'fab fa-google-play'
+            }
+        ],
         description: 'Idle Mining Town is a captivating idle incremental game where players build and manage their own mining empire. The game features automated resource collection, factory management, and strategic upgrades to maximize efficiency and profits.',
         screenshots: [
             'images/Mining/Ciudad.png',
@@ -240,6 +266,14 @@ const gameData = {
         year: '2024 - Present',
         tags: ['Unity', 'Idle Incremental Game', 'Android', 'Maintenance & Optimization'],
         heroImage: 'images/Hospital/Splash.png',
+        heroVideo: 'videos/Hospital/hospital ad.mp4',
+        storeLinks: [
+            {
+                store: 'Google Play',
+                url: 'https://play.google.com/store/apps/details?id=com.vivastudios.idle.hospital.tycoon.empire&pcampaignid=web_share',
+                icon: 'fab fa-google-play'
+            }
+        ],
         description: 'Hospital Empire is a strategic idle tycoon game where players build and manage their own hospital network. Manage patients, hire staff, upgrade facilities, and expand your medical empire across multiple locations.',
         screenshots: [
             'images/Hospital/hospital 1.png',
@@ -302,6 +336,18 @@ const gameData = {
         year: '2022 - 2024',
         tags: ['Unity', 'Arcade Shooter', 'Android/iOS', 'Cancelled'],
         heroImage: 'images/Bowtoys/bowtoys-splash.jpg',
+        storeLinks: [
+            {
+                store: 'Itch.io',
+                url: 'https://kometasoft.itch.io/bowtoys',
+                icon: 'fas fa-gamepad'
+            },
+            {
+                store: 'Steam',
+                url: 'https://store.steampowered.com/app/bowtoys',
+                icon: 'fab fa-steam'
+            }
+        ],
         description: 'Bowtoys was an arcade-style shooter game featuring colorful characters and fast-paced action. Players controlled various characters with unique abilities, engaging in multiplayer battles across different themed maps.',
         screenshots: [
             'images/Bowtoys/bowtoys-characters.jpg',
@@ -417,6 +463,13 @@ const gameData = {
         year: '2021 - 2022',
         tags: ['Unity', 'Arcade Shooter', 'Android', 'Cancelled'],
         heroImage: 'images/Wow/wow-icon.png',
+        storeLinks: [
+            {
+                store: 'Itch.io',
+                url: 'https://kometasoft.itch.io/wall-of-war',
+                icon: 'fas fa-gamepad'
+            }
+        ],
         description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
         screenshots: [
             'images/Wow/wowBosses.png',
@@ -505,8 +558,23 @@ function populatePage(game) {
     document.getElementById('game-company').textContent = game.company;
     document.getElementById('game-role').textContent = game.role;
     document.getElementById('game-year').textContent = game.year;
-    document.getElementById('game-hero-image').src = game.heroImage;
-    document.getElementById('game-hero-image').alt = game.title;
+    
+    // Use hero video if available, otherwise use hero image
+    const heroContainer = document.querySelector('.game-hero-image');
+    if (game.heroVideo) {
+        // Create video element
+        heroContainer.innerHTML = `
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="${game.heroVideo}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        `;
+    } else {
+        // Use image as fallback
+        const img = document.getElementById('game-hero-image');
+        img.src = game.heroImage;
+        img.alt = game.title;
+    }
     
     // Update tags
     const tagsContainer = document.getElementById('game-tags');
@@ -517,6 +585,24 @@ function populatePage(game) {
         tagElement.textContent = tag;
         tagsContainer.appendChild(tagElement);
     });
+    
+    // Update store links
+    const storeLinksContainer = document.getElementById('store-links');
+    storeLinksContainer.innerHTML = '';
+    if (game.storeLinks && game.storeLinks.length > 0) {
+        game.storeLinks.forEach(store => {
+            const linkElement = document.createElement('a');
+            linkElement.href = store.url;
+            linkElement.target = '_blank';
+            linkElement.rel = 'noopener noreferrer';
+            linkElement.className = 'store-link';
+            linkElement.innerHTML = `
+                <i class="${store.icon}"></i>
+                <span>${store.store}</span>
+            `;
+            storeLinksContainer.appendChild(linkElement);
+        });
+    }
     
     // Update description
     document.getElementById('game-description').innerHTML = `<p>${game.description}</p>`;
