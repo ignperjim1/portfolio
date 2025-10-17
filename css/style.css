@@ -2028,8 +2028,7 @@ img {
 
 .feature-content {
     display: none;
-    padding-top: 2rem;
-    padding: 0 3rem 3rem;
+    padding: 2rem 0 3rem 3rem;
     background: rgba(0, 0, 0, 0.2);
 }
 

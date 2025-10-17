@@ -589,14 +589,41 @@ function populatePage(game) {
             const overlay = document.getElementById(overlayId);
             
             if (video && overlay) {
+                let userPaused = false;
+                let seeking = false;
+                
                 overlay.addEventListener('click', () => {
                     video.play();
                     overlay.style.display = 'none';
+                    userPaused = false;
                 });
                 
-                // Show overlay again when video is paused
+                // Track when user manually pauses
                 video.addEventListener('pause', () => {
-                    overlay.style.display = 'flex';
+                    if (!seeking) {
+                        userPaused = true;
+                        overlay.style.display = 'flex';
+                    }
+                });
+                
+                // Track when user starts seeking
+                video.addEventListener('seeking', () => {
+                    seeking = true;
+                });
+                
+                // Track when user stops seeking
+                video.addEventListener('seeked', () => {
+                    seeking = false;
+                    // Only show overlay if user had paused before seeking
+                    if (userPaused && video.paused) {
+                        overlay.style.display = 'flex';
+                    }
+                });
+                
+                // Hide overlay when video starts playing
+                video.addEventListener('play', () => {
+                    overlay.style.display = 'none';
+                    userPaused = false;
                 });
             }
         }, 100);
