@@ -560,33 +560,33 @@ function populatePage(game) {
     document.getElementById('game-role').textContent = game.role;
     document.getElementById('game-year').textContent = game.year;
     
-    // Use hero video if available, otherwise use hero image
-    const heroContainer = document.querySelector('.game-hero-image');
-    if (game.heroVideo) {
-        // Create video element with custom play button overlay
-        heroContainer.innerHTML = `
-            <div class="hero-video-container">
-                <video controls class="hero-video" id="hero-video-${Date.now()}">
-                    <source src="${game.heroVideo}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="hero-play-overlay" id="hero-play-overlay-${Date.now()}">
-                    <div class="play-button">
-                        <i class="fas fa-play"></i>
+        // Use hero video if available, otherwise use hero image
+        const heroContainer = document.querySelector('.game-hero-image');
+        if (game.heroVideo) {
+            // Generate consistent IDs
+            const videoId = `hero-video-${game.id}`;
+            const overlayId = `hero-play-overlay-${game.id}`;
+            
+            // Create video element with custom play button overlay
+            heroContainer.innerHTML = `
+                <div class="hero-video-container">
+                    <video controls class="hero-video" id="${videoId}">
+                        <source src="${game.heroVideo}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="hero-play-overlay" id="${overlayId}">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <p class="play-text">Click to play</p>
                     </div>
-                    <p class="play-text">Click to play</p>
                 </div>
-            </div>
-        `;
-        
-        // Add click event to play video and hide overlay
-        const videoId = `hero-video-${Date.now()}`;
-        const overlayId = `hero-play-overlay-${Date.now()}`;
-        
-        // Use setTimeout to ensure elements are rendered
-        setTimeout(() => {
-            const video = document.getElementById(videoId);
-            const overlay = document.getElementById(overlayId);
+            `;
+
+            // Use setTimeout to ensure elements are rendered
+            setTimeout(() => {
+                const video = document.getElementById(videoId);
+                const overlay = document.getElementById(overlayId);
             
             if (video && overlay) {
                 let hasPlayedOnce = false;
