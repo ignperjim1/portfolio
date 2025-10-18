@@ -895,6 +895,11 @@ img {
     color: #aaa;
 }
 
+/* Portfolio card overlay hover effect */
+.project-card:hover .game-card-overlay {
+    opacity: 1;
+}
+
 
 /* "... and more!" card */
 .project-card-more {
