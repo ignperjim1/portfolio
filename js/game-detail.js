@@ -589,21 +589,13 @@ function populatePage(game) {
             const overlay = document.getElementById(overlayId);
             
             if (video && overlay) {
-                let userPaused = false;
+                let hasPlayedOnce = false;
                 let seeking = false;
                 
                 overlay.addEventListener('click', () => {
                     video.play();
                     overlay.style.display = 'none';
-                    userPaused = false;
-                });
-                
-                // Track when user manually pauses
-                video.addEventListener('pause', () => {
-                    if (!seeking) {
-                        userPaused = true;
-                        overlay.style.display = 'flex';
-                    }
+                    hasPlayedOnce = true;
                 });
                 
                 // Track when user starts seeking
@@ -614,16 +606,19 @@ function populatePage(game) {
                 // Track when user stops seeking
                 video.addEventListener('seeked', () => {
                     seeking = false;
-                    // Only show overlay if user had paused before seeking
-                    if (userPaused && video.paused) {
-                        overlay.style.display = 'flex';
-                    }
                 });
                 
-                // Hide overlay when video starts playing
+                // Hide overlay when video starts playing and mark as played
                 video.addEventListener('play', () => {
                     overlay.style.display = 'none';
-                    userPaused = false;
+                    hasPlayedOnce = true;
+                });
+                
+                // Don't show overlay on pause if video has been played before
+                video.addEventListener('pause', () => {
+                    if (!seeking && !hasPlayedOnce) {
+                        overlay.style.display = 'flex';
+                    }
                 });
             }
         }, 100);
