@@ -838,9 +838,6 @@ img {
     overflow: hidden;
     transition: var(--transition);
     cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    display: block;
 }
 
 .project-card:hover,
@@ -897,6 +894,7 @@ img {
     font-size: 0.9rem;
     color: #aaa;
 }
+
 
 /* "... and more!" card */
 .project-card-more {
