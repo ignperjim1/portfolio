@@ -525,7 +525,480 @@ const gameData = {
                 ]
             }
         ]
-    }
+    },
+    'shatraj': {
+        title: 'Shatraj',
+        company: 'Kometasoft S.L.',
+        role: 'Lead Game Programmer',
+        year: '2022 - 2024',
+        tags: ['Unreal Engine', '3D Chess Game', 'Turn-Based RPG combat', '8 <i class="fas fa-person fa-solid"></i>', 'PC'],
+        heroImage: 'images/Shatraj/shatraj-wallpaper.png',
+        heroVideo: 'videos/Shatraj/shatraj-gameplay.mp4',
+        storeLinks: [],
+        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
+        screenshots: [
+            'images/Wow/wowBosses.png',
+            'images/Wow/wowCharacterSelect.png',
+            'images/Wow/wowGameOver1.png',
+            'images/Wow/wowGameOver2.png',
+            'images/Wow/wowHUD.png',
+            'images/Wow/wowMainMenu.png'
+        ],
+        myRole: [
+            'Developed tower defense mechanics and enemy AI systems',
+            'Implemented resource management and upgrade systems',
+            'Designed and programmed wave generation and difficulty scaling',
+            'Created UI systems for base management and upgrades',
+            'Balanced gameplay progression and difficulty curves',
+            'Worked closely with the lead programmer on core systems'
+        ],
+        technologies: [
+            'Unity Engine',
+            'C# Programming',
+            'Git Version Control',
+            'Confluence Documentation',
+            'Jira Project Management'
+        ],
+        keyFeatures: [
+            {
+                title: 'Tower Defense Mechanics',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
+                        caption: 'Game HUD and main menu'
+                    }
+                ]
+            },
+            {
+                title: 'Characters & Bosses',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
+                        caption: 'Character selection and boss fights'
+                    }
+                ]
+            }
+        ]
+    },
+    'engine-of-time': {
+        title: 'Engine of Time',
+        role: 'Game Programmer',
+        year: '2022',
+        tags: ['Unity', 'Puzzles', '3 <i class="fas fa-person fa-solid"></i>', 'PC'],
+        heroImage: 'images/EngineOfTime/engineoftime-icon.png',
+        heroVideo: 'images/EngineOfTime/engine-of-time.mp4',
+        storeLinks: [
+            {
+                store: 'Itch.io',
+                url: 'https://corahe-game.itch.io/the-engine-of-time',
+                icon: 'fas fa-gamepad'
+            }
+        ],
+        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
+        screenshots: [
+            'images/Wow/wowBosses.png',
+            'images/Wow/wowCharacterSelect.png',
+            'images/Wow/wowGameOver1.png',
+            'images/Wow/wowGameOver2.png',
+            'images/Wow/wowHUD.png',
+            'images/Wow/wowMainMenu.png'
+        ],
+        myRole: [
+            'Developed tower defense mechanics and enemy AI systems',
+            'Implemented resource management and upgrade systems',
+            'Designed and programmed wave generation and difficulty scaling',
+            'Created UI systems for base management and upgrades',
+            'Balanced gameplay progression and difficulty curves',
+            'Worked closely with the lead programmer on core systems'
+        ],
+        technologies: [
+            'Unity Engine',
+            'C# Programming',
+            'Git Version Control',
+            'Confluence Documentation',
+            'Jira Project Management'
+        ],
+        keyFeatures: [
+            {
+                title: 'Tower Defense Mechanics',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
+                        caption: 'Game HUD and main menu'
+                    }
+                ]
+            },
+            {
+                title: 'Characters & Bosses',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
+                        caption: 'Character selection and boss fights'
+                    }
+                ]
+            }
+        ]
+    },
+    'recreating-mechanics': {
+        title: 'Recreating Videogame Mechanics',
+        role: 'Game Developer',
+        year: '2022 - 2023',
+        tags: ['Unity', 'Demo'],
+        heroImage: 'images/OtherProjects/mechanics-image.png',
+        storeLinks: [],   
+        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
+        screenshots: [
+            'images/Wow/wowBosses.png',
+            'images/Wow/wowCharacterSelect.png',
+            'images/Wow/wowGameOver1.png',
+            'images/Wow/wowGameOver2.png',
+            'images/Wow/wowHUD.png',
+            'images/Wow/wowMainMenu.png'
+        ],
+        myRole: [
+            'Developed tower defense mechanics and enemy AI systems',
+            'Implemented resource management and upgrade systems',
+            'Designed and programmed wave generation and difficulty scaling',
+            'Created UI systems for base management and upgrades',
+            'Balanced gameplay progression and difficulty curves',
+            'Worked closely with the lead programmer on core systems'
+        ],
+        technologies: [
+            'Unity Engine',
+            'C# Programming',
+            'Git Version Control',
+            'Confluence Documentation',
+            'Jira Project Management'
+        ],
+        keyFeatures: [
+            {
+                title: 'Tower Defense Mechanics',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
+                        caption: 'Game HUD and main menu'
+                    }
+                ]
+            },
+            {
+                title: 'Characters & Bosses',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
+                        caption: 'Character selection and boss fights'
+                    }
+                ]
+            }
+        ]
+    },
+    'zero-to-hundred': {
+        title: 'Zero to Hundred',
+        role: 'Game Programmer',
+        year: '2022',
+        tags: ['Unity', '2D Shooter', '4 <i class="fas fa-person fa-solid"></i>', 'PC'],
+        heroImage: 'images/ZeroToHundred/SPLASH-ART_01.png',
+        heroVideo: 'videos/ZeroToHundred/Zero to Hundred - Gameplay.mp4',
+        storeLinks: [
+            {
+                store: 'Itch.io',
+                url: 'https://201games.itch.io/zero-to-hundred',
+                icon: 'fas fa-gamepad'
+            }
+        ],
+        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
+        screenshots: [
+            'images/Wow/wowBosses.png',
+            'images/Wow/wowCharacterSelect.png',
+            'images/Wow/wowGameOver1.png',
+            'images/Wow/wowGameOver2.png',
+            'images/Wow/wowHUD.png',
+            'images/Wow/wowMainMenu.png'
+        ],
+        myRole: [
+            'Developed tower defense mechanics and enemy AI systems',
+            'Implemented resource management and upgrade systems',
+            'Designed and programmed wave generation and difficulty scaling',
+            'Created UI systems for base management and upgrades',
+            'Balanced gameplay progression and difficulty curves',
+            'Worked closely with the lead programmer on core systems'
+        ],
+        technologies: [
+            'Unity Engine',
+            'C# Programming',
+            'Git Version Control',
+            'Confluence Documentation',
+            'Jira Project Management'
+        ],
+        keyFeatures: [
+            {
+                title: 'Tower Defense Mechanics',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
+                        caption: 'Game HUD and main menu'
+                    }
+                ]
+            },
+            {
+                title: 'Characters & Bosses',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
+                        caption: 'Character selection and boss fights'
+                    }
+                ]
+            }
+        ]
+    },
+    
+    'fruitwatchers': {
+        title: 'Fruitwatchers',
+        role: 'Solo Developer',
+        year: '2022',
+        tags: ['Unity', '2D Platformer', 'PC/Android'],
+        heroImage: 'images/Fruitwatchers/ScreenshotLevel6.png',
+        heroVideo: 'videos/Fruitwatchers/fruitwatchers-level1.mp4',
+        storeLinks: [
+            {
+                store: 'Itch.io',
+                url: 'https://nachoperez.itch.io/fruitwatchers',
+                icon: 'fas fa-gamepad'
+            }
+        ],
+        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
+        screenshots: [
+            'images/Wow/wowBosses.png',
+            'images/Wow/wowCharacterSelect.png',
+            'images/Wow/wowGameOver1.png',
+            'images/Wow/wowGameOver2.png',
+            'images/Wow/wowHUD.png',
+            'images/Wow/wowMainMenu.png'
+        ],
+        myRole: [
+            'Developed tower defense mechanics and enemy AI systems',
+            'Implemented resource management and upgrade systems',
+            'Designed and programmed wave generation and difficulty scaling',
+            'Created UI systems for base management and upgrades',
+            'Balanced gameplay progression and difficulty curves',
+            'Worked closely with the lead programmer on core systems'
+        ],
+        technologies: [
+            'Unity Engine',
+            'C# Programming',
+            'Git Version Control',
+            'Confluence Documentation',
+            'Jira Project Management'
+        ],
+        keyFeatures: [
+            {
+                title: 'Tower Defense Mechanics',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
+                        caption: 'Game HUD and main menu'
+                    }
+                ]
+            },
+            {
+                title: 'Characters & Bosses',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
+                        caption: 'Character selection and boss fights'
+                    }
+                ]
+            }
+        ]
+    },
+    'spaceship-crash': {
+        title: 'Spaceship Crash',
+        role: 'Game Developer',
+        year: '2021',
+        tags: ['Unreal Engine', 'Level Design', 'Demo'],
+        heroImage: 'images/OtherProjects/spaceshipcrash-screenshot.png',
+        heroVideo: 'videos/Others/spaceship-crash.mp4',
+        storeLinks: [
+            {
+                store: 'Itch.io',
+                url: 'https://nachoperez.itch.io/spaceship-crash',
+                icon: 'fas fa-gamepad'
+            }
+        ],
+        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
+        screenshots: [
+            'images/Wow/wowBosses.png',
+            'images/Wow/wowCharacterSelect.png',
+            'images/Wow/wowGameOver1.png',
+            'images/Wow/wowGameOver2.png',
+            'images/Wow/wowHUD.png',
+            'images/Wow/wowMainMenu.png'
+        ],
+        myRole: [
+            'Developed tower defense mechanics and enemy AI systems',
+            'Implemented resource management and upgrade systems',
+            'Designed and programmed wave generation and difficulty scaling',
+            'Created UI systems for base management and upgrades',
+            'Balanced gameplay progression and difficulty curves',
+            'Worked closely with the lead programmer on core systems'
+        ],
+        technologies: [
+            'Unity Engine',
+            'C# Programming',
+            'Git Version Control',
+            'Confluence Documentation',
+            'Jira Project Management'
+        ],
+        keyFeatures: [
+            {
+                title: 'Tower Defense Mechanics',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
+                        caption: 'Game HUD and main menu'
+                    }
+                ]
+            },
+            {
+                title: 'Characters & Bosses',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
+                        caption: 'Character selection and boss fights'
+                    }
+                ]
+            }
+        ]
+    },
+    'pirates-lair': {
+        title: 'Pirates Lair',
+        role: 'Game Developer',
+        year: '2021',
+        tags: ['Unity', 'Level Design', 'Demo'],
+        heroImage: 'images/OtherProjects/pirates-lair.jpg',
+        heroVideo: 'videos/Others/pirates-lair.mp4',
+        storeLinks: [
+            {
+                store: 'Itch.io',
+                url: 'https://nachoperez.itch.io/pirates-lair',
+                icon: 'fas fa-gamepad'
+            }
+        ],
+        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
+        screenshots: [
+            'images/Wow/wowBosses.png',
+            'images/Wow/wowCharacterSelect.png',
+            'images/Wow/wowGameOver1.png',
+            'images/Wow/wowGameOver2.png',
+            'images/Wow/wowHUD.png',
+            'images/Wow/wowMainMenu.png'
+        ],
+        myRole: [
+            'Developed tower defense mechanics and enemy AI systems',
+            'Implemented resource management and upgrade systems',
+            'Designed and programmed wave generation and difficulty scaling',
+            'Created UI systems for base management and upgrades',
+            'Balanced gameplay progression and difficulty curves',
+            'Worked closely with the lead programmer on core systems'
+        ],
+        technologies: [
+            'Unity Engine',
+            'C# Programming',
+            'Git Version Control',
+            'Confluence Documentation',
+            'Jira Project Management'
+        ],
+        keyFeatures: [
+            {
+                title: 'Tower Defense Mechanics',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
+                        caption: 'Game HUD and main menu'
+                    }
+                ]
+            },
+            {
+                title: 'Characters & Bosses',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
+                        caption: 'Character selection and boss fights'
+                    }
+                ]
+            }
+        ]
+    },
+    
 };
 
 // Get game parameter from URL
