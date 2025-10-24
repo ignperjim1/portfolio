@@ -2105,6 +2105,7 @@ img {
     border-radius: 8px;
     border: 1px solid rgba(116, 0, 184, 0.3);
     display: block;
+    margin: 0 auto;
 }
 
 .feature-code {
