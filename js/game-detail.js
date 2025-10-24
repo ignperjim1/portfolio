@@ -824,10 +824,10 @@ const gameData = {
                         type: 'text',
                         value: '<a href="https://www.youtube.com/@mixandjam/">Mix and Jam</a> is a Youtube channel dedicated to recreating the most striking and iconic mechanics of video games in Unity.'+
                         'I discovered it and started following its videos, learning how to recreate those mechanics that I had grown up with and that had made me fall in love with video games as a child.'+
-                        '\n\n'+
+                        '<br><br>'+
                         'His channel is great for learning, since it explains how to replicate the different mechanics but he doesn\'t go into great detail either, so that leaves room for the person'+
                         ' who watches the video to try and find out how he has solved a certain problem, just as if it was a class exercise.'+
-                        '\n\n'+
+                        '<br><br>'+
                         'In my opinion they are a great way to learn game programming and get ideas for future projects.'
                     },
                     {
@@ -855,7 +855,7 @@ const gameData = {
                         type: 'text',
                         value: 'Spaceship Crash is the provisional game I gave to one of the first levels I created using Unreal Engine 4.'+
                         'It puts us in the role of the captain of a spaceship that has suffered a problem with the generator and must try to repair it before the ship explodes.'+
-                        '\n\n'+
+                        '<br><br>'+
                         'All the programming was done with Blueprints and the assets can be found for free in the Epic Games Store.'
                     },
                     {
@@ -873,7 +873,7 @@ const gameData = {
                         value: 'Pirate\'s Lair is the provisional game I gave to one of the first levels I created using Unity.'+
                         'It puts us in the role of a treasure hunter in search of the lost treasure of the famous pirate Calico Jack. Before dying, the pirate separated the treasure map'+
                         'into 5 pieces and hid them away.'+
-                        '\n\n'+
+                        '<br><br>'+
                         'All the programming was done with in Unity with C# and almost all the assets were created by me using Maya 3D.'
                     },
                     {
@@ -1085,7 +1085,7 @@ function createContentBlock(block) {
                 container.appendChild(heading);
             }
             const textPara = document.createElement('p');
-            textPara.textContent = block.value;
+            textPara.innerHTML = block.value;
             container.appendChild(textPara);
             break;
             
