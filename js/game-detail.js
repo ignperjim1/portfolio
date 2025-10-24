@@ -659,68 +659,6 @@ const gameData = {
             }
         ]
     },
-    'recreating-mechanics': {
-        title: 'Recreating Videogame Mechanics',
-        role: 'Game Developer',
-        year: '2022 - 2023',
-        tags: ['Unity', 'Demo'],
-        heroImage: 'images/OtherProjects/mechanics-image.png',
-        storeLinks: [],   
-        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
-        screenshots: [
-            'images/Wow/wowBosses.png',
-            'images/Wow/wowCharacterSelect.png',
-            'images/Wow/wowGameOver1.png',
-            'images/Wow/wowGameOver2.png',
-            'images/Wow/wowHUD.png',
-            'images/Wow/wowMainMenu.png'
-        ],
-        myRole: [
-            'Developed tower defense mechanics and enemy AI systems',
-            'Implemented resource management and upgrade systems',
-            'Designed and programmed wave generation and difficulty scaling',
-            'Created UI systems for base management and upgrades',
-            'Balanced gameplay progression and difficulty curves',
-            'Worked closely with the lead programmer on core systems'
-        ],
-        technologies: [
-            'Unity Engine',
-            'C# Programming',
-            'Git Version Control',
-            'Confluence Documentation',
-            'Jira Project Management'
-        ],
-        keyFeatures: [
-            {
-                title: 'Tower Defense Mechanics',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
-                    },
-                    {
-                        type: 'images',
-                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
-                        caption: 'Game HUD and main menu'
-                    }
-                ]
-            },
-            {
-                title: 'Characters & Bosses',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
-                    },
-                    {
-                        type: 'images',
-                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
-                        caption: 'Character selection and boss fights'
-                    }
-                ]
-            }
-        ]
-    },
     'zero-to-hundred': {
         title: 'Zero to Hundred',
         role: 'Game Programmer',
@@ -860,144 +798,94 @@ const gameData = {
             }
         ]
     },
-    'spaceship-crash': {
-        title: 'Spaceship Crash',
+    'other-projects': {
+        title: 'Unfinished projects/Demos',
         role: 'Game Developer',
-        year: '2021',
-        tags: ['Unreal Engine', 'Level Design', 'Demo'],
+        year: '2021 - 2025',
+        tags: ['Unity/Unreal Engine', 'Demo', 'Level Design', 'Gameplay Programming', 'Game Design'],
         heroImage: 'images/OtherProjects/spaceshipcrash-screenshot.png',
-        heroVideo: 'videos/Others/spaceship-crash.mp4',
-        storeLinks: [
-            {
-                store: 'Itch.io',
-                url: 'https://nachoperez.itch.io/spaceship-crash',
-                icon: 'fas fa-gamepad'
-            }
-        ],
-        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
-        screenshots: [
-            'images/Wow/wowBosses.png',
-            'images/Wow/wowCharacterSelect.png',
-            'images/Wow/wowGameOver1.png',
-            'images/Wow/wowGameOver2.png',
-            'images/Wow/wowHUD.png',
-            'images/Wow/wowMainMenu.png'
-        ],
+        description: 'These are a collection of different levels and demos that, for some reason, I have not finished but I think they deserve to be here. Most of them helped me learn both how to program and how to design levels and even some 3D modeling basics.',
         myRole: [
-            'Developed tower defense mechanics and enemy AI systems',
-            'Implemented resource management and upgrade systems',
-            'Designed and programmed wave generation and difficulty scaling',
-            'Created UI systems for base management and upgrades',
-            'Balanced gameplay progression and difficulty curves',
-            'Worked closely with the lead programmer on core systems'
+            'Developed various gameplay mechanics and systems',
+            'Designed and programmed level design and gameplay systems',
+            '3D modeled some of the assets',
         ],
         technologies: [
-            'Unity Engine',
-            'C# Programming',
-            'Git Version Control',
-            'Confluence Documentation',
-            'Jira Project Management'
+            'Unity Engine (Blueprints)',
+            'Unity (C#)',
+            'Maya (3D Modeling)',
+            'Aseprite (Pixel Art)',
         ],
         keyFeatures: [
             {
-                title: 'Tower Defense Mechanics',
+                title: 'Recreating Game Mechanics - Demos',
                 content: [
                     {
                         type: 'text',
-                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
+                        value: '<a href="https://www.youtube.com/@mixandjam/">Mix and Jam</a> is a Youtube channel dedicated to recreating the most striking and iconic mechanics of video games in Unity.'+
+                        'I discovered it and started following its videos, learning how to recreate those mechanics that I had grown up with and that had made me fall in love with video games as a child.'+
+                        '\n\n'+
+                        'His channel is great for learning, since it explains how to replicate the different mechanics but he doesn\'t go into great detail either, so that leaves room for the person'+
+                        ' who watches the video to try and find out how he has solved a certain problem, just as if it was a class exercise.'+
+                        '\n\n'+
+                        'In my opinion they are a great way to learn game programming and get ideas for future projects.'
                     },
                     {
-                        type: 'images',
-                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
-                        caption: 'Game HUD and main menu'
-                    }
+                        type: 'video',
+                        value: 'videos/Others/mario-kingdom-select.mp4',
+                        caption: 'Recreating Kingdom select menu from Super Mario Odyssey'
+                    },
+                    {
+                        type: 'video',
+                        value: 'videos/Others/gow-axe-throw.mp4',
+                        caption: 'Recreating Axe Throw mechanic from God of War (2018)'
+                    },
+                    {
+                        type: 'video',
+                        value: 'videos/Others/celeste-movement.mp4',
+                        caption: 'Recreating Celeste\'s main character moveset and artistic style'
+                    },
+
                 ]
             },
             {
-                title: 'Characters & Bosses',
+                title: 'Spaceship Crash - Unreal Engine Level',
                 content: [
                     {
                         type: 'text',
-                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                        value: 'Spaceship Crash is the provisional game I gave to one of the first levels I created using Unreal Engine 4.'+
+                        'It puts us in the role of the captain of a spaceship that has suffered a problem with the generator and must try to repair it before the ship explodes.'+
+                        '\n\n'+
+                        'All the programming was done with Blueprints and the assets can be found for free in the Epic Games Store.'
                     },
                     {
-                        type: 'images',
-                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
-                        caption: 'Character selection and boss fights'
-                    }
+                        type: 'video',
+                        value: 'videos/Others/spaceship-crash.mp4',
+                        caption: 'Full gameplay video'
+                    },
+                ]
+            },
+            {
+                title: 'Pirate\'s Lair - Unity Level',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Pirate\'s Lair is the provisional game I gave to one of the first levels I created using Unity.'+
+                        'It puts us in the role of a treasure hunter in search of the lost treasure of the famous pirate Calico Jack. Before dying, the pirate separated the treasure map'+
+                        'into 5 pieces and hid them away.'+
+                        '\n\n'+
+                        'All the programming was done with in Unity with C# and almost all the assets were created by me using Maya 3D.'
+                    },
+                    {
+                        type: 'video',
+                        value: 'videos/Others/pirates-lair.mp4',
+                        caption: 'Full gameplay video'
+                    },
                 ]
             }
         ]
     },
-    'pirates-lair': {
-        title: 'Pirates Lair',
-        role: 'Game Developer',
-        year: '2021',
-        tags: ['Unity', 'Level Design', 'Demo'],
-        heroImage: 'images/OtherProjects/pirates-lair.jpg',
-        heroVideo: 'videos/Others/pirates-lair.mp4',
-        storeLinks: [
-            {
-                store: 'Itch.io',
-                url: 'https://nachoperez.itch.io/pirates-lair',
-                icon: 'fas fa-gamepad'
-            }
-        ],
-        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
-        screenshots: [
-            'images/Wow/wowBosses.png',
-            'images/Wow/wowCharacterSelect.png',
-            'images/Wow/wowGameOver1.png',
-            'images/Wow/wowGameOver2.png',
-            'images/Wow/wowHUD.png',
-            'images/Wow/wowMainMenu.png'
-        ],
-        myRole: [
-            'Developed tower defense mechanics and enemy AI systems',
-            'Implemented resource management and upgrade systems',
-            'Designed and programmed wave generation and difficulty scaling',
-            'Created UI systems for base management and upgrades',
-            'Balanced gameplay progression and difficulty curves',
-            'Worked closely with the lead programmer on core systems'
-        ],
-        technologies: [
-            'Unity Engine',
-            'C# Programming',
-            'Git Version Control',
-            'Confluence Documentation',
-            'Jira Project Management'
-        ],
-        keyFeatures: [
-            {
-                title: 'Tower Defense Mechanics',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
-                    },
-                    {
-                        type: 'images',
-                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
-                        caption: 'Game HUD and main menu'
-                    }
-                ]
-            },
-            {
-                title: 'Characters & Bosses',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
-                    },
-                    {
-                        type: 'images',
-                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
-                        caption: 'Character selection and boss fights'
-                    }
-                ]
-            }
-        ]
-    },
+    
     
 };
 
