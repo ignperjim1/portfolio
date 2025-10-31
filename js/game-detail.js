@@ -743,29 +743,16 @@ const gameData = {
                 icon: 'fas fa-gamepad'
             }
         ],
-        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
-        screenshots: [
-            'images/Wow/wowBosses.png',
-            'images/Wow/wowCharacterSelect.png',
-            'images/Wow/wowGameOver1.png',
-            'images/Wow/wowGameOver2.png',
-            'images/Wow/wowHUD.png',
-            'images/Wow/wowMainMenu.png'
-        ],
+        description: 'Fruitwatchers is a friendly and colorful 2D platformer where you play as an apprentice of Fruitwatcher, whose task will be to rescue all the fruits lost all around the different worlds.\nThe game contains 5 different worlds to visit (plus special worlds only available after finishing the game and rescuing all the fruits), more than 25 enemies and traps and 4 different characters with unique abilities.\nIt\'s heavily inspired by classic platformers like Super Mario Bros.',
         myRole: [
-            'Developed tower defense mechanics and enemy AI systems',
-            'Implemented resource management and upgrade systems',
-            'Designed and programmed wave generation and difficulty scaling',
-            'Created UI systems for base management and upgrades',
-            'Balanced gameplay progression and difficulty curves',
-            'Worked closely with the lead programmer on core systems'
+            'Design of the game\'s mechanics and systems (e.g. rewards, progression, enemy AI, etc.)',
+            'Design of the different levels based on existing assets',
+            'All scripting of the game',
+            'Modification of assets using Aseprite for the pixel art (almost all assets were reused from other artists)'
         ],
         technologies: [
-            'Unity Engine',
-            'C# Programming',
-            'Git Version Control',
-            'Confluence Documentation',
-            'Jira Project Management'
+            'Unity (C#)',
+            'Aseprite (Pixel Art)',
         ],
         keyFeatures: [
             {
