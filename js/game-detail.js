@@ -594,7 +594,7 @@ const gameData = {
         title: 'Engine of Time',
         role: 'Game Programmer',
         year: '2022',
-        tags: ['Unity', 'Puzzles', '3 <i class="fas fa-person fa-solid"></i>', 'PC'],
+        tags: ['Unity', 'Puzzles', 'Game Jam (72h) - Team of 3', 'PC'],
         heroImage: 'images/EngineOfTime/engineoftime-icon.png',
         heroVideo: 'images/EngineOfTime/engine-of-time.mp4',
         storeLinks: [
@@ -604,7 +604,11 @@ const gameData = {
                 icon: 'fas fa-gamepad'
             }
         ],
-        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
+        description: 'Engine of Time is a maze-based puzzle game with mechanics inspired by the passing of time and day and night cycles,'+
+        ' simulating the inside of a clock mechanism. I created it in collaboration with 3 other friends. <br><br>Night and day take place because'+
+        ' of a time machine, that can\'t work properly without the small gears that compose it. The player must guide the gears across the maze in order'+
+        ' to make the days to happen correctly in time.<br><br> The theme for this jam was <span style="color: #48bfe3">"Night and day cycle"</span> and'+
+        ' we had 72h to create the game.',
         screenshots: [
             'images/Wow/wowBosses.png',
             'images/Wow/wowCharacterSelect.png',
@@ -614,12 +618,8 @@ const gameData = {
             'images/Wow/wowMainMenu.png'
         ],
         myRole: [
-            'Developed tower defense mechanics and enemy AI systems',
-            'Implemented resource management and upgrade systems',
-            'Designed and programmed wave generation and difficulty scaling',
-            'Created UI systems for base management and upgrades',
-            'Balanced gameplay progression and difficulty curves',
-            'Worked closely with the lead programmer on core systems'
+            'Collaboration in the design of the idea and mechanics of the game, as well as maze layouts and puzzles',
+            'Implementation of all the coding of the game as the only programmer in the team, including the logic of the procedural generated mazes'
         ],
         technologies: [
             'Unity Engine',
@@ -630,17 +630,55 @@ const gameData = {
         ],
         keyFeatures: [
             {
-                title: 'Tower Defense Mechanics',
+                title: 'Game Idea, Basics and More Info',
                 content: [
                     {
                         type: 'text',
-                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
+                        value: 'With the theme of the jam in mind, we held a couple of meetings to discuss what our game would be about.'+
+                        '<br>We finally came up with the idea of a 2D maze puzzle game that mixed the concept of the passing of time and day and night cycles.'+
+                        'The maze has a lighted area that represents the day and a dark area that represents the night. Both rotate around the maze simulating the passing of time.'+
+                        'Obstacles and traps in the maze behave differently depending if they are in the day or night area. <br><br>'+
+                        'The objective of the game is to reach the center of the maze before a full day has passed (that means, when the lighted area has rotated 360 degrees around the maze).'+
+                        '<br>This way, we have 12 different mazes with increasing difficulty. Each time players finish a maze, they will be transported to the next one, which will be more complicated '+
+                        'and will have a greater number of obstacles but they will have more time to complete it.'
                     },
                     {
                         type: 'images',
-                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
-                        caption: 'Game HUD and main menu'
-                    }
+                        value: ['images/EngineofTime/laberintodia.png', 'images/EngineofTime/laberintonoche.png'],
+                        caption: 'Day/Night areas in the maze',
+                        columns: 2
+                    },
+                    {
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>Visuals</b></span><br><br>'+
+                        '- For the aesthetic, since we wanted to represent the passing of time and day and night cycles, we decided to use the insides of a clock'+
+                        ' as a setting for our mazes, thus taking a reference to steampunk aesthetics. <br><br>'+
+                        '- For the character, we chose an endearing and friendly representation of a gear, and for the obstacles we relied on things that resembled'+
+                        ' the insides of a machine, like nuts, bolts, sliding walls, rolling bars, etc.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/EngineofTime/draft-1.png', 'images/EngineofTime/draft-2.png'],
+                        caption: 'Drafts of the game',
+                        columns: 2
+                    },
+                    {
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>More info about the game</b></span><br><br>'+
+                        '- The level selector consists in the main platform of the game, with each level representing our progress throughout the game. The player'+
+                        ' can turn it around with the mouse like a wheel to choose different levels (only if he has completed that level before). <br><br>'+
+                        '- In game, players have a preparation time where they can take a look at the entire maze and plan their path before starting the level.'+
+                        ' When this time expires, the camera is focused on the character and vision is greatly reduced.<br><br>'+
+                        '- Time ends if the light gives a full rotation around the maze, as if a whole day has passed. During the game, on the bottom right '+
+                        ' corner players can find a little compass that hints them where the light and night zones are currently, so to help keep track of the time they have left.<br><br>'+
+                        '- Different obstacles react to day and night differently. Some of them will move or spin faster in the night, or viceversa.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/EngineofTime/visionprevia.png', 'images/EngineofTime/selector-nivel.png'],
+                        caption: 'Maze layout and level selector',
+                        columns: 2
+                    },
                 ]
             },
             {
