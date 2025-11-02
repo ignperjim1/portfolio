@@ -673,22 +673,15 @@ const gameData = {
                 icon: 'fas fa-gamepad'
             }
         ],
-        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
+        description: 'Zero to Hundred is a game I created in collaboration with 3 other friends for the Indie Spain Jam 2022, where we had a week to create a game. The jam theme was <color="#48bfe3">"From 0 to 100"</color> and the optional subtheme was <color="#48bfe3">"Replayability"</color>.<br><br>The game is a 2D shooter where the player controls a mobile phone lost in space that must remain next to a charging station until its battery is refilled, all this while surviving waves of enemies in the form of mobile apps that will try to stop it. <br><br>It was my first jam and, although we didn\'t win it definitely was an experience I hope I can repeat again some time!',
         screenshots: [
-            'images/Wow/wowBosses.png',
-            'images/Wow/wowCharacterSelect.png',
-            'images/Wow/wowGameOver1.png',
-            'images/Wow/wowGameOver2.png',
-            'images/Wow/wowHUD.png',
-            'images/Wow/wowMainMenu.png'
+            'images/Zerotohundred/SPLASH-ART_01.png',
+            'images/Zerotohundred/cobp.png',
+            'images/Zerotohundred/Moviles.png',
         ],
         myRole: [
-            'Developed tower defense mechanics and enemy AI systems',
-            'Implemented resource management and upgrade systems',
-            'Designed and programmed wave generation and difficulty scaling',
-            'Created UI systems for base management and upgrades',
-            'Balanced gameplay progression and difficulty curves',
-            'Worked closely with the lead programmer on core systems'
+            'Collaboration in the design of the idea and mechanics of the game, enemies and objectives',
+            'Implementation of all the coding of the game as the only programmer in the team'
         ],
         technologies: [
             'Unity Engine',
@@ -697,36 +690,6 @@ const gameData = {
             'Confluence Documentation',
             'Jira Project Management'
         ],
-        keyFeatures: [
-            {
-                title: 'Tower Defense Mechanics',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
-                    },
-                    {
-                        type: 'images',
-                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
-                        caption: 'Game HUD and main menu'
-                    }
-                ]
-            },
-            {
-                title: 'Characters & Bosses',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
-                    },
-                    {
-                        type: 'images',
-                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
-                        caption: 'Character selection and boss fights'
-                    }
-                ]
-            }
-        ]
     },
     
     'fruitwatchers': {
