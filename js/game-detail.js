@@ -663,7 +663,7 @@ const gameData = {
         title: 'Zero to Hundred',
         role: 'Game Programmer',
         year: '2022',
-        tags: ['Unity', '2D Shooter', '4 <i class="fas fa-person fa-solid"></i>', 'PC'],
+        tags: ['Unity', '2D Shooter', 'Game Jam (48h) - Team of 4', 'PC'],
         heroImage: 'images/ZeroToHundred/SPLASH-ART_01.png',
         heroVideo: 'videos/ZeroToHundred/Zero to Hundred - Gameplay.mp4',
         storeLinks: [
@@ -673,7 +673,7 @@ const gameData = {
                 icon: 'fas fa-gamepad'
             }
         ],
-        description: 'Zero to Hundred is a game I created in collaboration with 3 other friends for the Indie Spain Jam 2022, where we had a week to create a game. The jam theme was <color="#48bfe3">"From 0 to 100"</color> and the optional subtheme was <color="#48bfe3">"Replayability"</color>.<br><br>The game is a 2D shooter where the player controls a mobile phone lost in space that must remain next to a charging station until its battery is refilled, all this while surviving waves of enemies in the form of mobile apps that will try to stop it. <br><br>It was my first jam and, although we didn\'t win it definitely was an experience I hope I can repeat again some time!',
+        description: 'Zero to Hundred is a game I created in collaboration with 3 other friends for the Indie Spain Jam 2022, where we had a week to create a game. The jam theme was <span style="color: #48bfe3">"From 0 to 100"</span> and the optional subtheme was <span style="color: #48bfe3">"Replayability"</span>.<br><br>The game is a 2D shooter where the player controls a mobile phone lost in space that must remain next to a charging station until its battery is refilled, all this while surviving waves of enemies in the form of mobile apps that will try to stop it. <br><br>It was my first jam and, although we didn\'t win it definitely was an experience I hope I can repeat again some time!',
         screenshots: [
             'images/Zerotohundred/SPLASH-ART_01.png',
             'images/Zerotohundred/cobp.png',
@@ -988,13 +988,40 @@ function populatePage(game) {
     });
     roleContainer.innerHTML += '</ul>';
     
+    // Update screenshots
+    const screenshotsSection = document.getElementById('screenshots-section');
+    const screenshotsContainer = document.getElementById('game-screenshots');
+    if (game.screenshots && game.screenshots.length > 0) {
+        screenshotsSection.style.display = 'block';
+        screenshotsContainer.innerHTML = '';
+        game.screenshots.forEach(screenshot => {
+            const img = document.createElement('img');
+            img.src = screenshot;
+            img.alt = game.title;
+            img.className = 'screenshot';
+            img.addEventListener('click', () => {
+                // Simple modal/lightbox functionality could be added here
+                window.open(screenshot, '_blank');
+            });
+            screenshotsContainer.appendChild(img);
+        });
+    } else {
+        screenshotsSection.style.display = 'none';
+    }
+    
     // Update key features with expandable dropdowns
+    const featuresSection = document.getElementById('key-features-section');
     const featuresContainer = document.getElementById('key-features');
-    featuresContainer.innerHTML = '';
-    game.keyFeatures.forEach((feature, index) => {
-        const featureElement = createFeatureElement(feature, index);
-        featuresContainer.appendChild(featureElement);
-    });
+    if (game.keyFeatures && game.keyFeatures.length > 0) {
+        featuresSection.style.display = 'block';
+        featuresContainer.innerHTML = '';
+        game.keyFeatures.forEach((feature, index) => {
+            const featureElement = createFeatureElement(feature, index);
+            featuresContainer.appendChild(featureElement);
+        });
+    } else {
+        featuresSection.style.display = 'none';
+    }
 }
 
 // Create expandable feature element
