@@ -596,7 +596,7 @@ const gameData = {
         year: '2022',
         tags: ['Unity', 'Puzzles', 'Game Jam (72h) - Team of 3', 'PC'],
         heroImage: 'images/EngineOfTime/engineoftime-icon.png',
-        heroVideo: 'images/EngineOfTime/engine-of-time.mp4',
+        heroVideo: 'videos/EngineOfTime/engine-of-time.mp4',
         storeLinks: [
             {
                 store: 'Itch.io',
@@ -761,7 +761,7 @@ const gameData = {
                 content: [
                     {
                         type: 'text',
-                        value: 'The idea of the game was predefined by the assets that I had to use. This had its positive part, since using existing sprites and animations were going to save me a tremendous amount of time, but at the same time I was constricted when it came to conceiving how I wanted the game to be. <br>Ultimately, I decided to stick with the resources I had and make a classic platformer. I used the animations the enemies and characters already had to establish their behavior and attacks, I added unique abilities to the 4 unlockable characters so that only a certain character could access a certain area of a level to grab a hidden fruit. I also created the different worlds from the pixel art assets of various artists, trying to make them as varied but cohesive as possible.'
+                        value: 'The idea of the game was predefined by the assets that I had to use. This had its positive part, since using existing sprites and animations were going to save me a tremendous amount of time, but at the same time I was constricted when it came to conceiving how I wanted the game to be. <br><br>Ultimately, I decided to stick with the resources I had and make a classic platformer. I used the animations the enemies and characters already had to establish their behavior and attacks, I added unique abilities to the 4 unlockable characters so that only a certain character could access a certain area of a level to grab a hidden fruit. I also created the different worlds from the pixel art assets of various artists, trying to make them as varied but cohesive as possible.'
                     },
                     {
                         type: 'images',
@@ -782,7 +782,7 @@ const gameData = {
                 content: [
                     {
                         type: 'text',
-                        value: 'As development of the game progressed, many of the things I wanted to implement changed. <br><br> - During conception phase, I had in mind to implement a local multiplayer for up to 4 players, similar to the ones found in the most recent 2D Super Mario games, which I couldn\'t do because I didn\'t have the necessary experience at the time.<br>br>- Since I decided not to implement the local multiplayer, I wanted to do something special and I decided to release the game simultaneously on both PC and Android devices. That meant modifying certain game features, as well as almost the entire in-game interface.'
+                        value: 'As development of the game progressed, many of the things I wanted to implement changed. <br><br> - During conception phase, I had in mind to implement a local multiplayer for up to 4 players, similar to the ones found in the most recent 2D Super Mario games, which I couldn\'t do because I didn\'t have the necessary experience at the time.<br><br>- Since I decided not to implement the local multiplayer, I wanted to do something special and I decided to release the game simultaneously on both PC and Android devices. That meant modifying certain game features, as well as almost the entire in-game interface.'
                     },
                     {
                         type: 'images',
