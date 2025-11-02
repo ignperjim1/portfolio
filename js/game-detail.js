@@ -607,16 +607,8 @@ const gameData = {
         description: 'Engine of Time is a maze-based puzzle game with mechanics inspired by the passing of time and day and night cycles,'+
         ' simulating the inside of a clock mechanism. I created it in collaboration with 3 other friends. <br><br>Night and day take place because'+
         ' of a time machine, that can\'t work properly without the small gears that compose it. The player must guide the gears across the maze in order'+
-        ' to make the days to happen correctly in time.<br><br> The theme for this jam was <span style="color: #48bfe3">"Night and day cycle"</span> and'+
+        ' to make the days to happen correctly in time.<br><br> The theme for this jam was <span style="color: #48bfe3">Night and day cycle</span> and'+
         ' we had 72h to create the game.',
-        screenshots: [
-            'images/Wow/wowBosses.png',
-            'images/Wow/wowCharacterSelect.png',
-            'images/Wow/wowGameOver1.png',
-            'images/Wow/wowGameOver2.png',
-            'images/Wow/wowHUD.png',
-            'images/Wow/wowMainMenu.png'
-        ],
         myRole: [
             'Collaboration in the design of the idea and mechanics of the game, as well as maze layouts and puzzles',
             'Implementation of all the coding of the game as the only programmer in the team, including the logic of the procedural generated mazes'
@@ -711,7 +703,7 @@ const gameData = {
                 icon: 'fas fa-gamepad'
             }
         ],
-        description: 'Zero to Hundred is a game I created in collaboration with 3 other friends for the Indie Spain Jam 2022, where we had a week to create a game. The jam theme was <span style="color: #48bfe3">"From 0 to 100"</span> and the optional subtheme was <span style="color: #48bfe3">"Replayability"</span>.<br><br>The game is a 2D shooter where the player controls a mobile phone lost in space that must remain next to a charging station until its battery is refilled, all this while surviving waves of enemies in the form of mobile apps that will try to stop it. <br><br>It was my first jam and, although we didn\'t win it definitely was an experience I hope I can repeat again some time!',
+        description: 'Zero to Hundred is a game I created in collaboration with 3 other friends for the Indie Spain Jam 2022, where we had a week to create a game. The jam theme was <span style="color: #48bfe3">From 0 to 100</span> and the optional subtheme was <span style="color: #48bfe3">Replayability</span>.<br><br>The game is a 2D shooter where the player controls a mobile phone lost in space that must remain next to a charging station until its battery is refilled, all this while surviving waves of enemies in the form of mobile apps that will try to stop it. <br><br>It was my first jam and, although we didn\'t win it definitely was an experience I hope I can repeat again some time!',
         screenshots: [
             'images/Zerotohundred/SPLASH-ART_01.png',
             'images/Zerotohundred/cobp.png',
