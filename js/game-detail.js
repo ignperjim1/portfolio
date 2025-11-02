@@ -756,30 +756,37 @@ const gameData = {
         ],
         keyFeatures: [
             {
-                title: 'Tower Defense Mechanics',
+                title: 'Game Idea & Basics',
                 content: [
                     {
                         type: 'text',
-                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
+                        value: 'The idea of the game was predefined by the assets that I had to use. This had its positive part, since using existing sprites and animations were going to save me a tremendous amount of time, but at the same time I was constricted when it came to conceiving how I wanted the game to be. <br>Ultimately, I decided to stick with the resources I had and make a classic platformer. I used the animations the enemies and characters already had to establish their behavior and attacks, I added unique abilities to the 4 unlockable characters so that only a certain character could access a certain area of a level to grab a hidden fruit. I also created the different worlds from the pixel art assets of various artists, trying to make them as varied but cohesive as possible.'
                     },
                     {
                         type: 'images',
-                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
-                        caption: 'Game HUD and main menu'
+                        value: ['images/Fruitwatchers/Gif1.gif',
+                            'images/Fruitwatchers/Screenshot1.png',
+                            'images/Fruitwatchers/Gif2.gif',
+                            'images/Fruitwatchers/Screenshot2.png',
+                            'images/Fruitwatchers/Gif3.gif',
+                            'images/Fruitwatchers/ScreenshotLevel6.png',
+                            'images/Fruitwatchers/Gif4.gif',
+                            'images/Fruitwatchers/ScreenshotLevel7.png',],
                     }
                 ]
             },
             {
-                title: 'Characters & Bosses',
+                title: 'Changes during development',
                 content: [
                     {
                         type: 'text',
-                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                        value: 'As development of the game progressed, many of the things I wanted to implement changed. <br><br> - During conception phase, I had in mind to implement a local multiplayer for up to 4 players, similar to the ones found in the most recent 2D Super Mario games, which I couldn\'t do because I didn\'t have the necessary experience at the time.<br>br>- Since I decided not to implement the local multiplayer, I wanted to do something special and I decided to release the game simultaneously on both PC and Android devices. That meant modifying certain game features, as well as almost the entire in-game interface.'
                     },
                     {
                         type: 'images',
-                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
-                        caption: 'Character selection and boss fights'
+                        value: ['images/Fruitwatchers/ScreenshotAndroid1.png', 'images/Fruitwatchers/ScreenshotAndroid2.png', 
+                            'images/Fruitwatchers/ScreenshotAndroid3.png', 'images/Fruitwatchers/ScreenshotAndroid4.png'],
+                        caption: 'Changes in the in-game interface'
                     }
                 ]
             }
