@@ -772,6 +772,7 @@ const gameData = {
                             'images/Fruitwatchers/ScreenshotLevel6.png',
                             'images/Fruitwatchers/Gif4.gif',
                             'images/Fruitwatchers/ScreenshotLevel7.png',],
+                        columns: 2
                     }
                 ]
             },
@@ -786,7 +787,8 @@ const gameData = {
                         type: 'images',
                         value: ['images/Fruitwatchers/ScreenshotAndroid1.png', 'images/Fruitwatchers/ScreenshotAndroid2.png', 
                             'images/Fruitwatchers/ScreenshotAndroid3.png', 'images/Fruitwatchers/ScreenshotAndroid4.png'],
-                        caption: 'Changes in the in-game interface'
+                        caption: 'Changes in the in-game interface',
+                        columns: 2
                     }
                 ]
             }
