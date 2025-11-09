@@ -550,16 +550,15 @@ const gameData = {
             'images/Wow/wowMainMenu.png'
         ],
         myRole: [
-            'Developed tower defense mechanics and enemy AI systems',
-            'Implemented resource management and upgrade systems',
-            'Designed and programmed wave generation and difficulty scaling',
-            'Created UI systems for base management and upgrades',
-            'Balanced gameplay progression and difficulty curves',
-            'Worked closely with the lead programmer on core systems'
+            'Collaboration in the design of the idea and mechanics of the game, as well as the worldbuilding and the narrative',
+            'Implementation of all the coding of the game, from the multiplayer to the combat system',
+            'Testing and correction of all the bugs found during development'
         ],
         technologies: [
             'Unity Engine',
             'C# Programming',
+            'Unreal Engine',
+            'Unreal Engine Blueprints',
             'Git Version Control',
             'Confluence Documentation',
             'Jira Project Management'
