@@ -528,14 +528,19 @@ const gameData = {
     },
     'shatraj': {
         title: 'Shatraj',
-        company: 'Kometasoft S.L.',
         role: 'Lead Game Programmer',
         year: '2022 - 2024',
-        tags: ['Unreal Engine', '3D Chess Game', 'Turn-Based RPG combat', '8 <i class="fas fa-person fa-solid"></i>', 'PC'],
-        heroImage: 'images/Shatraj/shatraj-wallpaper.png',
+        tags: ['Unreal Engine & Unity', '3D Chess Game', 'Turn-Based RPG combat', 'Cancelled project - Team of 8', 'PC'],
         heroVideo: 'videos/Shatraj/shatraj-gameplay.mp4',
+        heroVideoSubtitle: 'WARNING - Although only one screen is shown in the video, this is a local multiplayer game, so another player is controlling the opposing pieces on a different screen.',
         storeLinks: [],
-        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
+        description: 'Shatraj is a cancelled project developed by the team of 201 Games, a little indie studio formed by 7 other friends and me. '+
+        '\nThis is a multiplayer game where 2 players fight each other in a match that mixes the basics of a normal chess game with Turn-Based RPG '+
+        'combat and components like stats, weapons, magic spells, etc. We as a team did an incredible job with the worldbuilding and the narrative, '+
+        'but after 2 years working on the game we had to cancel it since we didn\'t have the resources and time to keep developing such a complex title in our free time.'+
+        '\n\nHowever, the game was at an advanced point of development and we even introduced it to the public at Gamepolis, a famous videogame fair celebrated in '+
+        'Málaga (Spain). We were able to implement local multiplayer and we wanted to implement online multiplayer for the end of 2024, but we realized too late '+
+        'that we had embarked on a task that was beyond us in complexity and scope.',
         screenshots: [
             'images/Wow/wowBosses.png',
             'images/Wow/wowCharacterSelect.png',
@@ -636,7 +641,7 @@ const gameData = {
                     },
                     {
                         type: 'images',
-                        value: ['images/EngineofTime/laberintodia.png', 'images/EngineofTime/laberintonoche.png'],
+                        value: ['images/EngineOfTime/laberintodia.png', 'images/EngineOfTime/laberintonoche.png'],
                         caption: 'Day/Night areas in the maze',
                         columns: 2
                     },
@@ -650,7 +655,7 @@ const gameData = {
                     },
                     {
                         type: 'images',
-                        value: ['images/EngineofTime/draft-1.png', 'images/EngineofTime/draft-2.png'],
+                        value: ['images/EngineOfTime/draft-1.png', 'images/EngineOfTime/draft-2.png'],
                         caption: 'Drafts of the game',
                         columns: 2
                     },
@@ -667,26 +672,12 @@ const gameData = {
                     },
                     {
                         type: 'images',
-                        value: ['images/EngineofTime/visionprevia.png', 'images/EngineofTime/selector-nivel.png'],
+                            value: ['images/EngineOfTime/visionprevia.png', 'images/EngineOfTime/selector-nivel.png'],
                         caption: 'Maze layout and level selector',
                         columns: 2
                     },
                 ]
             },
-            {
-                title: 'Characters & Bosses',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
-                    },
-                    {
-                        type: 'images',
-                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
-                        caption: 'Character selection and boss fights'
-                    }
-                ]
-            }
         ]
     },
     'zero-to-hundred': {
@@ -918,6 +909,10 @@ function populatePage(game) {
             const overlayId = `hero-play-overlay-${game.id}`;
             
             // Create video element with custom play button overlay
+            let subtitleHtml = '';
+            if (game.heroVideoSubtitle) {
+                subtitleHtml = `<p class="hero-video-subtitle">${game.heroVideoSubtitle}</p>`;
+            }
             heroContainer.innerHTML = `
                 <div class="hero-video-container">
                     <video controls class="hero-video" id="${videoId}">
@@ -931,6 +926,7 @@ function populatePage(game) {
                         <p class="play-text">Click to play</p>
                     </div>
                 </div>
+                ${subtitleHtml}
             `;
 
             // Use setTimeout to ensure elements are rendered
