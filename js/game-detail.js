@@ -535,10 +535,10 @@ const gameData = {
         heroVideoSubtitle: 'WARNING - Although only one screen is shown in the video, this is a local multiplayer game, so another player is controlling the opposing pieces on a different screen.',
         storeLinks: [],
         description: 'Shatraj is a cancelled project developed by the team of 201 Games, a little indie studio formed by 7 other friends and me. '+
-        '\nThis is a multiplayer game where 2 players fight each other in a match that mixes the basics of a normal chess game with Turn-Based RPG '+
+        '<br>This is a multiplayer game where 2 players fight each other in a match that mixes the basics of a normal chess game with Turn-Based RPG '+
         'combat and components like stats, weapons, magic spells, etc. We as a team did an incredible job with the worldbuilding and the narrative, '+
         'but after 2 years working on the game we had to cancel it since we didn\'t have the resources and time to keep developing such a complex title in our free time.'+
-        '\n\nHowever, the game was at an advanced point of development and we even introduced it to the public at Gamepolis, a famous videogame fair celebrated in '+
+        '<br><br>However, the game was at an advanced point of development and we even introduced it to the public at Gamepolis, a famous videogame fair celebrated in '+
         'Málaga (Spain). We were able to implement local multiplayer and we wanted to implement online multiplayer for the end of 2024, but we realized too late '+
         'that we had embarked on a task that was beyond us in complexity and scope.',
         screenshots: [
