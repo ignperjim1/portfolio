@@ -499,16 +499,15 @@ const gameData = {
                         type: 'text',
                         value: '<span style="color: #48bfe3"><b>Weapons</b></span><br><br>'+
                         'We included a lot of weapons in the game and we wanted to make each weapon feel different from the rest, without being unbalanced. There are automatic weapons, semiautomatic weapons, throwable weapons like grenades, melee weapons'+
-                        ' (like a baseball bat), powerful weapons that need to cool off from time to time (like a minigun). <br><br>'+
+                        ' (like a baseball bat), powerful weapons that need to cool off from time to time (like a minigun). <br>'+
                         'We also had what we called "joke weapons", that were weapons that did nothing by theirselves , like a throwable rubber duck, but when players pick up a potion from the ground these weapons become very powerful - in the case '+
                         'of the rubber duck, a Frankenstein-like duck appears and destroys everything. <br><br>'+
                         'Weapons have their own stats, which can be consulted and upgraded using coins in the Weapon Select Window in the Main Menu. These stats are: Damage, Fire Rate and Bullet Speed.'
                     },
                     {
-                        type: 'images',
-                        value: ['images/EngineOfTime/draft-1.png', 'images/EngineOfTime/draft-2.png'],
-                        caption: 'Drafts of the game',
-                        columns: 2
+                        type: 'video',
+                        value: 'videos/Wow/gow-axe-throw.mp4',
+                        caption: 'Recreating Axe Throw mechanic from God of War (2018)'
                     },
                 ]
             },
