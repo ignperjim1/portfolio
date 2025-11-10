@@ -488,21 +488,60 @@ const gameData = {
         ],
         keyFeatures: [
             {
-                title: 'Tower Defense Mechanics',
+                title: 'Game Mechanics',
                 content: [
                     {
                         type: 'text',
-                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
+                        value: 'To control the character, players can use the typical control structure of a Mobile Top Down Shooter: with the left thumb they move the character and with the right thumb they aim, shoot and use abilities and objects.'+
+                        ' When shooting, players can drag the right joystick to aim where they want to shoot - or hold it down without dragging to auto-aim. Players can also roll with a special button, that allows them to dodge bullets and other hazards.'
+                    },
+                    {
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>Weapons</b></span><br><br>'+
+                        'We included a lot of weapons in the game and we wanted to make each weapon feel different from the rest, without being unbalanced. There are automatic weapons, semiautomatic weapons, throwable weapons like grenades, melee weapons'+
+                        ' (like a baseball bat), powerful weapons that need to cool off from time to time (like a minigun). <br><br>'+
+                        'We also had what we called "joke weapons", that were weapons that did nothing by theirselves , like a throwable rubber duck, but when players pick up a potion from the ground these weapons become very powerful - in the case '+
+                        'of the rubber duck, a Frankenstein-like duck appears and destroys everything. <br><br>'+
+                        'Weapons have their own stats, which can be consulted and upgraded using coins in the Weapon Select Window in the Main Menu. These stats are: Damage, Fire Rate and Bullet Speed.'
                     },
                     {
                         type: 'images',
-                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
-                        caption: 'Game HUD and main menu'
+                        value: ['images/EngineOfTime/draft-1.png', 'images/EngineOfTime/draft-2.png'],
+                        caption: 'Drafts of the game',
+                        columns: 2
+                    },
+                ]
+            },
+            {
+                title: 'Waves Mode',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
+                        caption: 'Character selection and boss fights'
                     }
                 ]
             },
             {
-                title: 'Characters & Bosses',
+                title: 'History Mode',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
+                        caption: 'Character selection and boss fights'
+                    }
+                ]
+            },
+            {
+                title: 'Menu & In-Game UI',
                 content: [
                     {
                         type: 'text',
