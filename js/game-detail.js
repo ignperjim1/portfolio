@@ -462,35 +462,26 @@ const gameData = {
         company: 'Kometasoft S.L.',
         role: 'Junior Game Developer',
         year: '2021 - 2022',
-        tags: ['Unity', 'Arcade Shooter', 'Android', 'Cancelled'],
-        heroImage: 'images/Wow/wow-icon.png',
+        tags: ['Unity', '2D Hero Shooter', 'Android', 'Cancelled'],
         storeLinks: [
             {
-                store: 'Itch.io',
-                url: 'https://kometasoft.itch.io/wall-of-war',
-                icon: 'fas fa-gamepad'
+                store: 'Project Cancelled',
+                url: '',
+                icon: 'fas fa-ban'
             }
         ],
-        description: 'Wall of War was a tower defense style arcade shooter where players defended their base against waves of enemies. The game featured strategic placement of defensive structures and resource management.',
-        screenshots: [
-            'images/Wow/wowBosses.png',
-            'images/Wow/wowCharacterSelect.png',
-            'images/Wow/wowGameOver1.png',
-            'images/Wow/wowGameOver2.png',
-            'images/Wow/wowHUD.png',
-            'images/Wow/wowMainMenu.png'
-        ],
+        heroVideo: 'videos/Wow/wow-trailer.mp4',
+        heroVideoSubtitle: 'WARNING - Some of the text in screenshots and videos may not be translated because they were taken at an early stage of development.',
+        description: 'Wall of War was a 2D hero shooter game in which players face other opponents in a 1v1 arena or defeat waves of different enemies and bosses in a Survival Campaign mode. The game includes '+
+        'a incredibly huge variety of characters, each with its own stats and special abilities. <br>The game shines for its frenetic and crazy gameplay and its inherent humor.',
         myRole: [
-            'Developed tower defense mechanics and enemy AI systems',
-            'Implemented resource management and upgrade systems',
-            'Designed and programmed wave generation and difficulty scaling',
-            'Created UI systems for base management and upgrades',
-            'Balanced gameplay progression and difficulty curves',
-            'Worked closely with the lead programmer on core systems'
+            'Design, balance and implementation of several aspects of the game, including characters, levels, weapons...',
+            'Testing and correction of all the bugs found during development',
+            'Support of the lead programmer of the team, implementing features and mechanics',
+            'Design and implementation of the first steps of the game (including tutorial games), changes in the UI, rewards and progression systems...',
         ],
         technologies: [
-            'Unity Engine',
-            'C# Programming',
+            'Unity Engine (C# Programming)',
             'Git Version Control',
             'Confluence Documentation',
             'Jira Project Management'
@@ -541,55 +532,52 @@ const gameData = {
         '<br><br>However, the game was at an advanced point of development and we even introduced it to the public at Gamepolis, a famous videogame fair celebrated in '+
         'Málaga (Spain). We were able to implement local multiplayer and we wanted to implement online multiplayer for the end of 2024, but we realized too late '+
         'that we had embarked on a task that was beyond us in complexity and scope.',
-        screenshots: [
-            'images/Wow/wowBosses.png',
-            'images/Wow/wowCharacterSelect.png',
-            'images/Wow/wowGameOver1.png',
-            'images/Wow/wowGameOver2.png',
-            'images/Wow/wowHUD.png',
-            'images/Wow/wowMainMenu.png'
-        ],
         myRole: [
             'Collaboration in the design of the idea and mechanics of the game, as well as the worldbuilding and the narrative',
             'Implementation of all the coding of the game, from the multiplayer to the combat system',
             'Testing and correction of all the bugs found during development'
         ],
         technologies: [
-            'Unity Engine',
-            'C# Programming',
-            'Unreal Engine',
-            'Unreal Engine Blueprints',
+            'Unity Engine (C# Programming)',
+            'Unreal Engine (Blueprints)',
             'Git Version Control',
             'Confluence Documentation',
             'Jira Project Management'
         ],
         keyFeatures: [
             {
-                title: 'Tower Defense Mechanics',
+                title: 'Working as a Lead',
                 content: [
                     {
                         type: 'text',
-                        value: 'Classic tower defense gameplay with strategic tower placement and enemy pathing systems. Features multiple tower types and upgrade paths.'
+                        value: 'My role in the development of this game was Lead Programmer. I was responsible for all the coding of the game, from the initial prototypes to the final touches before presenting the game at Gamepolis: the logic of the AI, '+
+                        'the mechanics of the chess game, the Turn-Based combat system with magic and synergies, all the UI, the multiplayer system, etc.'+
+                        '<br><br>It was also my responsability to supervise the rest of the programming team, which varied in number throughout the development (sometimes it was just me, sometimes we were up to 5 programmers), as well as '+
+                        'teaching new people the codebase and the game mechanics. I\'m not going to lie, it was really stressful sometimes!'
                     },
-                    {
-                        type: 'images',
-                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowMainMenu.png'],
-                        caption: 'Game HUD and main menu'
-                    }
                 ]
             },
             {
-                title: 'Characters & Bosses',
+                title: 'From Unity to Unreal Engine',
                 content: [
                     {
                         type: 'text',
-                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                        value: 'Although at first wer started developing the game in Unity, after a year we decided to make the leap to Unreal Engine. This allowed us to redo from scratch aspects of the game that we weren\'t '+
+                        'quite fond of and also tweak others, this time with a clearer vision of what we wanted to achieve. For me it was a very hard experience, because changing engines in the middle of development was something '+
+                        'I had never done before, but it was a great learning experience and I\'m glad we did it.'+
+                        '<br><br>All the coding was carried out with BNlueprints, including the multiplayer and the combat system.'
                     },
                     {
-                        type: 'images',
-                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
-                        caption: 'Character selection and boss fights'
-                    }
+                        type: 'text',
+                        value: 'Here is how the game looked before doing the transition to Unreal Engine. You can compare it with the Gameplay Demo displayed on top of this page and judge by yourselves if it was worth the effort!'
+                    },
+                    
+                    {
+                        type: 'video',
+                        value: 'videos/Shatraj/shatraj-unity.mp4',
+                        caption: 'Shatraj - Unity Gameplay'
+                    },
+                    
                 ]
             }
         ]
