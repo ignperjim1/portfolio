@@ -496,6 +496,11 @@ const gameData = {
                         ' When shooting, players can drag the right joystick to aim where they want to shoot - or hold it down without dragging to auto-aim. Players can also roll with a special button, that allows them to dodge bullets and other hazards.'
                     },
                     {
+                        type: 'images',
+                        value: ['images/Wow/wowHUD.png'],
+                        caption: 'Gameplay HUD'
+                    },
+                    {
                         type: 'text',
                         value: '<span style="color: #48bfe3"><b>Weapons</b></span><br><br>'+
                         'We included a lot of weapons in the game and we wanted to make each weapon feel different from the rest, without being unbalanced. There are automatic weapons, semiautomatic weapons, throwable weapons like grenades, melee weapons'+
@@ -505,9 +510,25 @@ const gameData = {
                         'Weapons have their own stats, which can be consulted and upgraded using coins in the Weapon Select Window in the Main Menu. These stats are: Damage, Fire Rate and Bullet Speed.'
                     },
                     {
+                        type: 'images',
+                        value: ['images/Wow/weaponDisplay.png', 'images/Wow/wowCharacterSelect.png'],
+                        caption: 'Character selection weapons'
+                    },
+                    {
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>Characters</b></span><br><br>'+
+                        'Characters were designed following a funny and simplistic aesthetic line, like cartoons. Many of them make references to famous pop culture characters, references to the city of Seville and even Internet memes. '+
+                        '<br>Each has a special attack that can be performed once every so often.',
+                    },
+                    {
+                        type: 'text',
+                        value: '',
+                    },
+                    {
                         type: 'video',
-                        value: 'videos/Wow/gow-axe-throw.mp4',
-                        caption: 'Recreating Axe Throw mechanic from God of War (2018)'
+                        value: 'videos/Wow/wow-tutorial.mp4',
+                        caption: 'This is a video of the introductory tutorial of the game, which I designed on my own. In it, a character will guide players through the different screens and will teach them the basic controls of the game such as '+
+                        'moving, shooting, dodging, etc. Once that part is finished, players will be dragged to a new arena where the real game will begin.'
                     },
                 ]
             },
