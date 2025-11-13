@@ -499,7 +499,7 @@ const gameData = {
                         type: 'images',
                         value: ['images/Wow/wowHUD.png'],
                         caption: 'Gameplay HUD',
-                        style: { justifyContent: 'center', innerWidth: '50%' }
+                        style: { justifyContent: 'center', paddingLeft: '20%', paddingRight: '20%' }
                     },
                     {
                         type: 'text',
@@ -514,7 +514,7 @@ const gameData = {
                         type: 'images',
                         value: ['images/Wow/wowWeaponDisplay.png', 'images/Wow/wowCharacterSelect.png'],
                         caption: 'Character selection & weapons',
-                        style: { justifyContent: 'center', innerWidth: '50%' }
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
                     },
                     {
                         type: 'text',
@@ -539,13 +539,28 @@ const gameData = {
                 content: [
                     {
                         type: 'text',
-                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                        value: 'Waves Mode is the main game mode of the game. It is an infinite game mode in which players will face waves of enemies with increasing difficulty. It also features boss fights every certain waves. At the end '+
+                        'of each wave, players will be given to choose 3 upgrade cards (1 of them free, the other 2 are video rewards) that can consist of weapons, stat improvements, weapon upgrades, etc. <br> This game mode is infinite, '+
+                        'so it will end when players die. Depending on how far players reach, they will obtain more or less rewards.'
+                    },
+                    {
+                        type: 'video',
+                        value: ['videos/Wow/wow-wavesmode.mp4','videos/Wow/wow-bossfight.mp4'],
+                        caption: 'Waves mode and boss fight gameplay videos',
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
                     },
                     {
                         type: 'images',
-                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
-                        caption: 'Character selection and boss fights'
-                    }
+                        value: 'images/Wow/wowBosses.png',
+                        caption: 'Different bosses in the game - each with their own unique abilities and combat styles',
+                        style: { justifyContent: 'center', paddingLeft: '20%', paddingRight: '20%' }
+                    },
+                    {
+                        type: 'images',
+                        value: 'images/Wow/wowSlimeVariations.png',
+                        caption: 'Enemy variations appear in higher waves, adding special abilities and behaviors to the enemies',
+                        style: { justifyContent: 'center', paddingLeft: '20%', paddingRight: '20%' }
+                    },
                 ]
             },
             {
