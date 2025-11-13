@@ -498,7 +498,8 @@ const gameData = {
                     {
                         type: 'images',
                         value: ['images/Wow/wowHUD.png'],
-                        caption: 'Gameplay HUD'
+                        caption: 'Gameplay HUD',
+                        style: { maxWidth: '50%', margin: '0 auto', justifyContent: 'center' }
                     },
                     {
                         type: 'text',
@@ -511,8 +512,8 @@ const gameData = {
                     },
                     {
                         type: 'images',
-                        value: ['images/Wow/weaponDisplay.png', 'images/Wow/wowCharacterSelect.png'],
-                        caption: 'Character selection weapons'
+                        value: ['images/Wow/wowWeaponDisplay.png', 'images/Wow/wowCharacterSelect.png'],
+                        caption: 'Character selection & weapons'
                     },
                     {
                         type: 'text',
