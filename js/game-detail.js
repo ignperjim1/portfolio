@@ -568,13 +568,22 @@ const gameData = {
                 content: [
                     {
                         type: 'text',
-                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                        value: 'History mode is the secondary mode of the game. It is unlocked at level 10 and consists of a series '+
+                        'of 1v1 battles where players will fight against the different characters of the game, so that until they defeat '+
+                        'one they will not be able to advance to the next one. There are a total of 47 battles and the rules for this game mode '+
+                        'are very different from the Waves Mode.'+
+                        '<br><br>Players start on one side of the map and their opponent on the opposite. Players have a few seconds to search for a weapon '+
+                        'in their half of the map. Once that time is up, the big wall in the center of the map will fall and the battle will begin.'+
+                        'Players need to defeat their opponent in a best of 3 rounds to win the battle.'+
+                        '<br><br>This game mode was designed as a way to keep players engaged by giving them a different type of gameplay than the Waves Mode, '+
+                        'something more linear and with a more marked progression. In this way, a level selector was designed and implemented, where players'+
+                        'can see the characters they have already defeated and the ones they have left to defeat, as well as the rewards they can get along the way.'
                     },
                     {
-                        type: 'images',
-                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
-                        caption: 'Character selection and boss fights'
-                    }
+                        type: 'video',
+                        value: 'videos/Wow/wow-historymode.mp4',
+                        caption: 'History Mode - Gameplay'
+                    },
                 ]
             },
             {
@@ -582,13 +591,58 @@ const gameData = {
                 content: [
                     {
                         type: 'text',
-                        value: 'Multiple playable characters with unique abilities and challenging boss encounters throughout the game.'
+                        value: '<span style="color: #48bfe3"><b>Menu Screens</b></span><br><br>'+
+                        'When designing the UI of the game menus, we took inspiration from games like Brawl Stars '+
+                        'because we tried to convey the same sensations when choosing a character or changing weapons.'+
+                        '<br>In the Character Select screen, players can find all the information related to the characters, '+
+                        'like their special abilities and stats. Everything is displayed in a clear and intuitive way, with great '+
+                        'contrast between the UI elements and the background.'+
+                        '<br>In the Weapon Select screen, players can change their starting weapon for some of the game modes. Better '+
+                        'and cooler weapons can be unlocked with player experience. They can also use coins to level up their weapons, to a '+
+                        'maximum of 5 levels.'+
+                        '<br><br>Being a mobile game, daily challenges and rewards, as well as achievements, are very important for progression '+
+                        'and player retention. For this reason, we tried to design these aspects of the game in the most intuitive and simple '+
+                        'possible way, maintaining the general aesthetics of the rest of the menu screens.'
                     },
                     {
                         type: 'images',
-                        value: ['images/Wow/wowCharacterSelect.png', 'images/Wow/wowBosses.png'],
-                        caption: 'Character selection and boss fights'
-                    }
+                        value: ['images/Wow/wowMainMenu.png', 'images/Wow/wowQuest.png',
+                            'images/Wow/wowShop.png', 'images/Wow/wowCharacterSelect.png',
+                            'images/Wow/wowWeaponDisplay.png', 'images/Wow/wowWeaponChange.png',
+                        ],
+                        caption: 'Different menu screens',
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
+                    },
+                    {
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>Battle Pass</b></span><br><br>'+
+                        'A Battle Pass was designed and developed because they were so popular at the time and it was '+
+                        'a great way to increase player progress and reward them for playing, as well as to increase retention.'
+                    },
+                    {
+                        type: 'video',
+                        value: 'videos/Wow/wow-battlepass.mp4',
+                        caption: 'Battle Pass'
+                    },
+                    {
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>In-Game UI</b></span><br><br>'+
+                        'We wanted players to be able to access information about both their character and their weapon '+
+                        'in the middle of the gameplay, so we put all this information in the Pause Menu. In addition, '+
+                        'players can also check the improvements and weapons they have been obtaining along the match.'+
+                        '<br><br>On the Game Over screen, players can see a small and satisfying animation in which all the '+
+                        'experience they have gained in the match is added to their current experience bar. When done, they '+
+                        'can also take a look at the gold obtained and other data such as statistics about the game, like the '+
+                        'largest combo of enemies defeated without being hit.'
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Wow/wowHUD.png', 'images/Wow/wowPause.png',
+                            'images/Wow/wowGameOver1.png', 'images/Wow/wowGameOver2.png',
+                        ],
+                        caption: 'In-Game UI elements',
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
+                    },
                 ]
             }
         ]
