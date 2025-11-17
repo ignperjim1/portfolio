@@ -335,21 +335,19 @@ const gameData = {
         company: 'Kometasoft S.L.',
         role: 'Junior Game Developer',
         year: '2022 - 2024',
-        tags: ['Unity', 'Arcade Shooter', 'Android/iOS', 'Cancelled'],
-        heroImage: 'images/Bowtoys/bowtoys-splash.jpg',
+        tags: ['Unity', 'Arcade Shooter', 'Android/iOS', 'Cancelled project - Team of 4'],
+        heroVideo: 'videos/Bowtoys/bowtoys-tutorial.mp4',
         storeLinks: [
             {
-                store: 'Itch.io',
-                url: 'https://kometasoft.itch.io/bowtoys',
-                icon: 'fas fa-gamepad'
-            },
-            {
-                store: 'Steam',
-                url: 'https://store.steampowered.com/app/bowtoys',
-                icon: 'fab fa-steam'
+                store: 'Project Cancelled',
+                url: '',
+                icon: 'fas fa-ban'
             }
         ],
-        description: 'Bowtoys was an arcade-style shooter game featuring colorful characters and fast-paced action. Players controlled various characters with unique abilities, engaging in multiplayer battles across different themed maps.',
+        description: 'Bowtoys was an archery-themed arcade skill game in which players must defeat their opponent '+
+        'from a long distance, using their character\'s unique weapon and abilities. The game features a large '+
+        'number of toy characters, each with a unique weapon with different effects and projectile trajectories. '+
+        '<br>Each character also features a unique Fatality, a special move with which they can end the game in a surprising and shocking way.',
         screenshots: [
             'images/Bowtoys/bowtoys-characters.jpg',
             'images/Bowtoys/bowtoys-mapaacuatico.jpg',
@@ -462,7 +460,7 @@ const gameData = {
         company: 'Kometasoft S.L.',
         role: 'Junior Game Developer',
         year: '2021 - 2022',
-        tags: ['Unity', '2D Hero Shooter', 'Android', 'Cancelled'],
+        tags: ['Unity', '2D Hero Shooter', 'Android', 'Cancelled project - Team of 4'],
         storeLinks: [
             {
                 store: 'Project Cancelled',
