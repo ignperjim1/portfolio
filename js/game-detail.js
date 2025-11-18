@@ -348,52 +348,76 @@ const gameData = {
         'from a long distance, using their character\'s unique weapon and abilities. The game features a large '+
         'number of toy characters, each with a unique weapon with different effects and projectile trajectories. '+
         '<br>Each character also features a unique Fatality, a special move with which they can end the game in a surprising and shocking way.',
-        screenshots: [
-            'images/Bowtoys/bowtoys-characters.jpg',
-            'images/Bowtoys/bowtoys-mapaacuatico.jpg',
-            'images/Bowtoys/bowtoys-mapacampo.jpg',
-            'images/Bowtoys/bowtoys-mapadesierto.jpg',
-            'images/Bowtoys/bowtoys-menu.jpg',
-            'images/Bowtoys/bowtoys-panel.webp'
-        ],
         myRole: [
-            'Developed core gameplay mechanics and character systems',
-            'Implemented multiplayer networking and matchmaking',
-            'Designed and programmed character abilities and weapons',
-            'Created level design tools and map generation systems',
-            'Balanced gameplay mechanics and player progression',
-            'Collaborated with artists and designers on feature implementation'
+            'Design, balance and implementation of several aspects of the game, including characters, levels, weapons...',
+            'Testing and correction of all the bugs found during development',
+            'Support of the lead programmer of the team, implementing features and mechanics',
+            'Design and implementation of the first steps of the game (including tutorial games), changes in the UI, rewards and progression systems...',
         ],
         technologies: [
-            'Unity Engine',
-            'C# Programming',
-            'Photon Networking',
+            'Unity Engine (C# Programming)',
             'Git Version Control',
             'Confluence Documentation',
             'Jira Project Management'
         ],
         keyFeatures: [
             {
-                title: 'Multiplayer Combat',
+                title: 'Game Mechanics',
                 content: [
                     {
                         type: 'text',
-                        value: 'Real-time multiplayer combat system with low-latency networking and synchronized gameplay. Uses Photon Networking for PvP battles with advanced hit detection and damage calculation.'
+                        value: 'The controls of the game are really simple and intuitive, adapted to mobile platforms and tablets. '+
+                        'To shoot, players simply drag and drop, a formula which success has already been more than proven by franchises '+
+                        'like Angry Birds (from which we took a lot of inspiration).'
+                    },
+                    {
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>Weapons & Special Abilities</b></span><br><br>'+
+                        'In order to make each match feel unique and motivate the player to keep playing, we gave the characters '+
+                        'a very defined aesthetic. <br>In addition, we gave each character a weapon according to their aesthetic and '+
+                        'personality. These weapons also vary from each other. The trajectory the weapon takes will depend on its shape '+
+                        '(a spear does not behave the same in the air than a hammer), as well as with which part it hits the target and '+
+                        'how much damage it does. <br><br>Tapping the screen while the weapon is in mid-air, the player can perform a '+
+                        'special move. This move is unique to each character, and it goes from splitting the weapon into three smaller ones, '+
+                        'explode the weapon in mid-air or even shoot lightning bolts.',
                     },
                     {
                         type: 'video',
-                        value: 'videos/placeholder.mp4', // Replace with actual video if available
-                        caption: 'Multiplayer combat gameplay'
+                        value: ['videos/Bowtoys/bowtoys-crocodile-special.mp4','videos/Bowtoys/bowtoys-rabbit-special.mp4'],
+                        caption: 'Each character has a unique special move',
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
                     },
                     {
-                        type: 'code',
-                        language: 'csharp',
-                        value: '// Multiplayer Combat\npublic class CombatSystem : MonoBehaviourPunPV\n{\n    [PunRPC]\n    public void DealDamage(int targetId, int damage) {\n        var target = PhotonView.Find(targetId);\n        target.GetComponent<PlayerHealth>().TakeDamage(damage);\n    }\n}'
-                    }
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>Fatalities</b></span><br><br>'+
+                        'Fatalities are a way of rewarding players for winning the game. Once players reduce their opponent\'s'+
+                        ' health to 0, the opponent character will get stunned and players will have the chance to perform one last shot.'+
+                        'If they land this shot, a cinematic will take place in which the enemy is destroyed in a very impressive and gory way.'+
+                        '<br>Each character has its own Fatality and they were designed following the character\'s line of design.',
+                    },
+                    {
+                        type: 'video',
+                        value: ['videos/Bowtoys/bowtoys-fox-facility.mp4','videos/Bowtoys/bowtoys-pig-fatality.mp4'],
+                        caption: 'Fatalities incentivize players to win the game rewarding them with a cinematic way of destroying their opponent',
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
+                    },
+                    {
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>Targets</b></span><br><br>'+
+                        'To give variety to matches, we designed a target system where several targets appear in '+
+                        'random positions between both players. If a player manages to hit one of these, this player will '+
+                        'gain a temporary bonus, either by making himself smaller (and therefore harder to get hit), making the '+
+                        'opponent bigger (and therefore easier to get hit), having an extra shot, etc.',
+                    },
+                    {
+                        type: 'video',
+                        value: 'videos/Bowtoys/bowtoys-targets.mp4',
+                        caption: 'Targets keep the game interesting and reward skilled players',
+                    },
                 ]
             },
             {
-                title: 'Character Abilities',
+                title: 'Game Modes',
                 content: [
                     {
                         type: 'text',
@@ -407,7 +431,7 @@ const gameData = {
                 ]
             },
             {
-                title: 'Dynamic Maps',
+                title: 'Menu & In-Game UI',
                 content: [
                     {
                         type: 'text',
@@ -420,39 +444,6 @@ const gameData = {
                     }
                 ]
             },
-            {
-                title: 'UI & Progression',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Comprehensive UI system with achievements, missions, rewards, and player progression tracking.'
-                    },
-                    {
-                        type: 'images',
-                        value: ['images/Bowtoys/bowtoysachievements.png', 'images/Bowtoys/bowtoysmissions.png', 'images/Bowtoys/bowtoysrewards.png'],
-                        caption: 'Achievements, missions, and rewards systems'
-                    },
-                    {
-                        type: 'text',
-                        heading: 'In-Game UI',
-                        value: 'Polished in-game UI with match end screens, roulette system, and real-time HUD elements.'
-                    },
-                    {
-                        type: 'images',
-                        value: ['images/Bowtoys/bowtoysingameui.png', 'images/Bowtoys/bowtoysmatchend.png'],
-                        caption: 'In-game UI elements'
-                    }
-                ]
-            },
-            {
-                title: 'Weapon Systems',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Diverse weapon system with different weapon types and upgrade mechanics. Features 15+ weapon types with unique stats and abilities.'
-                    }
-                ]
-            }
         ]
     },
     'wow': {
