@@ -1245,6 +1245,8 @@ function createContentBlock(block) {
             const img = document.createElement('img');
             img.src = block.value;
             img.alt = block.caption || 'Feature image';
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => openImageModal(block.value, block.caption));
             container.appendChild(img);
             if (block.caption) {
                 const caption = document.createElement('p');
@@ -1273,6 +1275,8 @@ function createContentBlock(block) {
                 const imgElement = document.createElement('img');
                 imgElement.src = imgSrc;
                 imgElement.alt = block.caption || 'Feature image';
+                imgElement.style.cursor = 'pointer';
+                imgElement.addEventListener('click', () => openImageModal(imgSrc, block.caption));
                 imagesGrid.appendChild(imgElement);
             });
             container.appendChild(imagesGrid);
@@ -1286,6 +1290,8 @@ function createContentBlock(block) {
             
         case 'video':
             container.className = 'feature-video';
+            // Ensure container uses block layout so caption stays below
+            container.style.display = 'block';
             
             // Handle both single video (string) and multiple videos (array)
             if (Array.isArray(block.value)) {
@@ -1340,6 +1346,9 @@ function createContentBlock(block) {
                 const caption = document.createElement('p');
                 caption.className = 'feature-caption';
                 caption.textContent = block.caption;
+                // Ensure caption is displayed as block and appears below the videos
+                caption.style.display = 'block';
+                caption.style.width = '100%';
                 container.appendChild(caption);
             }
             break;
@@ -1376,6 +1385,116 @@ function applyInlineStyles(element, styleObj) {
     Object.keys(styleObj).forEach(property => {
         element.style[property] = styleObj[property];
     });
+}
+
+// Open image in full-size modal
+function openImageModal(imageSrc, caption) {
+    // Remove existing image modal if present
+    const existingModal = document.getElementById('image-modal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+    
+    // Create modal overlay
+    const modal = document.createElement('div');
+    modal.id = 'image-modal';
+    modal.className = 'modal active';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.position = 'fixed';
+    modal.style.zIndex = '10000';
+    modal.style.left = '0';
+    modal.style.top = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+    modal.style.backdropFilter = 'blur(5px)';
+    modal.style.cursor = 'pointer';
+    
+    // Create modal content container
+    const modalContent = document.createElement('div');
+    modalContent.style.position = 'relative';
+    modalContent.style.maxWidth = '95%';
+    modalContent.style.maxHeight = '95%';
+    modalContent.style.display = 'flex';
+    modalContent.style.flexDirection = 'column';
+    modalContent.style.alignItems = 'center';
+    modalContent.style.cursor = 'default';
+    
+    // Create close button
+    const closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '&times;';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.top = '-40px';
+    closeBtn.style.right = '0';
+    closeBtn.style.background = 'transparent';
+    closeBtn.style.border = 'none';
+    closeBtn.style.color = '#fff';
+    closeBtn.style.fontSize = '40px';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.lineHeight = '1';
+    closeBtn.style.padding = '0';
+    closeBtn.style.width = '40px';
+    closeBtn.style.height = '40px';
+    closeBtn.style.zIndex = '10001';
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeImageModal();
+    });
+    
+    // Create image element
+    const fullImage = document.createElement('img');
+    fullImage.src = imageSrc;
+    fullImage.alt = caption || 'Full size image';
+    fullImage.style.maxWidth = '100%';
+    fullImage.style.maxHeight = '85vh';
+    fullImage.style.objectFit = 'contain';
+    fullImage.style.borderRadius = '8px';
+    fullImage.style.boxShadow = '0 10px 50px rgba(0, 0, 0, 0.5)';
+    
+    // Create caption if provided
+    if (caption) {
+        const captionElement = document.createElement('p');
+        captionElement.textContent = caption;
+        captionElement.style.color = '#fff';
+        captionElement.style.marginTop = '15px';
+        captionElement.style.textAlign = 'center';
+        captionElement.style.fontSize = '16px';
+        modalContent.appendChild(captionElement);
+    }
+    
+    // Assemble modal
+    modalContent.appendChild(fullImage);
+    modalContent.appendChild(closeBtn);
+    modal.appendChild(modalContent);
+    
+    // Add to document
+    document.body.appendChild(modal);
+    
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeImageModal();
+        }
+    });
+    
+    // Close on Escape key
+    const escapeHandler = (e) => {
+        if (e.key === 'Escape') {
+            closeImageModal();
+            document.removeEventListener('keydown', escapeHandler);
+        }
+    };
+    document.addEventListener('keydown', escapeHandler);
+}
+
+// Close image modal
+function closeImageModal() {
+    const modal = document.getElementById('image-modal');
+    if (modal) {
+        modal.remove();
+    }
 }
 
 // Toggle feature expansion
