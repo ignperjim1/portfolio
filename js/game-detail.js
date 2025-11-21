@@ -651,7 +651,7 @@ const gameData = {
                         style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
                     },
                 ]
-            }
+            },
         ]
     },
     'shatraj': {
@@ -1286,13 +1286,41 @@ function createContentBlock(block) {
             
         case 'video':
             container.className = 'feature-video';
-            const video = document.createElement('video');
-            video.controls = true;
-            const source = document.createElement('source');
-            source.src = block.value;
-            source.type = 'video/mp4';
-            video.appendChild(source);
-            container.appendChild(video);
+            
+            // Handle both single video (string) and multiple videos (array)
+            if (Array.isArray(block.value)) {
+                // Create a container for multiple videos
+                const videosContainer = document.createElement('div');
+                videosContainer.className = 'videos-container';
+                
+                // Apply custom styles if provided
+                if (block.style) {
+                    applyInlineStyles(videosContainer, block.style);
+                }
+                
+                // Create a video element for each video in the array
+                block.value.forEach(videoSrc => {
+                    const video = document.createElement('video');
+                    video.controls = true;
+                    const source = document.createElement('source');
+                    source.src = videoSrc;
+                    source.type = 'video/mp4';
+                    video.appendChild(source);
+                    videosContainer.appendChild(video);
+                });
+                
+                container.appendChild(videosContainer);
+            } else {
+                // Single video
+                const video = document.createElement('video');
+                video.controls = true;
+                const source = document.createElement('source');
+                source.src = block.value;
+                source.type = 'video/mp4';
+                video.appendChild(source);
+                container.appendChild(video);
+            }
+            
             if (block.caption) {
                 const caption = document.createElement('p');
                 caption.className = 'feature-caption';

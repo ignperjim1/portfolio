@@ -1973,21 +1973,19 @@ img {
     padding: 0;
 }
 
-/*.my-role li {
+.my-role li {
     padding: 12px 0;
     border-bottom: 1px solid rgba(116, 0, 184, 0.1);
     position: relative;
     padding-left: 30px;
-}*/
+}
 
-.my-role li {
+.my-role li::marker {
     content: '▶';
+    position: absolute;
     left: 0;
     color: var(--primary-color);
     font-size: 0.8rem;
-    border-bottom: 1px solid rgba(116, 0, 184, 0.1);
-    position: relative;
-    padding-left: 30px;
 }
 
 /* Key Features Expandable Styles */
