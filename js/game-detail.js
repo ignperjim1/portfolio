@@ -420,14 +420,10 @@ const gameData = {
                 title: 'Game Modes',
                 content: [
                     {
-                        type: 'text',
-                        value: 'Unique character abilities system with special powers and cooldown mechanics. Features over 20 different abilities across 8 character classes.'
+                        type: 'video',
+                        value: 'videos/Bowtoys/bowtoys-minigames.mp4',
+                        caption: 'Different game modes and minigames available in the game',
                     },
-                    {
-                        type: 'images',
-                        value: ['images/Bowtoys/bowtoys-characters.jpg', 'images/Bowtoys/bowtoyscharactershowcase.png'],
-                        caption: 'Character selection and abilities'
-                    }
                 ]
             },
             {
@@ -435,12 +431,34 @@ const gameData = {
                 content: [
                     {
                         type: 'text',
-                        value: 'Procedurally generated maps with interactive elements and environmental hazards. Features 5 different map types with unique mechanics.'
+                        value: '<span style="color: #48bfe3"><b>Menu Screens</b></span><br><br>'+
+                        'When designing the UI of the game menus, we opted for a casual and striking design, using bright colors with a lot of contrast. We wanted it to be simple, intuitive and colorful.'+
+                        '<br>Since the charactters are stuffed animals, instead of using the typical roulette wheen to unlock prizes, we decided to use a Hook Machine, which is more in line with the context. '+
+                        'Also, once we unlock a character, it is displayed in the Character Showcase, accessible from the Main Menu.'+
+                        '<br><br>Being a mobile game, daily challenges, rewards and achievements are very important for progression and player retention. For that reason, we tried to design it in the most '+
+                        'intuitive and simple way possible, maintaining the general aesthetics of the rest of the menu screens.',
                     },
                     {
                         type: 'images',
-                        value: ['images/Bowtoys/bowtoys-mapaacuatico.jpg', 'images/Bowtoys/bowtoys-mapacampo.jpg', 'images/Bowtoys/bowtoys-mapadesierto.jpg'],
-                        caption: 'Different map environments'
+                        value: ['images/Bowtoys/bowtoys-menu.jpg', 'images/Bowtoys/bowtoysroulette.png', 'images/Bowtoys/bowtoyscharactershowcase.png',
+                            'images/Bowtoys/bowtoysachievements.png', 'images/Bowtoys/bowtoysrewards.png', 'images/Bowtoys/bowtoysmissions.png',
+                            'images/Bowtoys/bowtoysmatchend.png'],
+                        caption: 'Different Menu Screens',
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
+                    }
+                    {
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>In-Game UI</b></span><br><br>'+
+                        'The following image corresponds to the In-Game UI of a Standard Match. We tried to design it to be as discrete as possible, so that players could have as much screen space as possible. '+
+                        'In the upper part of the screen we find the health bars of both characters, in the left part a window that explains their character\'s special ability and in the right part some icons that '+
+                        'indicate where things of interest are located, like the enemy character or targets. <br><br>In addition, while aiming the shot, a floating window indicates the angle and force of the shot, to help '+
+                        'players aim better and hit more accurately.',
+                    },
+                    {
+                        type: 'images',
+                        value: ['images/Bowtoys/bowtoysingameui.png'],
+                        caption: 'In Game UI of a Standard Match',
+                        style: { justifyContent: 'center', paddingLeft: '20%', paddingRight: '20%' }
                     }
                 ]
             },
