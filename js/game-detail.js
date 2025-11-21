@@ -510,7 +510,7 @@ const gameData = {
                     },
                     {
                         type: 'text',
-                        value: '<span style="color: #48bfe3"><b>Weapons</b></span><br><br>'+
+                        value: '<span style="color: #48bfe3"><b>Weapons</b></span><br>'+
                         'We included a lot of weapons in the game and we wanted to make each weapon feel different from the rest, without being unbalanced. There are automatic weapons, semiautomatic weapons, throwable weapons like grenades, melee weapons'+
                         ' (like a baseball bat), powerful weapons that need to cool off from time to time (like a minigun). <br>'+
                         'We also had what we called "joke weapons", that were weapons that did nothing by theirselves , like a throwable rubber duck, but when players pick up a potion from the ground these weapons become very powerful - in the case '+
@@ -525,13 +525,13 @@ const gameData = {
                     },
                     {
                         type: 'text',
-                        value: '<span style="color: #48bfe3"><b>Characters</b></span><br><br>'+
+                        value: '<span style="color: #48bfe3"><b>Characters</b></span><br>'+
                         'Characters were designed following a funny and simplistic aesthetic line, like cartoons. Many of them make references to famous pop culture characters, references to the city of Seville and even Internet memes. '+
                         '<br>Each has a special attack that can be performed once every so often.',
                     },
                     {
                         type: 'text',
-                        value: '',
+                        value: '<span style="color: #48bfe3"><b>Tutorial</b></span><br>',
                     },
                     {
                         type: 'video',
