@@ -558,13 +558,13 @@ const gameData = {
                     },
                     {
                         type: 'images',
-                        value: 'images/Wow/wowBosses.png',
+                        value: ['images/Wow/wowBosses.png'],
                         caption: 'Different bosses in the game - each with their own unique abilities and combat styles',
                         style: { justifyContent: 'center', paddingLeft: '20%', paddingRight: '20%' }
                     },
                     {
                         type: 'images',
-                        value: 'images/Wow/wowSlimeVariations.png',
+                        value: ['images/Wow/wowSlimeVariations.png'],
                         caption: 'Enemy variations appear in higher waves, adding special abilities and behaviors to the enemies',
                         style: { justifyContent: 'center', paddingLeft: '20%', paddingRight: '20%' }
                     },
