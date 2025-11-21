@@ -385,7 +385,7 @@ const gameData = {
                         type: 'video',
                         value: ['videos/Bowtoys/bowtoys-crocodile-special.mp4','videos/Bowtoys/bowtoys-rabbit-special.mp4'],
                         caption: 'Each character has a unique special move',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex'}
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', flexDirection: 'row'}
                     },
                     {
                         type: 'text',
