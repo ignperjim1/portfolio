@@ -385,7 +385,7 @@ const gameData = {
                         type: 'video',
                         value: ['videos/Bowtoys/bowtoys-crocodile-special.mp4','videos/Bowtoys/bowtoys-rabbit-special.mp4'],
                         caption: 'Each character has a unique special move',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }
                     },
                     {
                         type: 'text',
@@ -399,7 +399,7 @@ const gameData = {
                         type: 'video',
                         value: ['videos/Bowtoys/bowtoys-fox-facility.mp4','videos/Bowtoys/bowtoys-pig-fatality.mp4'],
                         caption: 'Fatalities incentivize players to win the game rewarding them with a cinematic way of destroying their opponent',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }
                     },
                     {
                         type: 'text',
@@ -554,7 +554,7 @@ const gameData = {
                         type: 'video',
                         value: ['videos/Wow/wow-wavesmode.mp4','videos/Wow/wow-bossfight.mp4'],
                         caption: 'Waves mode and boss fight gameplay videos',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }
                     },
                     {
                         type: 'images',
