@@ -385,7 +385,7 @@ const gameData = {
                         type: 'video',
                         value: ['videos/Bowtoys/bowtoys-crocodile-special.mp4','videos/Bowtoys/bowtoys-rabbit-special.mp4'],
                         caption: 'Each character has a unique special move',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex', flexDirection: 'row'}
                     },
                     {
                         type: 'text',
@@ -399,7 +399,7 @@ const gameData = {
                         type: 'video',
                         value: ['videos/Bowtoys/bowtoys-fox-facility.mp4','videos/Bowtoys/bowtoys-pig-fatality.mp4'],
                         caption: 'Fatalities incentivize players to win the game rewarding them with a cinematic way of destroying their opponent',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex', flexDirection: 'row' }
                     },
                     {
                         type: 'text',
@@ -554,7 +554,7 @@ const gameData = {
                         type: 'video',
                         value: ['videos/Wow/wow-wavesmode.mp4','videos/Wow/wow-bossfight.mp4'],
                         caption: 'Waves mode and boss fight gameplay videos',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex', flexDirection: 'row'}
                     },
                     {
                         type: 'images',
@@ -1298,14 +1298,29 @@ function createContentBlock(block) {
                     applyInlineStyles(videosContainer, block.style);
                 }
                 
+                // Check if this is a flexbox layout (indicates videos should be resized to fit)
+                const isFlexLayout = block.style && (block.style.display === 'flex' || block.style.flexDirection === 'row');
+                
                 // Create a video element for each video in the array
-                block.value.forEach(videoSrc => {
+                block.value.forEach((videoSrc, index) => {
                     const video = document.createElement('video');
                     video.controls = true;
                     const source = document.createElement('source');
                     source.src = videoSrc;
                     source.type = 'video/mp4';
                     video.appendChild(source);
+                    
+                    // Only apply flex sizing if this is a flexbox layout
+                    if (isFlexLayout) {
+                        // Style video to fit in row: use flex-basis with calc to account for gap
+                        // Each video gets equal space minus the gap divided by number of videos
+                        video.style.flex = '1 1 0';
+                        video.style.minWidth = '0'; // Allow flexbox to shrink below content size
+                        video.style.maxWidth = '100%';
+                        video.style.width = '100%';
+                        video.style.height = 'auto';
+                    }
+                    
                     videosContainer.appendChild(video);
                 });
                 
