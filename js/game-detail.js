@@ -385,7 +385,7 @@ const gameData = {
                         type: 'video',
                         value: ['videos/Bowtoys/bowtoys-crocodile-special.mp4','videos/Bowtoys/bowtoys-rabbit-special.mp4'],
                         caption: 'Each character has a unique special move',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', flexDirection: 'row'}
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex', flexDirection: 'row'}
                     },
                     {
                         type: 'text',
@@ -1258,17 +1258,41 @@ function createContentBlock(block) {
             
         case 'images':
             container.className = 'feature-images';
+            container.style.display = 'block';
+            
             const imagesGrid = document.createElement('div');
             imagesGrid.className = 'images-grid';
             
-            // Apply custom column setting if provided
+            // Set grid to max 2 columns, prioritize row direction
+            imagesGrid.style.display = 'grid';
+            // Use repeat with auto-fit but ensure max 2 columns by using minmax
+            const numItems = block.value.length;
+            if (numItems <= 2) {
+                imagesGrid.style.gridTemplateColumns = `repeat(${numItems}, 1fr)`;
+            } else {
+                // For more than 2 items, use auto-fit with minmax to cap at 2 columns
+                imagesGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+            }
+            imagesGrid.style.maxWidth = '100%';
+            imagesGrid.style.gap = '3rem';
+            imagesGrid.style.gridAutoFlow = 'row';
+            
+            // Apply custom column setting if provided (but cap at 2)
             if (block.columns) {
-                imagesGrid.style.gridTemplateColumns = `repeat(${block.columns}, 1fr)`;
+                const maxColumns = Math.min(block.columns, 2);
+                imagesGrid.style.gridTemplateColumns = `repeat(${maxColumns}, 1fr)`;
             }
             
-            // Apply custom styles to grid if provided
+            // Apply custom styles to grid if provided (but preserve grid structure)
             if (block.style) {
                 applyInlineStyles(imagesGrid, block.style);
+                // Ensure grid properties are maintained
+                if (!block.style.display) {
+                    imagesGrid.style.display = 'grid';
+                }
+                if (!block.style.gridAutoFlow) {
+                    imagesGrid.style.gridAutoFlow = 'row';
+                }
             }
             
             block.value.forEach(imgSrc => {
@@ -1276,14 +1300,21 @@ function createContentBlock(block) {
                 imgElement.src = imgSrc;
                 imgElement.alt = block.caption || 'Feature image';
                 imgElement.style.cursor = 'pointer';
+                imgElement.style.width = '100%';
+                imgElement.style.height = 'auto';
+                imgElement.style.objectFit = 'contain';
                 imgElement.addEventListener('click', () => openImageModal(imgSrc, block.caption));
                 imagesGrid.appendChild(imgElement);
             });
             container.appendChild(imagesGrid);
+            
             if (block.caption) {
                 const caption = document.createElement('p');
                 caption.className = 'feature-caption';
                 caption.textContent = block.caption;
+                caption.style.display = 'block';
+                caption.style.width = '100%';
+                caption.style.marginTop = '1rem';
                 container.appendChild(caption);
             }
             break;
@@ -1295,17 +1326,35 @@ function createContentBlock(block) {
             
             // Handle both single video (string) and multiple videos (array)
             if (Array.isArray(block.value)) {
-                // Create a container for multiple videos
+                // Create a container for multiple videos using grid layout
                 const videosContainer = document.createElement('div');
                 videosContainer.className = 'videos-container';
                 
-                // Apply custom styles if provided
+                // Set grid to max 2 columns, prioritize row direction
+                videosContainer.style.display = 'grid';
+                // Use repeat with auto-fit but ensure max 2 columns
+                const numVideos = block.value.length;
+                if (numVideos <= 2) {
+                    videosContainer.style.gridTemplateColumns = `repeat(${numVideos}, 1fr)`;
+                } else {
+                    // For more than 2 videos, use 2 columns
+                    videosContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                }
+                videosContainer.style.maxWidth = '100%';
+                videosContainer.style.gap = '3rem';
+                videosContainer.style.gridAutoFlow = 'row';
+                
+                // Apply custom styles if provided (but preserve grid structure)
                 if (block.style) {
                     applyInlineStyles(videosContainer, block.style);
+                    // Ensure grid properties are maintained unless explicitly overridden
+                    if (!block.style.display) {
+                        videosContainer.style.display = 'grid';
+                    }
+                    if (!block.style.gridAutoFlow) {
+                        videosContainer.style.gridAutoFlow = 'row';
+                    }
                 }
-                
-                // Check if this is a flexbox layout (indicates videos should be resized to fit)
-                const isFlexLayout = block.style && (block.style.display === 'flex' || block.style.flexDirection === 'row');
                 
                 // Create a video element for each video in the array
                 block.value.forEach((videoSrc, index) => {
@@ -1316,16 +1365,11 @@ function createContentBlock(block) {
                     source.type = 'video/mp4';
                     video.appendChild(source);
                     
-                    // Only apply flex sizing if this is a flexbox layout
-                    if (isFlexLayout) {
-                        // Style video to fit in row: use flex-basis with calc to account for gap
-                        // Each video gets equal space minus the gap divided by number of videos
-                        video.style.flex = '1 1 0';
-                        video.style.minWidth = '0'; // Allow flexbox to shrink below content size
-                        video.style.maxWidth = '100%';
-                        video.style.width = '100%';
-                        video.style.height = 'auto';
-                    }
+                    // Style video to fit in grid cell
+                    video.style.width = '100%';
+                    video.style.height = 'auto';
+                    video.style.maxWidth = '100%';
+                    video.style.objectFit = 'contain';
                     
                     videosContainer.appendChild(video);
                 });
@@ -1349,6 +1393,7 @@ function createContentBlock(block) {
                 // Ensure caption is displayed as block and appears below the videos
                 caption.style.display = 'block';
                 caption.style.width = '100%';
+                caption.style.marginTop = '1rem';
                 container.appendChild(caption);
             }
             break;
