@@ -445,7 +445,7 @@ const gameData = {
                             'images/Bowtoys/bowtoysmatchend.png'],
                         caption: 'Different Menu Screens',
                         style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
-                    }
+                    },
                     {
                         type: 'text',
                         value: '<span style="color: #48bfe3"><b>In-Game UI</b></span><br><br>'+
@@ -1114,16 +1114,31 @@ function populatePage(game) {
     storeLinksContainer.innerHTML = '';
     if (game.storeLinks && game.storeLinks.length > 0) {
         game.storeLinks.forEach(store => {
-            const linkElement = document.createElement('a');
-            linkElement.href = store.url;
-            linkElement.target = '_blank';
-            linkElement.rel = 'noopener noreferrer';
-            linkElement.className = 'store-link';
-            linkElement.innerHTML = `
-                <i class="${store.icon}"></i>
-                <span>${store.store}</span>
-            `;
-            storeLinksContainer.appendChild(linkElement);
+            // Check if link should be disabled (empty URL or "Project Cancelled")
+            const isDisabled = !store.url || store.url.trim() === '' || store.store === 'Project Cancelled';
+            
+            if (isDisabled) {
+                // Create a disabled span element instead of a link
+                const disabledElement = document.createElement('span');
+                disabledElement.className = 'store-link disabled';
+                disabledElement.innerHTML = `
+                    <i class="${store.icon}"></i>
+                    <span>${store.store}</span>
+                `;
+                storeLinksContainer.appendChild(disabledElement);
+            } else {
+                // Create a clickable link
+                const linkElement = document.createElement('a');
+                linkElement.href = store.url;
+                linkElement.target = '_blank';
+                linkElement.rel = 'noopener noreferrer';
+                linkElement.className = 'store-link';
+                linkElement.innerHTML = `
+                    <i class="${store.icon}"></i>
+                    <span>${store.store}</span>
+                `;
+                storeLinksContainer.appendChild(linkElement);
+            }
         });
     }
     
