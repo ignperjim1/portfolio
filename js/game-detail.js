@@ -275,7 +275,13 @@ const gameData = {
                 icon: 'fab fa-google-play'
             }
         ],
-        description: 'Hospital Empire is a strategic idle tycoon game where players build and manage their own hospital network. Manage patients, hire staff, upgrade facilities, and expand your medical empire across multiple locations.',
+        description: 'Hospital Empire is a strategic idle game where players build and manage their own hospital network. Manage patients, hire staff, upgrade facilities, '+
+        'and expand your medical empire across multiple locations.<br>The game was created by spanish studio Bee Games, and published under my company Viva Games. When the studio closed '+
+        'in 2024, the game was taken over completely by my company. After that it was sold to <span style="color: #48bfe3"><b>Plug In Digital</b></span>, a renowned publisher in the mobile games industry.'+
+        '<br>My task here was to adapt the entire game to be published under <span style="color: #48bfe3"><b>Plug In Digital</b></span>, ensuring compatibility and compliance with platform requirements. That meant removing '+
+        'all online-dependent systems, including analytics, server connections, Google Play services, IAPs and more, and identifying and resolving multiple bugs and issues found in the game. '+
+        '<br>The process took around 2 months to be completed, with several iterations and milestones.'
+        ,
         screenshots: [
             'images/Hospital/hospital 1.png',
             'images/Hospital/hospital 2.png',
@@ -284,50 +290,16 @@ const gameData = {
             'images/Hospital/hospital gameplay 2.png'
         ],
         myRole: [
-            'Lead development and optimization of the hospital management systems',
-            'Implement patient flow and staff management mechanics',
-            'Design and balance the economic progression systems',
-            'Create engaging idle mechanics and offline progression',
-            'Analyze player behavior to improve game balance',
-            'Coordinate content updates and new feature releases'
+            'Adaptation of an existing idle hospital-management game for publishing under renowned publisher <span style="color: #48bfe3"><b>Plug In Digital</b></span>, ensuring compatibility and compliance with platform requirements',
+            'Removal of all online-dependent systems, including analytics, server connections, Google Play services, IAPs and more',
+            'Identification and resolution of multiple bugs and issues found in the game, including performance issues and UI bugs',
         ],
         technologies: [
-            'Unity Engine',
-            'C# Programming',
-            'Data Analytics',
-            'A/B Testing',
+            'Unity Engine (C# Programming)',
             'Git Version Control',
             'Jira Project Management'
         ],
         keyFeatures: [
-            {
-                title: 'Hospital Management',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Comprehensive hospital management system where players oversee all aspects of medical facility operations including patient flow, staff management, and facility upgrades.'
-                    },
-                    {
-                        type: 'images',
-                        value: ['images/Hospital/hospital 1.png', 'images/Hospital/hospital 2.png', 'images/Hospital/hospital 3.png'],
-                        caption: 'Hospital management overview'
-                    }
-                ]
-            },
-            {
-                title: 'Patient Care & Gameplay',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Realistic patient care simulation with diagnosis, treatment, and recovery mechanics. Manage multiple departments and emergency situations.'
-                    },
-                    {
-                        type: 'images',
-                        value: ['images/Hospital/hospital gameplay 1.png', 'images/Hospital/hospital gameplay 2.png'],
-                        caption: 'Patient care gameplay'
-                    }
-                ]
-            }
         ]
     },
     'bowtoys': {
@@ -372,7 +344,7 @@ const gameData = {
                     },
                     {
                         type: 'text',
-                        value: '<span style="color: #48bfe3"><b>Weapons & Special Abilities</b></span><br><br>'+
+                        value: '<span style="color: #48bfe3"><b>Weapons & Special Abilities</b></span><br>'+
                         'In order to make each match feel unique and motivate the player to keep playing, we gave the characters '+
                         'a very defined aesthetic. <br>In addition, we gave each character a weapon according to their aesthetic and '+
                         'personality. These weapons also vary from each other. The trajectory the weapon takes will depend on its shape '+
@@ -389,7 +361,7 @@ const gameData = {
                     },
                     {
                         type: 'text',
-                        value: '<span style="color: #48bfe3"><b>Fatalities</b></span><br><br>'+
+                        value: '<span style="color: #48bfe3"><b>Fatalities</b></span><br>'+
                         'Fatalities are a way of rewarding players for winning the game. Once players reduce their opponent\'s'+
                         ' health to 0, the opponent character will get stunned and players will have the chance to perform one last shot.'+
                         'If they land this shot, a cinematic will take place in which the enemy is destroyed in a very impressive and gory way.'+
@@ -403,7 +375,7 @@ const gameData = {
                     },
                     {
                         type: 'text',
-                        value: '<span style="color: #48bfe3"><b>Targets</b></span><br><br>'+
+                        value: '<span style="color: #48bfe3"><b>Targets</b></span><br>'+
                         'To give variety to matches, we designed a target system where several targets appear in '+
                         'random positions between both players. If a player manages to hit one of these, this player will '+
                         'gain a temporary bonus, either by making himself smaller (and therefore harder to get hit), making the '+
@@ -420,6 +392,49 @@ const gameData = {
                 title: 'Game Modes',
                 content: [
                     {
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>Standard Match</b></span><br>'+
+                        'This is the main game mode of the game. It begins with players choosing a character. The '+
+                        'AI then generates a game against a random opponent character (or the other player\'s character '+
+                        'if playing Local Multiplayer). The map generated will have a random layout depending on the '+
+                        'player(s) current level. The more advanced the player(s), the more unevenness and slopes the '+
+                        'scenario generates, increasing the difficulty to land shots. <br>Both characters need to take '+
+                        'turns shooting each other with their respective weapons until the health of one of them reaches 0.'+
+                        '<br><br>As I said, this game mode can also be played online with a friend who is connected to the same '+
+                        'network.',
+                    },
+                    {
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>Apple Shot</b></span><br>'+
+                        'In this minigame, players have an NPC in front of them with a fruit on its head. Players must shoot '+
+                        'trying to hit the fruit but not the NPC. If the player correctly hits the fruit, the NPC will respawn again '+
+                        'with a new fruit on its head but this time further away from the player, making the task more difficult each time.'+
+                        '<br>However, if the player hits the NPC, he will lose 1 out of 3 lives. If he loses all his lives, the game is over.'+
+                        'When this happens, players will get a reward based on the amount of times they hit the fruit.'+
+                        '<br>This minigame is unlocked at level 5 and players can access it from the Main Menu.',
+                    },
+                    {
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>Bird Hunt</b></span><br>'+
+                        'In this minigame, players have a limited amount of time to shoot the birds that appearn on '+
+                        'top of the screen. Each bird drops coins when shot down, and there are birds that carry special '+
+                        'items, like bombs that explode when shot and knock down other birds or clocks that grants more time.'+
+                        '<br>The minigame ends when players run out of time and they are rewarded all the coins they collect.'+
+                        '<br>This minigame is unlocked at level 10 and players can access it from the Main Menu.',
+                    },
+                    {
+                        type: 'text',
+                        value: '<span style="color: #48bfe3"><b>Waves Mode</b></span><br>'+
+                        'In this minigame, players are transported back in time. They will need to defend themselves from '+
+                        'waves of troglodytes and dinosaurs, shooting all kinds of weapons of them - weapons from all characters in the game.'+
+                        'If they survive enough time, a meteor will sweep all enemies, leading to a new round with increasingly resistant enemies. '+
+                        '<br>The minigame ends when enemies touch the player or when players survive through all waves, obtaining a reward '+
+                        'according to the number of waves they survived.'+
+                        '<br>This minigame is accessible at the end of a Standard Match and players need to play with gems (premium currency) '+
+                        'or with Fatalities tokens. The number of Fatalities the player has done are stored to be used as currency exclusively '+
+                        'to grant access to this game mode. Players can play a Wave Mode game paying with gems or paying 3 Fataliy tokens.',
+                    },
+                    {
                         type: 'video',
                         value: 'videos/Bowtoys/bowtoys-minigames.mp4',
                         caption: 'Different game modes and minigames available in the game',
@@ -431,7 +446,7 @@ const gameData = {
                 content: [
                     {
                         type: 'text',
-                        value: '<span style="color: #48bfe3"><b>Menu Screens</b></span><br><br>'+
+                        value: '<span style="color: #48bfe3"><b>Menu Screens</b></span><br>'+
                         'When designing the UI of the game menus, we opted for a casual and striking design, using bright colors with a lot of contrast. We wanted it to be simple, intuitive and colorful.'+
                         '<br>Since the charactters are stuffed animals, instead of using the typical roulette wheen to unlock prizes, we decided to use a Hook Machine, which is more in line with the context. '+
                         'Also, once we unlock a character, it is displayed in the Character Showcase, accessible from the Main Menu.'+
@@ -448,7 +463,7 @@ const gameData = {
                     },
                     {
                         type: 'text',
-                        value: '<span style="color: #48bfe3"><b>In-Game UI</b></span><br><br>'+
+                        value: '<span style="color: #48bfe3"><b>In-Game UI</b></span><br>'+
                         'The following image corresponds to the In-Game UI of a Standard Match. We tried to design it to be as discrete as possible, so that players could have as much screen space as possible. '+
                         'In the upper part of the screen we find the health bars of both characters, in the left part a window that explains their character\'s special ability and in the right part some icons that '+
                         'indicate where things of interest are located, like the enemy character or targets. <br><br>In addition, while aiming the shot, a floating window indicates the angle and force of the shot, to help '+
@@ -598,7 +613,7 @@ const gameData = {
                 content: [
                     {
                         type: 'text',
-                        value: '<span style="color: #48bfe3"><b>Menu Screens</b></span><br><br>'+
+                        value: '<span style="color: #48bfe3"><b>Menu Screens</b></span><br>'+
                         'When designing the UI of the game menus, we took inspiration from games like Brawl Stars '+
                         'because we tried to convey the same sensations when choosing a character or changing weapons.'+
                         '<br>In the Character Select screen, players can find all the information related to the characters, '+
@@ -622,7 +637,7 @@ const gameData = {
                     },
                     {
                         type: 'text',
-                        value: '<span style="color: #48bfe3"><b>Battle Pass</b></span><br><br>'+
+                        value: '<span style="color: #48bfe3"><b>Battle Pass</b></span><br>'+
                         'A Battle Pass was designed and developed because they were so popular at the time and it was '+
                         'a great way to increase player progress and reward them for playing, as well as to increase retention.'
                     },
@@ -633,7 +648,7 @@ const gameData = {
                     },
                     {
                         type: 'text',
-                        value: '<span style="color: #48bfe3"><b>In-Game UI</b></span><br><br>'+
+                        value: '<span style="color: #48bfe3"><b>In-Game UI</b></span><br>'+
                         'We wanted players to be able to access information about both their character and their weapon '+
                         'in the middle of the gameplay, so we put all this information in the Pause Menu. In addition, '+
                         'players can also check the improvements and weapons they have been obtaining along the match.'+
@@ -771,7 +786,7 @@ const gameData = {
                     },
                     {
                         type: 'text',
-                        value: '<span style="color: #48bfe3"><b>Visuals</b></span><br><br>'+
+                        value: '<span style="color: #48bfe3"><b>Visuals</b></span><br>'+
                         '- For the aesthetic, since we wanted to represent the passing of time and day and night cycles, we decided to use the insides of a clock'+
                         ' as a setting for our mazes, thus taking a reference to steampunk aesthetics. <br><br>'+
                         '- For the character, we chose an endearing and friendly representation of a gear, and for the obstacles we relied on things that resembled'+
@@ -785,7 +800,7 @@ const gameData = {
                     },
                     {
                         type: 'text',
-                        value: '<span style="color: #48bfe3"><b>More info about the game</b></span><br><br>'+
+                        value: '<span style="color: #48bfe3"><b>More info about the game</b></span><br>'+
                         '- The level selector consists in the main platform of the game, with each level representing our progress throughout the game. The player'+
                         ' can turn it around with the mouse like a wheel to choose different levels (only if he has completed that level before). <br><br>'+
                         '- In game, players have a preparation time where they can take a look at the entire maze and plan their path before starting the level.'+
