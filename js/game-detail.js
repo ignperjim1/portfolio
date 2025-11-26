@@ -357,7 +357,7 @@ const gameData = {
                         type: 'video',
                         value: ['videos/Bowtoys/bowtoys-crocodile-special.mp4','videos/Bowtoys/bowtoys-rabbit-special.mp4'],
                         caption: 'Each character has a unique special move',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex', flexDirection: 'row'}
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem'}
                     },
                     {
                         type: 'text',
@@ -371,7 +371,7 @@ const gameData = {
                         type: 'video',
                         value: ['videos/Bowtoys/bowtoys-fox-facility.mp4','videos/Bowtoys/bowtoys-pig-fatality.mp4'],
                         caption: 'Fatalities incentivize players to win the game rewarding them with a cinematic way of destroying their opponent',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex' }
+                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem'}
                     },
                     {
                         type: 'text',
@@ -1273,7 +1273,9 @@ function createContentBlock(block) {
             
         case 'images':
             container.className = 'feature-images';
+            // Ensure container is always block-level, never flex or grid
             container.style.display = 'block';
+            container.style.width = '100%';
             
             const imagesGrid = document.createElement('div');
             imagesGrid.className = 'images-grid';
@@ -1328,17 +1330,21 @@ function createContentBlock(block) {
                 const caption = document.createElement('p');
                 caption.className = 'feature-caption';
                 caption.textContent = block.caption;
+                // Explicitly set caption to block, outside the grid
                 caption.style.display = 'block';
                 caption.style.width = '100%';
                 caption.style.marginTop = '1rem';
+                caption.style.clear = 'both'; // Ensure it's on a new line
+                caption.style.position = 'relative'; // Ensure it's in normal flow
                 container.appendChild(caption);
             }
             break;
             
         case 'video':
             container.className = 'feature-video';
-            // Ensure container uses block layout so caption stays below
+            // Ensure container is always block-level, never flex or grid
             container.style.display = 'block';
+            container.style.width = '100%';
             
             // Handle both single video (string) and multiple videos (array)
             if (Array.isArray(block.value)) {
@@ -1407,10 +1413,12 @@ function createContentBlock(block) {
                 const caption = document.createElement('p');
                 caption.className = 'feature-caption';
                 caption.textContent = block.caption;
-                // Ensure caption is displayed as block and appears below the videos
+                // Explicitly set caption to block, outside the grid/videos container
                 caption.style.display = 'block';
                 caption.style.width = '100%';
                 caption.style.marginTop = '1rem';
+                caption.style.clear = 'both'; // Ensure it's on a new line
+                caption.style.position = 'relative'; // Ensure it's in normal flow
                 container.appendChild(caption);
             }
             break;
@@ -1436,7 +1444,18 @@ function createContentBlock(block) {
     
     // Apply inline styles if provided
     if (block.style) {
-        applyInlineStyles(container, block.style);
+        // For images and videos, exclude display property to keep caption outside grid
+        const isImagesOrVideos = block.type === 'images' || block.type === 'video';
+        if (isImagesOrVideos) {
+            // Apply styles except display to preserve block layout
+            Object.keys(block.style).forEach(property => {
+                if (property !== 'display') {
+                    container.style[property] = block.style[property];
+                }
+            });
+        } else {
+            applyInlineStyles(container, block.style);
+        }
     }
     
     return container;
