@@ -1300,14 +1300,15 @@ function createContentBlock(block) {
             
             // Apply custom styles to grid if provided (but preserve grid structure)
             if (block.style) {
-                applyInlineStyles(imagesGrid, block.style);
-                // Ensure grid properties are maintained
-                if (!block.style.display) {
-                    imagesGrid.style.display = 'grid';
-                }
-                if (!block.style.gridAutoFlow) {
-                    imagesGrid.style.gridAutoFlow = 'row';
-                }
+                // Apply styles except display and gridAutoFlow (we'll set those explicitly)
+                Object.keys(block.style).forEach(property => {
+                    if (property !== 'display' && property !== 'gridAutoFlow' && property !== 'flexDirection') {
+                        imagesGrid.style[property] = block.style[property];
+                    }
+                });
+                // Always enforce grid layout for arrays (max 2 per row)
+                imagesGrid.style.display = 'grid';
+                imagesGrid.style.gridAutoFlow = 'row';
             }
             
             block.value.forEach(imgSrc => {
@@ -1361,14 +1362,15 @@ function createContentBlock(block) {
                 
                 // Apply custom styles if provided (but preserve grid structure)
                 if (block.style) {
-                    applyInlineStyles(videosContainer, block.style);
-                    // Ensure grid properties are maintained unless explicitly overridden
-                    if (!block.style.display) {
-                        videosContainer.style.display = 'grid';
-                    }
-                    if (!block.style.gridAutoFlow) {
-                        videosContainer.style.gridAutoFlow = 'row';
-                    }
+                    // Apply styles except display, gridAutoFlow, and flexDirection (we'll set those explicitly)
+                    Object.keys(block.style).forEach(property => {
+                        if (property !== 'display' && property !== 'gridAutoFlow' && property !== 'flexDirection') {
+                            videosContainer.style[property] = block.style[property];
+                        }
+                    });
+                    // Always enforce grid layout for arrays (max 2 per row)
+                    videosContainer.style.display = 'grid';
+                    videosContainer.style.gridAutoFlow = 'row';
                 }
                 
                 // Create a video element for each video in the array
