@@ -357,7 +357,7 @@ const gameData = {
                         type: 'video',
                         value: ['videos/Bowtoys/bowtoys-crocodile-special.mp4','videos/Bowtoys/bowtoys-rabbit-special.mp4'],
                         caption: 'Each character has a unique special move',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem'}
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
                     },
                     {
                         type: 'text',
@@ -371,7 +371,7 @@ const gameData = {
                         type: 'video',
                         value: ['videos/Bowtoys/bowtoys-fox-facility.mp4','videos/Bowtoys/bowtoys-pig-fatality.mp4'],
                         caption: 'Fatalities incentivize players to win the game rewarding them with a cinematic way of destroying their opponent',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem'}
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
                     },
                     {
                         type: 'text',
@@ -459,7 +459,7 @@ const gameData = {
                             'images/Bowtoys/bowtoysachievements.png', 'images/Bowtoys/bowtoysrewards.png', 'images/Bowtoys/bowtoysmissions.png',
                             'images/Bowtoys/bowtoysmatchend.png'],
                         caption: 'Different Menu Screens',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
                     },
                     {
                         type: 'text',
@@ -473,7 +473,7 @@ const gameData = {
                         type: 'images',
                         value: ['images/Bowtoys/bowtoysingameui.png'],
                         caption: 'In Game UI of a Standard Match',
-                        style: { justifyContent: 'center', paddingLeft: '20%', paddingRight: '20%' }
+                        style: { justifyContent: 'center', paddingLeft: '3rem', paddingRight: '3rem' }
                     }
                 ]
             },
@@ -521,7 +521,7 @@ const gameData = {
                         type: 'images',
                         value: ['images/Wow/wowHUD.png'],
                         caption: 'Gameplay HUD',
-                        style: { justifyContent: 'center', paddingLeft: '20%', paddingRight: '20%' }
+                        style: { justifyContent: 'center', paddingLeft: '3rem', paddingRight: '3rem' }
                     },
                     {
                         type: 'text',
@@ -536,7 +536,7 @@ const gameData = {
                         type: 'images',
                         value: ['images/Wow/wowWeaponDisplay.png', 'images/Wow/wowCharacterSelect.png'],
                         caption: 'Character selection & weapons',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
                     },
                     {
                         type: 'text',
@@ -569,19 +569,19 @@ const gameData = {
                         type: 'video',
                         value: ['videos/Wow/wow-wavesmode.mp4','videos/Wow/wow-bossfight.mp4'],
                         caption: 'Waves mode and boss fight gameplay videos',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem', display: 'flex'}
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
                     },
                     {
                         type: 'images',
                         value: ['images/Wow/wowBosses.png'],
                         caption: 'Different bosses in the game - each with their own unique abilities and combat styles',
-                        style: { justifyContent: 'center', paddingLeft: '20%', paddingRight: '20%' }
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem'}
                     },
                     {
                         type: 'images',
                         value: ['images/Wow/wowSlimeVariations.png'],
                         caption: 'Enemy variations appear in higher waves, adding special abilities and behaviors to the enemies',
-                        style: { justifyContent: 'center', paddingLeft: '20%', paddingRight: '20%' }
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem'}
                     },
                 ]
             },
@@ -633,7 +633,7 @@ const gameData = {
                             'images/Wow/wowWeaponDisplay.png', 'images/Wow/wowWeaponChange.png',
                         ],
                         caption: 'Different menu screens',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
                     },
                     {
                         type: 'text',
@@ -663,7 +663,7 @@ const gameData = {
                             'images/Wow/wowGameOver1.png', 'images/Wow/wowGameOver2.png',
                         ],
                         caption: 'In-Game UI elements',
-                        style: { justifyContent: 'center', paddingLeft: '10%', paddingRight: '10%', gap: '3rem' }
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
                     },
                 ]
             },
@@ -782,7 +782,7 @@ const gameData = {
                         type: 'images',
                         value: ['images/EngineOfTime/laberintodia.png', 'images/EngineOfTime/laberintonoche.png'],
                         caption: 'Day/Night areas in the maze',
-                        columns: 2
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
                     },
                     {
                         type: 'text',
@@ -796,7 +796,7 @@ const gameData = {
                         type: 'images',
                         value: ['images/EngineOfTime/draft-1.png', 'images/EngineOfTime/draft-2.png'],
                         caption: 'Drafts of the game',
-                        columns: 2
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
                     },
                     {
                         type: 'text',
@@ -813,7 +813,7 @@ const gameData = {
                         type: 'images',
                             value: ['images/EngineOfTime/visionprevia.png', 'images/EngineOfTime/selector-nivel.png'],
                         caption: 'Maze layout and level selector',
-                        columns: 2
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
                     },
                 ]
             },
@@ -895,7 +895,7 @@ const gameData = {
                             'images/Fruitwatchers/ScreenshotLevel6.png',
                             'images/Fruitwatchers/Gif4.gif',
                             'images/Fruitwatchers/ScreenshotLevel7.png',],
-                        columns: 2
+                            style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
                     }
                 ]
             },
@@ -911,7 +911,7 @@ const gameData = {
                         value: ['images/Fruitwatchers/ScreenshotAndroid1.png', 'images/Fruitwatchers/ScreenshotAndroid2.png', 
                             'images/Fruitwatchers/ScreenshotAndroid3.png', 'images/Fruitwatchers/ScreenshotAndroid4.png'],
                         caption: 'Changes in the in-game interface',
-                        columns: 2
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
                     }
                 ]
             }
