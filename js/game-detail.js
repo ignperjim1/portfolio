@@ -300,6 +300,39 @@ const gameData = {
             'Jira Project Management'
         ],
         keyFeatures: [
+            {
+                title: 'Removal of all online-dependent systems',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'I was in charge of removing all online-dependent systems. This included: '+
+                        '- Firebase (Crashlytics, Analytics, Remote Config) '+
+                        '- Android Performance Tuner '+
+                        '- Facebook SDK (Login, Share, App Invites) '+
+                        '- Ads (Google Admob, Ironsource, Unity Ads) '+
+                        '- Addressables (Asset Bundles) '+
+                        '- Google Play Games Services (Leaderboards, Achievements, Cloud Saving) '+
+                        '- IAPs (In-App Purchases) '+
+                        '- Push notifications '+
+                        '- Cloud Saving'+
+                        '<br>This process took around a few weeks to be completed, specially because I had to redesign a lot of aspects of the game to fit the new requirements.'+
+                        '<br><br>For example, now players didn\'t have Rewarded Ads, Interstitial Ads or IAPs to progress faster in the game, so I had to balance the game to make '+
+                        'its progression and difficulty curve more fair and engaging. I also had to redesign UI elements to fit the new requirements and create a local saving system that '+
+                        'replaced the cloud saving system.'
+                    },
+                ]
+            },
+            {
+                title: 'Bugs and optimizations',
+                content: [
+                    {
+                        type: 'text',
+                        value: 'Plug In Digital also asked for some optimizations to the game, such as updating Android SDK to the latest version and allowing 16KB memory page size.'+
+                        '<br><br>In terms of bugs, with the removal of online-dependent systems, a lot of them came up. Not only as a result of my changes, but also a lot of legacy bugs.'+
+                        'I had to playtest the game throughly to identify and fix them. This process took around a few weeks to be completed, with several iterations and milestones.'
+                    },
+                ]
+            },
         ]
     },
     'bowtoys': {
@@ -851,7 +884,6 @@ const gameData = {
             'Jira Project Management'
         ],
     },
-    
     'fruitwatchers': {
         title: 'Fruitwatchers',
         role: 'Solo Developer',
@@ -1179,9 +1211,10 @@ function populatePage(game) {
             img.src = screenshot;
             img.alt = game.title;
             img.className = 'screenshot';
+            img.style.cursor = 'pointer';
             img.addEventListener('click', () => {
-                // Simple modal/lightbox functionality could be added here
-                window.open(screenshot, '_blank');
+                // Open image in full-size modal (reusing the same modal from keyFeatures)
+                openImageModal(screenshot, `${game.title} - Screenshot`);
             });
             screenshotsContainer.appendChild(img);
         });
