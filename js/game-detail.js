@@ -191,70 +191,89 @@ const gameData = {
                 icon: 'fab fa-google-play'
             }
         ],
-        description: 'Idle Mining Town is a captivating idle incremental game where players build and manage their own mining empire. The game features automated resource collection, factory management, and strategic upgrades to maximize efficiency and profits.',
-        screenshots: [
-            'images/Mining/Ciudad.png',
-            'images/Mining/FactoryDetails.png',
-            'images/Mining/FactoryList.png',
-            'images/Mining/Gameplay.png',
-            'images/Mining/TechnologyUpgrade.png'
-        ],
+        description: 'Idle Mining Town is an idle tycoon game where players build, manage, and expand mining towns. Players extract minerals, automate production chains, '+
+        'and hire managers to optimize efficiency. The game features offline progression, tiered resource systems, strategic upgrades, and city expansion mechanics, delivering '+
+        'a hybrid experience for both casual and dedicated players.'
+        ,
         myRole: [
             'Lead development and maintenance of the idle game mechanics',
-            'Implement and balance the incremental progression systems',
-            'Optimize game performance and reduce loading times',
             'Design and implement new features and content updates',
             'Analyze player data to improve retention and monetization',
             'Coordinate with the team for regular content updates'
         ],
         technologies: [
-            'Unity Engine',
-            'C# Programming',
+            'Unity Engine (C# Programming)',
             'Data Analytics',
-            'A/B Testing',
             'Git Version Control',
             'Jira Project Management'
         ],
         keyFeatures: [
             {
-                title: 'Idle Resource Generation',
+                title: "Idle Resource Simulation & Offline Progression",
                 content: [
                     {
-                        type: 'text',
-                        value: 'Automated resource collection system that continues even when the player is offline. Features multiple resource types and exponential growth mechanics.'
+                        type: "text",
+                        value: "Multi-layered resource generation system with automated collection and offline progression. Predictive algorithms ensure accurate simulation of resources earned while the player is away."
                     },
                     {
-                        type: 'video',
-                        value: 'videos/mining_playable.mp4',
-                        caption: 'Idle gameplay demonstration'
+                        type: "video",
+                        value: "videos/mining_playable.mp4",
+                        caption: "Idle gameplay and resource generation demonstration"
                     }
                 ]
             },
             {
-                title: 'Factory Management',
+                title: "Modular Factory Automation",
                 content: [
                     {
-                        type: 'text',
-                        value: 'Complex factory automation system where players build and upgrade production chains to maximize efficiency and profits.'
+                        type: "text",
+                        value: "Designed scalable production chains with interdependent factories, bottleneck management, and upgrade prioritization. Players can optimize efficiency through strategic factory layout and automation."
                     },
                     {
-                        type: 'images',
-                        value: ['images/Mining/FactoryList.png', 'images/Mining/FactoryDetails.png'],
-                        caption: 'Factory management interface'
+                        type: "images",
+                        value: ["images/Mining/FactoryList.png", "images/Mining/FactoryDetails.png"],
+                        caption: "Factory management interface with modular production chains"
                     }
                 ]
             },
             {
-                title: 'City Building & Upgrades',
+                title: "City Building & Tiered Progression",
                 content: [
                     {
-                        type: 'text',
-                        value: 'Build and manage your mining town with various buildings and infrastructure. Upgrade technologies to unlock new capabilities.'
+                        type: "text",
+                        value: "Players expand their mining town with new buildings, unlockable resource tiers, and technology upgrades. Tiered progression ensures both accessible early gameplay and challenging late-game optimization."
                     },
                     {
-                        type: 'images',
-                        value: ['images/Mining/Ciudad.png', 'images/Mining/TechnologyUpgrade.png'],
-                        caption: 'City overview and technology upgrades'
+                        type: "images",
+                        value: ["images/Mining/Ciudad.png", "images/Mining/TechnologyUpgrade.png"],
+                        caption: "City layout and technology upgrades"
+                    }
+                ]
+            },
+            {
+                title: "AI-Driven Managers & Optimization",
+                content: [
+                    {
+                        type: "text",
+                        value: "Implemented AI-controlled managers with unique traits to automate production, reduce downtime, and provide bonuses. Players strategically assign managers to optimize resource collection and efficiency."
+                    }
+                ]
+            },
+            {
+                title: "Data-Driven Analytics & Balancing",
+                content: [
+                    {
+                        type: "text",
+                        value: "Integrated player telemetry and analytics to monitor engagement, progression bottlenecks, and feature usage. Used data to inform balancing decisions, optimize retention, and guide content updates."
+                    }
+                ]
+            },
+            {
+                title: "Strategic Depth & Hybrid Gameplay",
+                content: [
+                    {
+                        type: "text",
+                        value: "Balanced casual idle mechanics with strategic tycoon elements, allowing players to engage at their own pace. Players can optimize production, plan upgrades, and expand efficiently, creating long-term engagement."
                     }
                 ]
             }
@@ -306,15 +325,15 @@ const gameData = {
                     {
                         type: 'text',
                         value: 'I was in charge of removing all online-dependent systems. This included: '+
-                        '- Firebase (Crashlytics, Analytics, Remote Config) '+
-                        '- Android Performance Tuner '+
-                        '- Facebook SDK (Login, Share, App Invites) '+
-                        '- Ads (Google Admob, Ironsource, Unity Ads) '+
-                        '- Addressables (Asset Bundles) '+
-                        '- Google Play Games Services (Leaderboards, Achievements, Cloud Saving) '+
-                        '- IAPs (In-App Purchases) '+
-                        '- Push notifications '+
-                        '- Cloud Saving'+
+                        '<br>- Firebase (Crashlytics, Analytics, Remote Config) '+
+                        '<br>- Android Performance Tuner '+
+                        '<br>- Facebook SDK (Login, Share, App Invites) '+
+                        '<br>- Ads (Google Admob, Ironsource, Unity Ads) '+
+                        '<br>- Addressables (Asset Bundles) '+
+                        '<br>- Google Play Games Services (Leaderboards, Achievements, Cloud Saving) '+
+                        '<br>- IAPs (In-App Purchases) '+
+                        '<br>- Push notifications '+
+                        '<br>- Cloud Saving'+
                         '<br>This process took around a few weeks to be completed, specially because I had to redesign a lot of aspects of the game to fit the new requirements.'+
                         '<br><br>For example, now players didn\'t have Rewarded Ads, Interstitial Ads or IAPs to progress faster in the game, so I had to balance the game to make '+
                         'its progression and difficulty curve more fair and engaging. I also had to redesign UI elements to fit the new requirements and create a local saving system that '+
