@@ -65,9 +65,9 @@ const gameData = {
     'afterworld': {
         title: 'After World',
         company: 'Viva Games',
-        role: 'Lead Game Developer',
+        role: 'Lead Game Developer & Technical Director',
         year: '2024 - Present',
-        tags: ['Unity', 'Zombie Survival', 'Android/iOS', 'Mobile'],
+        tags: ['Unity', 'Zombie Survival', 'URP Migration', 'Multiplatform', 'RPG Mechanics', 'Base Building'],
         heroImage: 'images/AfterWorld/Splash.png',
         heroVideo: 'videos/AfterWorld/survival16_9.mp4',
         storeLinks: [
@@ -78,102 +78,276 @@ const gameData = {
             },
             {
                 store: 'App Store',
-                url: '',//'https://apps.apple.com/app/after-world/id123456789',
+                url: 'https://apps.apple.com/es/app/after-world-zombie-survival/id6741428349',
                 icon: 'fab fa-app-store-ios'
             }
         ],
-        description: 'After World is an immersive zombie survival game set in a post-apocalyptic world. Players must scavenge for resources, build shelters, and fight off hordes of zombies while managing their survival needs. The game features deep crafting systems, base building, and intense combat mechanics.',
-        screenshots: [
-            'images/AfterWorld/Characters.png',
-            'images/AfterWorld/Combat.png',
-            'images/AfterWorld/Inventory.png',
-            'images/AfterWorld/PlayerCreation1.png',
-            'images/AfterWorld/PlayerCreation2.png'
-        ],
+        description: 'After World is a multiplatform zombie survival RPG where players build and defend their base, explore procedurally generated missions, ' +
+    'craft equipment, and level up skills.The game features deep RPG progression, strategic base building, intense combat, and a rich crafting system.'+
+    'Originally started in 2015, the project was rescued from hiatus and I led its complete modernization to current Unity standards (URP14), optimization, and worldwide multiplatform release as the sole developer',
+    
         myRole: [
-            'Lead the complete game design and programming of After World',
-            'Design and implement core gameplay mechanics including combat, crafting, and survival systems',
-            'Create and maintain detailed design documentation',
-            'Mentor other developers and coordinate with artists and QA teams',
-            'Implement player progression and monetization systems',
-            'Optimize game performance for mobile platforms'
+            'Rescued legacy project from hiatus and modernized codebase to current Unity standards',
+            'Led complete technical modernization from legacy LWRP to Unity URP14 with custom shader migration',
+            'Led complete development cycle: design, programming, optimization, and multiplatform deployment',
+            'Architected and implemented all gameplay systems, features, and content updates',
+            'Optimized performance for mobile platforms (Android & iOS) and conducted technical QA',
+            'Coordinated with Art and QA departments when additional support was needed'
         ],
         technologies: [
-            'Unity Engine',
-            'C# Programming',
+            'Unity Engine (C# Programming)',
+            'Universal Render Pipeline (URP)',
+            'A* Pathfinding Project',
+            'Behavior Designer (AI)',
+            'Firebase & Analytics Integration',
             'Git Version Control',
-            'Jira Project Management',
-            'Google Analytics',
-            'Firebase Integration'
+            'Multiplatform Deployment (Android/iOS)'
+        ],
+        screenshots: [
+            'images/AfterWorld/Combat.png',
+            'images/AfterWorld/DestacadaHacha.png',
+            'images/AfterWorld/Characters.png',
+            'images/AfterWorld/Splash.png'
         ],
         keyFeatures: [
             {
-                title: 'Zombie Combat System',
+                title: "Base Building & City Management System",
                 content: [
                     {
-                        type: 'text',
-                        value: 'Advanced combat mechanics featuring multiple weapon types, zombie AI with different behaviors, and dynamic difficulty scaling. The system includes hit detection, damage calculation, and special effects.'
+                        type: "text",
+                        value: "Designed and implemented a comprehensive base building system where players construct and manage their survival settlement. " +
+                        "Features include grid-based building placement, resource production buildings with automated crafting queues, defensive structures, " +
+                        "storage management, and technology upgrades. The system uses a modular architecture with building inventory systems, task management, " +
+                        "and persistent save data. Players can build walls, gates, crafting stations, resource generators, and defensive structures to protect against zombie hordes."
                     },
                     {
-                        type: 'video',
-                        value: 'videos/AfterWorld/survival16_9.mp4',
-                        caption: 'Combat gameplay demonstration',
-                        customClass: 'fullwidth-video'  // Make video full width
-                    },
-                    {
-                        type: 'image',
-                        value: 'images/AfterWorld/Combat.png',
-                        caption: 'Zombie combat screenshot',
-                        customClass: 'large-image'  // Make image large
-                    },
-                    {
-                        type: 'text',
-                        heading: 'Technical Implementation',
-                        value: 'Implemented using Unity\'s physics system with custom collision detection. Features include weapon switching, combo attacks, and environmental damage. The AI uses state machines for different zombie types.',
-                        customClass: 'highlighted-text'  // Highlight this section
-                    },
-                    {
-                        type: 'code',
-                        language: 'csharp',
-                        value: '// Zombie AI State Machine\npublic class ZombieAI : MonoBehaviour\n{\n    public enum ZombieState { Idle, Chasing, Attacking, Dead }\n    private ZombieState currentState;\n    \n    void Update() {\n        switch(currentState) {\n            case ZombieState.Chasing:\n                ChasePlayer();\n                break;\n            case ZombieState.Attacking:\n                AttackPlayer();\n                break;\n        }\n    }\n}'
-                    }
-                ]
-            },
-            {
-                title: 'Resource Management',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Comprehensive resource system including food, water, materials, and ammunition. Players must balance immediate survival needs with long-term base building goals.'
-                    },
-                    {
-                        type: 'image',
-                        value: 'images/AfterWorld/Inventory.png',
-                        caption: 'Inventory management system'
-                    }
-                ]
-            },
-            {
-                title: 'Character Customization',
-                content: [
-                    {
-                        type: 'text',
-                        value: 'Extensive character creation and progression system with visual customization, skill trees, and equipment upgrades.'
+                        type: "video",
+                        value: "videos/AfterWorld/lfs/BuildingBaseShowcase.mp4",
+                        caption: "Base building mechanics: placement, construction, and management"
                     },
                     {
                         type: 'images',
-                        value: ['images/AfterWorld/PlayerCreation1.png', 'images/AfterWorld/PlayerCreation2.png', 'images/AfterWorld/Characters.png'],
-                        caption: 'Character creation options',
-                        columns: 3,  // Force 3 columns
-                        customClass: 'large-gap'  // Add extra gap between images
+                        value: [
+                            "images/AfterWorld/BaseUpgradeGif.png",
+                            "images/AfterWorld/CommanderView.png",
+                            "images/AfterWorld/DefensiveStructures.png"
+                        ],
+                        caption: "City management interface and base construction systems - defensive structures and upgrades",
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
+                    },
+                ]
+            },
+            {
+                title: "Combat System: Melee, Ranged & Zombie AI",
+                content: [
+                    {
+                        type: "text",
+                        value: "Developed a sophisticated combat system featuring melee and ranged weapons with distinct mechanics, hit reactions, stopping power, " +
+                        "damage types, and knockback systems. Implemented intelligent zombie AI with horde behavior, pathfinding, aggro systems, and dynamic difficulty scaling. " +
+                        "The damage system includes hit zones, critical hits, weapon durability, and tactical combat features like sneak attacks and dodge rolls. " +
+                        "NPCs and zombies feature state machines for combat, patrol, and idle behaviors."
                     },
                     {
-                        type: 'text',
-                        heading: 'Features',
-                        value: 'Over 50 customization options including appearance, clothing, and equipment. The skill system affects gameplay mechanics and unlocks new abilities as players progress.'
+                        type: "video",
+                        value: "videos/AfterWorld/lfs/CombatRanged.mp4",
+                        caption: "Zombie horde AI and large-scale combat scenarios"
+                    },
+                    {
+                        type: 'video',
+                        value: ['videos/AfterWorld/lfs/Combat/CombatMeleeBat.mp4',
+                            'videos/AfterWorld/lfs/Combat/CombatMeleeSpear.mp4',
+                            'videos/AfterWorld/lfs/Combat/CombatGrenade.mp4',
+                            'videos/AfterWorld/lfs/Combat/CombatClaymore.mp4',],
+                        caption: 'Combat demonstration and weapons variety and mechanics',
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
+                    },
+                ]
+            },
+            {
+                title: "Crafting System & Production Chains",
+                content: [
+                    {
+                        type: "text",
+                        value: "Architected a modular crafting system with recipe-based production, crafting benches, resource requirements, and queued task management. " +
+                        "Players craft weapons, armor, consumables, building materials, and technological upgrades through specialized workstations. " +
+                        "The system features automated production chains, inventory-aware crafting, learning points to unlock recipes, technology tiers, " +
+                        "and batch crafting capabilities. Integrated with the base building system for production buildings that automatically craft queued items."
+                    },
+                    {
+                        type: "video",
+                        value: "videos/AfterWorld/lfs/Crafting.mp4",
+                        caption: "Crafting interface and production chain demonstration in different workbenches (buildings)"
+                    },
+                    {
+                        type: "images",
+                        value: [
+                            "images/AfterWorld/CraftingTable.png",
+                            "images/AfterWorld/CraftingInProcess.png",
+                        ],
+                        caption: "Crafting interface, workbenches, and recipe management",
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
                     }
                 ]
-            }
+            },
+            {
+                title: "RPG Progression: Skills, Attributes & Leveling",
+                content: [
+                    {
+                        type: "text",
+                        value: "Designed a deep RPG progression system with experience-based leveling, skill trees with 90+ unique skills across multiple categories " +
+                        "(Combat, Survival, Gathering, Stealth), attribute systems affecting character stats, and learning points for unlocking crafting recipes. " +
+                        "Skills provide percentage-based bonuses to damage, health, stamina, resource gathering, stealth, and crafting efficiency. " +
+                        "The modular stat system allows dynamic stat modifications from equipment, skills, buffs, and debuffs, creating strategic build variety."
+                    },
+                    {
+                        type: "images",
+                        value: [
+                            "images/AfterWorld/LevelUp.png",
+                            "images/AfterWorld/SkillsTree.png",
+                        ],
+                        caption: "Skill tree system and character progression interfaces",
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
+                    }
+                ]
+            },
+            {
+                title: "Technical Modernization: LWRP to URP14 Migration",
+                content: [
+                    {
+                        type: "text",
+                        value: "Rescued a legacy project from hiatus and led the complete technical modernization from an outdated custom LWRP fork to Unity's Universal Render Pipeline 14. " +
+                        "This involved migrating and adapting hundreds of custom shaders, including custom render features (fur rendering, post-processing, screen-space effects), " +
+                        "and optimizing the rendering pipeline for multiplatform performance. The migration required deep understanding of Unity's rendering architecture, " +
+                        "HLSL shader programming, and careful refactoring to maintain visual fidelity while improving performance."
+                    },
+                    {
+                        type: 'video',
+                        value: ['videos/AfterWorld/lfs/Tutorial-Antes.mp4',
+                            'videos/AfterWorld/lfs/Tutorial-Despues.mp4',],
+                        caption: 'Before/After comparison of the tutorial of the game',
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
+                    },
+                    {
+                        type: 'video',
+                        value: ['videos/AfterWorld/lfs/Bosque-Antes.mp4',
+                            'videos/AfterWorld/lfs/Bosque-Despues.mp4',],
+                        caption: 'Before/After comparison of the first level of the game',
+                        style: { justifyContent: 'center', paddingLeft: '2rem', paddingRight: '2rem', gap: '3rem'}
+                    },
+                ]
+            },
+            
+        
+        /*{
+            title: "World Map & Procedural Mission System",
+            content: [
+                {
+                    type: "text",
+                    value: "Implemented an interconnected world map system with mission nodes, unlockable paths, and procedurally generated levels. " +
+                    "Each mission features seeded random generation ensuring consistent layouts while providing variety through configurable spawn points, " +
+                    "dynamic enemy placement, randomized loot, and day/night cycles. The system includes mission progression tracking, connection unlocking, " +
+                    "campaign missions, event missions, and save state persistence. Players travel between locations, each with unique environmental themes and challenges."
+                },
+                {
+                    type: "video",
+                    value: "videos/AfterWorld/world-map-exploration.mp4",
+                    caption: "World map navigation and mission selection system"
+                    // Suggested: Player navigating world map, selecting missions, showing unlocked paths
+                },
+                {
+                    type: "video",
+                    value: "videos/AfterWorld/mission-gameplay.mp4",
+                    caption: "Mission gameplay showcasing procedural generation and exploration"
+                    // Suggested: Full mission playthrough showing exploration, combat, looting, and mission completion
+                },
+                {
+                    type: "images",
+                    value: [
+                        "images/AfterWorld/world-map.png",
+                        "images/AfterWorld/mission-select.png",
+                        "images/AfterWorld/level-variety.png"
+                    ],
+                    caption: "World map interface and procedurally generated mission environments"
+                    // Suggested: World map UI, mission details screen, various level screenshots
+                }
+            ]
+        },
+        
+        {
+            title: "Inventory & Equipment Management",
+            content: [
+                {
+                    type: "text",
+                    value: "Developed a comprehensive inventory system with equipment slots, backpack storage, chest inventories, and intelligent item stacking. " +
+                    "Features include drag-and-drop interface, item filtering, equipment stats comparison, durability tracking, and inventory expansion through backpack items. " +
+                    "The system supports multiple inventory types (player bag, equipment, building storage, enemy loot) with smart item transfer, " +
+                    "automatic sorting, and transaction validation. Integrated with crafting, looting, and trading systems."
+                },
+                {
+                    type: "video",
+                    value: "videos/AfterWorld/inventory-management.mp4",
+                    caption: "Inventory system and equipment management demonstration"
+                    // Suggested: Player managing inventory, equipping items, comparing gear, organizing storage
+                },
+                {
+                    type: "images",
+                    value: [
+                        "images/AfterWorld/inventory-ui.png",
+                        "images/AfterWorld/equipment-screen.png",
+                        "images/AfterWorld/loot-window.png"
+                    ],
+                    caption: "Inventory interface and equipment management systems"
+                    // Suggested: Full inventory UI, equipment comparison tooltip, chest/storage interface
+                }
+            ]
+        },
+        
+        {
+            title: "Cross-Platform Optimization & Deployment",
+            content: [
+                {
+                    type: "text",
+                    value: "Led multiplatform development and optimization for Android, iOS, and Windows PC, each with platform-specific features and controls. " +
+                    "Implemented dynamic quality settings with multiple preset levels (Low, Medium, High, Ultra) adjusting rendering features, shadows, " +
+                    "post-processing, and draw distances. Optimized asset loading with Addressables system for efficient memory management. " +
+                    "Integrated platform-specific SDKs for analytics, cloud saves, achievements, and in-app purchases. Achieved consistent 60 FPS on mid-range devices " +
+                    "while maintaining visual quality on high-end platforms through adaptive quality and LOD systems."
+                },
+                {
+                    type: "images",
+                    value: [
+                        "images/AfterWorld/platform-android.png",
+                        "images/AfterWorld/platform-ios.png",
+                        "images/AfterWorld/platform-pc.png",
+                        "images/AfterWorld/quality-settings.png"
+                    ],
+                    caption: "Game running across multiple platforms with optimized performance"
+                    // Suggested: Screenshots from each platform, quality settings UI, performance metrics
+                }
+            ]
+        },
+        
+        {
+            title: "Persistent Save System & Data Management",
+            content: [
+                {
+                    type: "text",
+                    value: "Architected a robust save/load system using custom serialization for game state persistence across sessions. " +
+                    "The system saves player progression (level, skills, attributes), inventory states, base construction data, mission progress, " +
+                    "world state, and entity data. Features automatic save intervals, manual save options, cloud backup integration, " +
+                    "and data validation to prevent corruption. Implemented efficient serialization using ScriptableObject patterns and binary encoding " +
+                    "for optimal file size and loading speed. Supports save migration between game versions."
+                },
+                {
+                    type: "images",
+                    value: [
+                        "images/AfterWorld/save-system-architecture.png"
+                    ],
+                    caption: "Save system architecture and data persistence"
+                    // Suggested: Diagram or code screenshot showing save system structure
+                }
+            ]
+        }*/
         ]
     },
     'mining': {
