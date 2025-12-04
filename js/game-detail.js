@@ -1515,6 +1515,9 @@ function createContentBlock(block) {
             const numItems = block.value.length;
             if (isMobile) {
                 // Mobile: always use 1 column
+                    imagesGrid.style.paddingLeft = '0';
+                    imagesGrid.style.paddingRight = '0';
+                    imagesGrid.style.gap = '0';
                 imagesGrid.style.gridTemplateColumns = 'repeat(1, 1fr)';
             } else {
                 // Desktop: use 2 columns max
@@ -1524,9 +1527,9 @@ function createContentBlock(block) {
                     // For more than 2 items, use auto-fit with minmax to cap at 2 columns
                     imagesGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
                 }
+                imagesGrid.style.gap = '3rem';
             }
             imagesGrid.style.maxWidth = '100%';
-            imagesGrid.style.gap = '3rem';
             imagesGrid.style.gridAutoFlow = 'row';
             
             // Apply custom column setting if provided (but cap at 2 on desktop, 1 on mobile)
@@ -1593,7 +1596,10 @@ function createContentBlock(block) {
                 const numVideos = block.value.length;
                 if (isMobile) {
                     // Mobile: always use 1 column
+                    videosContainer.style.paddingLeft = '0';
+                    videosContainer.style.paddingRight = '0';
                     videosContainer.style.gridTemplateColumns = 'repeat(1, 1fr)';
+                    videosContainer.style.gap = '0';
                 } else {
                     // Desktop: use 2 columns max
                     if (numVideos <= 2) {
@@ -1602,9 +1608,9 @@ function createContentBlock(block) {
                         // For more than 2 videos, use 2 columns
                         videosContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
                     }
+                    videosContainer.style.gap = '3rem';
                 }
                 videosContainer.style.maxWidth = '100%';
-                videosContainer.style.gap = '3rem';
                 videosContainer.style.gridAutoFlow = 'row';
                 
                 // Apply custom styles if provided (but preserve grid structure)

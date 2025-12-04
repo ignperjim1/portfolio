@@ -2236,7 +2236,7 @@ img {
     }
     
     .feature-content {
-        padding: 0 1rem 1rem;
+        padding: 0.75rem 0 1rem 1rem;
     }
     
     .feature-text p {
@@ -2279,7 +2279,7 @@ img {
     }
     
     .feature-content {
-        padding: 0 0.75rem 0.75rem;
+        padding: 0.5rem 0 0.75rem 0.75rem;
     }
     
     .feature-text {
