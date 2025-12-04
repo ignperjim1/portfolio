@@ -1714,6 +1714,12 @@ img {
     min-height: 100vh;
 }
 
+@media (max-width: 768px) {
+    .game-detail-section {
+        padding: 60px 0 40px;
+    }
+}
+
 .back-button-container {
     margin-bottom: 40px;
 }

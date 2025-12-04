@@ -128,7 +128,7 @@ const gameData = {
                     {
                         type: 'images',
                         value: [
-                            "images/AfterWorld/BaseUpgradeGif.png",
+                            "images/AfterWorld/BaseUpgradeGif.gif",
                             "images/AfterWorld/CommanderView.png",
                             "images/AfterWorld/DefensiveStructures.png"
                         ],
@@ -149,7 +149,7 @@ const gameData = {
                     },
                     {
                         type: "video",
-                        value: "videos/AfterWorld/lfs/CombatRanged.mp4",
+                        value: "videos/AfterWorld/lfs/CombateRanged.mp4",
                         caption: "Zombie horde AI and large-scale combat scenarios"
                     },
                     {
@@ -1467,6 +1467,9 @@ function createFeatureElement(feature, index) {
 function createContentBlock(block) {
     const container = document.createElement('div');
     
+    // Detect mobile devices (typically <= 768px width)
+    const isMobile = window.innerWidth <= 768;
+    
     switch(block.type) {
         case 'text':
             container.className = 'feature-text';
@@ -1506,23 +1509,29 @@ function createContentBlock(block) {
             const imagesGrid = document.createElement('div');
             imagesGrid.className = 'images-grid';
             
-            // Set grid to max 2 columns, prioritize row direction
+            // Set grid to max 2 columns on desktop, 1 column on mobile
             imagesGrid.style.display = 'grid';
             // Use repeat with auto-fit but ensure max 2 columns by using minmax
             const numItems = block.value.length;
-            if (numItems <= 2) {
-                imagesGrid.style.gridTemplateColumns = `repeat(${numItems}, 1fr)`;
+            if (isMobile) {
+                // Mobile: always use 1 column
+                imagesGrid.style.gridTemplateColumns = 'repeat(1, 1fr)';
             } else {
-                // For more than 2 items, use auto-fit with minmax to cap at 2 columns
-                imagesGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                // Desktop: use 2 columns max
+                if (numItems <= 2) {
+                    imagesGrid.style.gridTemplateColumns = `repeat(${numItems}, 1fr)`;
+                } else {
+                    // For more than 2 items, use auto-fit with minmax to cap at 2 columns
+                    imagesGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                }
             }
             imagesGrid.style.maxWidth = '100%';
             imagesGrid.style.gap = '3rem';
             imagesGrid.style.gridAutoFlow = 'row';
             
-            // Apply custom column setting if provided (but cap at 2)
+            // Apply custom column setting if provided (but cap at 2 on desktop, 1 on mobile)
             if (block.columns) {
-                const maxColumns = Math.min(block.columns, 2);
+                const maxColumns = isMobile ? 1 : Math.min(block.columns, 2);
                 imagesGrid.style.gridTemplateColumns = `repeat(${maxColumns}, 1fr)`;
             }
             
@@ -1578,15 +1587,21 @@ function createContentBlock(block) {
                 const videosContainer = document.createElement('div');
                 videosContainer.className = 'videos-container';
                 
-                // Set grid to max 2 columns, prioritize row direction
+                // Set grid to max 2 columns on desktop, 1 column on mobile
                 videosContainer.style.display = 'grid';
                 // Use repeat with auto-fit but ensure max 2 columns
                 const numVideos = block.value.length;
-                if (numVideos <= 2) {
-                    videosContainer.style.gridTemplateColumns = `repeat(${numVideos}, 1fr)`;
+                if (isMobile) {
+                    // Mobile: always use 1 column
+                    videosContainer.style.gridTemplateColumns = 'repeat(1, 1fr)';
                 } else {
-                    // For more than 2 videos, use 2 columns
-                    videosContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                    // Desktop: use 2 columns max
+                    if (numVideos <= 2) {
+                        videosContainer.style.gridTemplateColumns = `repeat(${numVideos}, 1fr)`;
+                    } else {
+                        // For more than 2 videos, use 2 columns
+                        videosContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                    }
                 }
                 videosContainer.style.maxWidth = '100%';
                 videosContainer.style.gap = '3rem';
