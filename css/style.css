@@ -334,10 +334,11 @@ img {
 }
 
 .hero-title {
-    font-size: 10rem;
+    font-size:6rem;
     font-weight: 900;
     letter-spacing: 0.1em;
     margin-bottom: 20px;
+    white-space: nowrap;
     background: linear-gradient(135deg,var(--primary-color), var(--secondary-color), var(--accent-cyan),
      var(--accent-mint), var(--text-color));
     -webkit-background-clip: text;
@@ -1557,6 +1558,12 @@ img {
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2rem;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     .hero-subtitle {

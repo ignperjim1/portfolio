@@ -391,7 +391,7 @@ const gameData = {
                     },
                     {
                         type: "video",
-                        value: "videos/mining_playable.mp4",
+                        value: "videos/Mining/mining_playable.mp4",
                         caption: "Idle gameplay and resource generation demonstration"
                     }
                 ]
@@ -1596,10 +1596,10 @@ function createContentBlock(block) {
                 const numVideos = block.value.length;
                 if (isMobile) {
                     // Mobile: always use 1 column
-                    videosContainer.style.paddingLeft = '0';
-                    videosContainer.style.paddingRight = '0';
+                    videosContainer.style.paddingLeft = '0rem';
+                    videosContainer.style.paddingRight = '0rem';
                     videosContainer.style.gridTemplateColumns = 'repeat(1, 1fr)';
-                    videosContainer.style.gap = '0';
+                    videosContainer.style.gap = '0rem';
                 } else {
                     // Desktop: use 2 columns max
                     if (numVideos <= 2) {
